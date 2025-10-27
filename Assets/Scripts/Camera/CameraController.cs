@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering.HighDefinition;
 
 public class CameraController : MonoBehaviour
 {
@@ -9,6 +11,9 @@ public class CameraController : MonoBehaviour
     [SerializeField] GameObject UI;
     [SerializeField] GameObject camUI;
 
+    [SerializeField] VolumeProfile volumeProfile;
+    DepthOfField dof;
+
     public float adjVal;
 
     private bool VF = false;
@@ -16,6 +21,11 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         cam.usePhysicalProperties = true;
+        DepthOfField test;
+        if (volumeProfile.TryGet<DepthOfField>(out test))
+        {
+            dof = test;
+        }
     }
 
     private void Update()
@@ -39,11 +49,11 @@ public class CameraController : MonoBehaviour
         
         adjVal = Input.GetAxis("Mouse ScrollWheel");
 
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             adjVal++;
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             adjVal--;
         }
@@ -62,14 +72,14 @@ public class CameraController : MonoBehaviour
                 if (Input.GetKey("g"))
                 {
                     //Aperture
-                    cam.aperture += adjVal;
-                    if (cam.aperture > 32)
+                    dof.aperture.value += adjVal;
+                    if (dof.aperture.value > 32)
                     {
-                        cam.aperture = 32;
+                        dof.aperture.value = 32;
                     }
-                    else if (cam.aperture < 0.95f)
+                    else if (dof.aperture.value < 0.95f)
                     {
-                        cam.aperture = 0.95f;
+                        dof.aperture.value = 0.95f;
                     }
                 }
 
@@ -87,25 +97,32 @@ public class CameraController : MonoBehaviour
                 {
                     //Barrel Clipping
                     cam.barrelClipping += adjVal;
-
                 }
 
                 else if (Input.GetKey("f"))
                 {
                     //focal length
-
+                    dof.focalLength.value += adjVal;
                 }
 
                 else if (Input.GetKey("r"))
                 {
-                    //focal distancesss
-
+                    //focal distance
+                    dof.focusDistance.value += (adjVal * 10);
+                    if (dof.focusDistance.value > 135f)
+                    {
+                        dof.focusDistance.value = 135;
+                    }
+                    else if (dof.focusDistance.value < 35f)
+                    {
+                        dof.focusDistance.value = 35;
+                    }
                 }
 
                 else if (Input.GetKey("t"))
                 {
                     //iso
-
+                    cam.iso += (int) adjVal;
                 }
             }
         }
