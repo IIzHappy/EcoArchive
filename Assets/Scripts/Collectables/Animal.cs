@@ -1,8 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Animal", menuName = "Scriptable Objects/Animal")]
-public class Animal : ScriptableObject
+public class Animal : MonoBehaviour
 {
     public string _name;
-
 }

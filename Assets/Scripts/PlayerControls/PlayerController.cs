@@ -8,12 +8,19 @@ public class PlayerController : MonoBehaviour
     public Vector2 move;
     public Vector2 look;
     public bool jump;
+    [SerializeField] int walkState = 0;
+    //0-walk
+    //1-sprint
+    //2-slow walk
+    public bool _sprintDown;
+    public bool _slowWalkDown;
     public bool interact;
-    public bool sprinting;
 
     [Header("Player")]
-    public float MoveSpeed = 4.0f;
-    public float SprintSpeed = 6.0f;
+    public int[] _moveSpeed = new int[3];
+    //0-walk
+    //1-sprint
+    //2-slow walk
     public float AccelRate = 10.0f;
     public float JumpPower = 5f;
 
@@ -43,10 +50,28 @@ public class PlayerController : MonoBehaviour
         Move();
     }
 
+    public void UpdateWalkState()
+    {
+        if (_sprintDown)
+        {
+            walkState = 1;
+            return;
+        }
+        else if (_slowWalkDown)
+        {
+            walkState = 2;
+            return;
+        }
+        walkState = 0;
+    }
+
     private void Move()
     {
-        float targetSpeed = sprinting ? SprintSpeed : MoveSpeed;
-        if (move == Vector2.zero) targetSpeed = 0.0f;
+        float targetSpeed = 0;
+        if (move != Vector2.zero)
+        {
+            targetSpeed = _moveSpeed[walkState];
+        }
 
         float currentHorizontalSpeed = _speed;
 

@@ -27,7 +27,14 @@ public class Inputs : MonoBehaviour
 
     public void OnSprint(InputValue value)
     {
-        _playerController.sprinting = value.isPressed;
+        _playerController._sprintDown = value.isPressed;
+        _playerController.UpdateWalkState();
+    }
+
+    public void OnSlowWalk(InputValue value)
+    {
+        _playerController._slowWalkDown = value.isPressed;
+        _playerController.UpdateWalkState();
     }
 
     public void OnInteract(InputValue value)

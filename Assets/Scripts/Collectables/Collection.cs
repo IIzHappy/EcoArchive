@@ -17,30 +17,66 @@ public class Collection : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        UpdateCollection();
     }
 
     public void FoundAnimal(Animal animal)
     {
         _animals[animal] = true;
+        UpdateAnimals();
+        Debug.Log(animal._name + " collected");
     }
 
     public void AddBug(Bug bug)
     {
         _bugs[bug]++;
+        UpdateBugs();
         Debug.Log(bug._name + " collected");
     }
 
     public void AddBone(Bone bone)
     {
         _bones[bone]++;
+        UpdateBones();
         Debug.Log(bone._name + " collected");
     }
 
-    public void ResetInventory(Item item)
+    public void UpdateCollection()
+    {
+        UpdateAnimals();
+        UpdateBugs();
+        UpdateBones();
+    }
+
+    public void UpdateAnimals()
     {
 
+    }
+    public void UpdateBugs()
+    {
+
+    }
+    public void UpdateBones()
+    {
+
+    }
+
+    public void ResetCollection(Item item)
+    {
+        foreach (Animal animal in _animals.Keys)
+        {
+            _animals[animal] = false;
+        }
+        foreach (Bug bug in _bugs.Keys)
+        {
+            _bugs[bug] = 0;
+        }
+        foreach (Bone bone in _bones.Keys)
+        {
+            _bones[bone] = 0;
+        }
+        UpdateCollection();
     }
 }

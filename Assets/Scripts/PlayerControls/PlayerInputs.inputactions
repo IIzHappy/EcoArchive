@@ -42,6 +42,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "SlowWalk",
+                    "type": "Button",
+                    "id": "05bef4de-4dbc-427c-9ba6-195e6958da45",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Interact",
                     "type": "Button",
                     "id": "2fdb6aa6-102f-4e2d-90d7-1d55c8050ec7",
@@ -131,7 +140,7 @@
                     "name": "",
                     "id": "99f88c48-1a09-48b4-8d45-13e3426f6987",
                     "path": "<Keyboard>/space",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
@@ -142,7 +151,7 @@
                     "name": "",
                     "id": "8219ae8d-e1de-4ef4-b642-cc0980c86655",
                     "path": "<Keyboard>/leftShift",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
                     "action": "Sprint",
@@ -151,9 +160,20 @@
                 },
                 {
                     "name": "",
+                    "id": "55f54979-d02c-415d-8039-c8d35cdf57be",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": ";Keyboard & Mouse",
+                    "action": "SlowWalk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2e3be153-10ab-4c57-8e0e-91179c1113e4",
                     "path": "<Keyboard>/e",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
