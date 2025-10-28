@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.Progress;
 
@@ -9,6 +10,12 @@ public class Collection : MonoBehaviour
     [SerializeField] Dictionary<Animal, bool> _animals = new Dictionary<Animal, bool>();
     [SerializeField] Dictionary<Bug, int> _bugs = new Dictionary<Bug, int>();
     [SerializeField] Dictionary<Bone, int> _bones = new Dictionary<Bone, int>();
+
+    [SerializeField] GameObject _animalIcons;
+    [SerializeField] GameObject _bugsIcons;
+    [SerializeField] GameObject _bonesIcons;
+
+    public GameObject _iconPrefab;
 
     private void Awake()
     {
@@ -52,7 +59,7 @@ public class Collection : MonoBehaviour
 
     public void UpdateAnimals()
     {
-
+        
     }
     public void UpdateBugs()
     {

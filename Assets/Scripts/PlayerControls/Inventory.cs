@@ -16,6 +16,6 @@ public class Inventory : MonoBehaviour
 
     void previousItem()
     {
-        _curItem = (_curItem - 1) % _items.Count;
+        _curItem = (_curItem + -_items.Count - 1) % _items.Count;
     }
 }
