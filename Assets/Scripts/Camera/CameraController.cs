@@ -53,15 +53,13 @@ public class CameraController : MonoBehaviour
             playerCam.enabled = true;
         }
         
-        adjVal = Input.GetAxis("Mouse ScrollWheel");
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            adjVal++;
+            adjVal = Input.GetAxis("Mouse ScrollWheel") * 10f;
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        else
         {
-            adjVal--;
+            adjVal = Input.GetAxis("Mouse ScrollWheel");
         }
 
         if (VF)
@@ -142,7 +140,7 @@ public class CameraController : MonoBehaviour
                 else if (Input.GetKey("t"))
                 {
                     //iso
-                    cam.iso += (int) adjVal;
+                    cam.iso += (int)adjVal;
                 }
             }
         }
