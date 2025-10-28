@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - DeerPoints
+  - Animals
+  - Bones
+  - Bugs
   layers:
   - Default
   - TransparentFX

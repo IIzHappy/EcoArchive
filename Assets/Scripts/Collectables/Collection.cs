@@ -102,9 +102,12 @@ public class Collection : MonoBehaviour
         }
         foreach (Bug bug in _bugs.Keys)
         {
-            GameObject icon = Instantiate(_iconPrefab, _bugIcons.transform);
-            icon.GetComponent<Image>().sprite = bug._icon;
-            icon.GetComponentInChildren<TMP_Text>().text = bug._name;
+            GameObject icon = Instantiate(_iconPrefab, _bugIcons.transform); //should have question marks
+            if (_bugs[bug] >= 1)
+            {
+                icon.GetComponent<Image>().sprite = bug._icon;
+                icon.GetComponentInChildren<TMP_Text>().text = bug._name + "-" + _bugs[bug];
+            }
         }
     }
     public void UpdateBones()
@@ -116,9 +119,12 @@ public class Collection : MonoBehaviour
         }
         foreach (Bone bone in _bones.Keys)
         {
-            GameObject icon = Instantiate(_iconPrefab, _boneIcons.transform);
-            icon.GetComponent<Image>().sprite = bone._icon;
-            icon.GetComponentInChildren<TMP_Text>().text = bone._name;
+            GameObject icon = Instantiate(_iconPrefab, _boneIcons.transform); //should have question marks
+            if (_bones[bone] >= 1)
+            {
+                icon.GetComponent<Image>().sprite = bone._icon;
+                icon.GetComponentInChildren<TMP_Text>().text = bone._name + " - " + _bones[bone];
+            }
         }
     }
 
