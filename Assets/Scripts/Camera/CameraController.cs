@@ -121,26 +121,38 @@ public class CameraController : MonoBehaviour
                 {
                     //focal length
                     dof.focalLength.value += adjVal;
+                    if (dof.focalLength.value > 135f)
+                    {
+                        dof.focalLength.value = 135;
+                    }
+                    else if (dof.focalLength.value < 35f)
+                    {
+                        dof.focalLength.value = 35;
+                    }
                 }
 
                 else if (Input.GetKey("r"))
                 {
                     //focal distance
-                    dof.focusDistance.value += (adjVal * 10);
-                    if (dof.focusDistance.value > 135f)
-                    {
-                        dof.focusDistance.value = 135;
-                    }
-                    else if (dof.focusDistance.value < 35f)
-                    {
-                        dof.focusDistance.value = 35;
-                    }
+                    dof.focusDistance.value += adjVal;
                 }
 
                 else if (Input.GetKey("t"))
                 {
                     //iso
                     cam.iso += (int)adjVal;
+                }
+                else
+                {
+                    cam.focalLength += (int) adjVal;
+                    if (cam.focalLength > 100f)
+                    {
+                        cam.focalLength = 100f;
+                    }
+                    else if (cam.focalLength < 20f)
+                    {
+                        cam.focalLength = 20;
+                    }
                 }
             }
         }
