@@ -60,7 +60,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Inventory",
+                    "name": "Collection",
                     "type": "Button",
                     "id": "12263e0d-847f-4243-8f48-72ed7987c21c",
                     "expectedControlType": "",
@@ -184,10 +184,10 @@
                     "name": "",
                     "id": "8fc66747-8db3-43f4-9622-973426a823dc",
                     "path": "<Keyboard>/tab",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
-                    "action": "Inventory",
+                    "action": "Collection",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

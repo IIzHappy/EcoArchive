@@ -42,8 +42,8 @@ public class Inputs : MonoBehaviour
         _playerController.interact = value.isPressed;
     }
 
-    public void OnInventory(InputValue value)
+    public void OnCollection(InputValue value)
     {
-        //inventory
+        _playerController.CollectionMenu();
     }
 }

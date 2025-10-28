@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour
     float _cameraPitch;
     float _rotationVelocity;
 
+    public GameObject _collection;
+    public bool _collectionOpen;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -116,5 +119,10 @@ public class PlayerController : MonoBehaviour
     public void Interact()
     {
 
+    }
+    public void CollectionMenu()
+    {
+        _collectionOpen = !_collectionOpen;
+        _collection.SetActive(_collectionOpen);
     }
 }
