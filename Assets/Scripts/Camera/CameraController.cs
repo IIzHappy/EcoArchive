@@ -144,7 +144,7 @@ public class CameraController : MonoBehaviour
                 }
                 else
                 {
-                    cam.focalLength += (int) adjVal;
+                    cam.focalLength +=  adjVal * 10f;
                     if (cam.focalLength > 100f)
                     {
                         cam.focalLength = 100f;

@@ -8,6 +8,8 @@ TagManager:
   - Animals
   - Bones
   - Bugs
+  - FoxPoints
+  - RatPoints
   layers:
   - Default
   - TransparentFX
