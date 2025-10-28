@@ -22,7 +22,7 @@ public class Inputs : MonoBehaviour
 
     public void OnJump(InputValue value)
     {
-        _playerController.jump = value.isPressed;
+        _playerController.Jump();
     }
 
     public void OnSprint(InputValue value)
@@ -39,7 +39,7 @@ public class Inputs : MonoBehaviour
 
     public void OnInteract(InputValue value)
     {
-        _playerController.interact = value.isPressed;
+        _playerController.Interact();
     }
 
     public void OnCollection(InputValue value)

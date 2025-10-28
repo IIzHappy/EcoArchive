@@ -38,6 +38,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 857306019695818283}
+  - {fileID: 44239139498242025}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2860277373647039194
@@ -199,18 +200,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: {x: 0, y: 0}
   look: {x: 0, y: 0}
-  jump: 0
   walkState: 0
   _sprintDown: 0
   _slowWalkDown: 0
-  interact: 0
   _moveSpeed: 060000000c00000002000000
   AccelRate: 10
-  JumpPower: 5
+  JumpPower: 2.5
+  _groundCheck: {fileID: 44239139498242025}
+  _groundedThreshold: 0.1
   _playerCam: {fileID: 2486712070903582214}
   _topClamp: 90
   _bottomClamp: -90
-  _cameraSens: 0.5
+  _cameraSens: 0.3
+  _collection: {fileID: 0}
+  _collectionOpen: 0
+  _crosshair: {fileID: 0}
+  _interactDistance: 2
 --- !u!114 &4831228508429789391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,3 +367,34 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &4958785802163109656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 44239139498242025}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &44239139498242025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4958785802163109656}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6788334483604765244}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

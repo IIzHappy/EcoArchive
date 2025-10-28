@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,14 +9,12 @@ public class PlayerController : MonoBehaviour
     [Header("Character Input")]
     public Vector2 move;
     public Vector2 look;
-    public bool jump;
     [SerializeField] int walkState = 0;
     //0-walk
     //1-sprint
     //2-slow walk
     public bool _sprintDown;
     public bool _slowWalkDown;
-    public bool interact;
 
     [Header("Player")]
     public int[] _moveSpeed = new int[3];
@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     //2-slow walk
     public float AccelRate = 10.0f;
     public float JumpPower = 5f;
+    bool _isGrounded;
+    [SerializeField] Transform _groundCheck;
+    [SerializeField] float _groundedThreshold;
 
     private float _speed;
 
@@ -34,8 +37,15 @@ public class PlayerController : MonoBehaviour
     float _cameraPitch;
     float _rotationVelocity;
 
+    [Header("Collection Menu")]
     public GameObject _collection;
-    public bool _collectionOpen;
+    bool _collectionOpen;
+
+    [Header("Interactables")]
+    [SerializeField] GameObject _crosshair;
+    bool _interactable;
+    [SerializeField] float _interactDistance = 3;
+    GameObject _curInteractable;
 
     void Start()
     {
@@ -51,6 +61,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Move();
+        if (!_isGrounded) GroundedCheck();
+        InteractCheck();
     }
 
     public void UpdateWalkState()
@@ -114,12 +126,46 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-
+        if (_isGrounded) rb.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
     }
+    void GroundedCheck()
+    {
+        _isGrounded = Physics.Raycast(_groundCheck.position, Vector3.down, _groundedThreshold);
+    }
+
     public void Interact()
     {
-
+        if (_interactable)
+        {
+            Collectables item = _curInteractable.GetComponent<Collectables>();
+            if (item._bone != null)
+            {
+                Collection.Instance.AddBone(item._bone);
+                Destroy(_curInteractable);
+                InteractCheck();
+            }
+        }
     }
+    void InteractCheck()
+    {
+        Ray ray = new Ray(GetEyePos().position, GetLookDir());
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, _interactDistance))
+        {
+            if (hit.collider.gameObject.tag == "Bones")
+            {
+                _interactable = true;
+                _curInteractable = hit.collider.gameObject;
+                _crosshair.SetActive(true);
+                return;
+            }
+        }
+        _interactable = false;
+        _curInteractable = null;
+        _crosshair.SetActive(false);
+    }
+
     public void CollectionMenu()
     {
         _collectionOpen = !_collectionOpen;
