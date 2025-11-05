@@ -102,7 +102,7 @@ public class Collection : MonoBehaviour
         }
         foreach (Bug bug in _bugs.Keys)
         {
-            GameObject icon = Instantiate(_iconPrefab, _bugIcons.transform); //should have question marks
+            GameObject icon = Instantiate(_iconPrefab, _bugIcons.transform);
             if (_bugs[bug] >= 1)
             {
                 icon.GetComponent<Image>().sprite = bug._icon;
@@ -119,7 +119,7 @@ public class Collection : MonoBehaviour
         }
         foreach (Bone bone in _bones.Keys)
         {
-            GameObject icon = Instantiate(_iconPrefab, _boneIcons.transform); //should have question marks
+            GameObject icon = Instantiate(_iconPrefab, _boneIcons.transform);
             if (_bones[bone] >= 1)
             {
                 icon.GetComponent<Image>().sprite = bone._icon;

@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float _bottomClamp = -90f;
     [SerializeField] float _cameraSens = 1;
     float _cameraPitch;
-    float _rotationVelocity;
+    float _rotation;
 
     [Header("Collection Menu")]
     public GameObject _collection;
@@ -108,12 +108,12 @@ public class PlayerController : MonoBehaviour
     private void CameraRotation()
     {
         _cameraPitch += look.y * -_cameraSens;
-        _rotationVelocity = look.x * _cameraSens;
+        _rotation += look.x * _cameraSens;
 
         _cameraPitch = Mathf.Clamp(_cameraPitch, _bottomClamp, _topClamp);
 
-        _playerCam.transform.localRotation = Quaternion.Euler(_cameraPitch, 0.0f, 0.0f);
-        transform.Rotate(Vector3.up * _rotationVelocity);
+        _playerCam.transform.localRotation = Quaternion.Euler(_cameraPitch, 0f, 0f);
+        transform.rotation = Quaternion.Euler(0f, _rotation, 0f);
     }
     public Vector3 GetLookDir()
     {
