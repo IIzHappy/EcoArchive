@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour
 
     int resWidth, resHeight;
 
-    private bool VF = false;
+    public bool VF = false;
 
     private void Start()
     {

@@ -6,16 +6,33 @@ public class Inventory : MonoBehaviour
 {
 
     public List<GameObject> _items = new List<GameObject>();
+    [SerializeField] CameraController _cameraController;
     public int _curItem;
+
+    private void Update()
+    {
+        if (_curItem == 0 && _cameraController.VF) return;
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            previousItem();
+        } else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            nextItem();
+        }
+    }
 
     void nextItem()
     {
+        _items[_curItem].SetActive(false);
         _curItem = (_curItem + 1) % _items.Count;
-        //code to take out next item
+        _items[_curItem].SetActive(true);
     }
 
     void previousItem()
     {
-        _curItem = (_curItem + -_items.Count - 1) % _items.Count;
+        _items[_curItem].SetActive(false);
+        _curItem = (_curItem + _items.Count - 1) % _items.Count;
+        _items[_curItem].SetActive(true);
     }
 }
