@@ -4,7 +4,7 @@ using UnityEngine;
 public class NetController : MonoBehaviour
 {
     public bool _swinging;
-    public float _swingTime = 0.7f;
+    public float _swingTime = 1.2f;
     public float _swingResetTime = 0.3f;
 
     [SerializeField] Collider _collider;
@@ -18,8 +18,7 @@ public class NetController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && !_swinging)
         {
-            Debug.Log("net swing");
-            Swing(_swingTime);
+            StartCoroutine(Swing(_swingTime));
         }
     }
 
@@ -30,7 +29,7 @@ public class NetController : MonoBehaviour
         //net swing animation
         yield return new WaitForSeconds(duration);
         _collider.enabled = false;
-        SwingReset(_swingResetTime);
+        StartCoroutine(SwingReset(_swingResetTime));
     }
     IEnumerator SwingReset(float duration)
     {
