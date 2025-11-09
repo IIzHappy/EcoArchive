@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering.HighDefinition;
+using System.Collections;
 
 public class CameraController : MonoBehaviour
 {
@@ -68,21 +69,7 @@ public class CameraController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 //Take photo
-                Debug.Log("Snap");
-
-                RenderTexture rt = new RenderTexture(resWidth, resHeight, 24);
-                cam.targetTexture = rt;
-                Texture2D screenShot = new Texture2D(resWidth, resHeight, TextureFormat.RGB24, false);
-                cam.Render();
-                RenderTexture.active = rt;
-                screenShot.ReadPixels(new Rect(0, 0, resWidth, resHeight), 0, 0);
-                cam.targetTexture = null;
-                RenderTexture.active = null; // JC: added to avoid errors
-                Destroy(rt);
-                byte[] bytes = screenShot.EncodeToPNG();
-                string filename = string.Format(Application.dataPath + "/Player Images/" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".png");
-                System.IO.File.WriteAllBytes(filename, bytes);
-                Debug.Log(string.Format("Took screenshot to: {0}", filename));
+                StartCoroutine(TakePhoto());
             }
 
             if (Input.anyKey)
@@ -111,12 +98,6 @@ public class CameraController : MonoBehaviour
                     }
                 }
 
-                else if (Input.GetKey("c"))
-                {
-                    //Barrel Clipping
-                    cam.barrelClipping += adjVal;
-                }
-
                 else if (Input.GetKey("f"))
                 {
                     //focal length
@@ -137,11 +118,6 @@ public class CameraController : MonoBehaviour
                     dof.focusDistance.value += adjVal;
                 }
 
-                else if (Input.GetKey("t"))
-                {
-                    //iso
-                    cam.iso += (int)adjVal;
-                }
                 else
                 {
                     cam.focalLength +=  adjVal * 10f;
@@ -157,5 +133,23 @@ public class CameraController : MonoBehaviour
             }
         }
         adjVal = 0;
+    }
+
+    private IEnumerator TakePhoto()
+    {
+        RenderTexture rt = new RenderTexture(resWidth, resHeight, 24);
+        cam.targetTexture = rt;
+        Texture2D screenShot = new Texture2D(resWidth, resHeight, TextureFormat.RGB24, false);
+        cam.Render();
+        RenderTexture.active = rt;
+        screenShot.ReadPixels(new Rect(0, 0, resWidth, resHeight), 0, 0);
+        cam.targetTexture = null;
+        RenderTexture.active = null; // JC: added to avoid errors
+        Destroy(rt);
+        byte[] bytes = screenShot.EncodeToPNG();
+        string filename = string.Format(Application.dataPath + "/Player Images/" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".png");
+        System.IO.File.WriteAllBytes(filename, bytes);
+        Debug.Log(string.Format("Took screenshot to: {0}", filename));
+        yield return null;
     }
 }
