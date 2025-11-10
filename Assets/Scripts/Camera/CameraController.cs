@@ -17,6 +17,8 @@ public class CameraController : MonoBehaviour
 
     public float adjVal;
 
+    public int photoNum = 0;
+
     int resWidth, resHeight;
 
     public bool VF = false;
@@ -69,6 +71,7 @@ public class CameraController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 //Take photo
+                photoNum++;
                 StartCoroutine(TakePhoto());
             }
 
@@ -144,10 +147,10 @@ public class CameraController : MonoBehaviour
         RenderTexture.active = rt;
         screenShot.ReadPixels(new Rect(0, 0, resWidth, resHeight), 0, 0);
         cam.targetTexture = null;
-        RenderTexture.active = null; // JC: added to avoid errors
+        RenderTexture.active = null;
         Destroy(rt);
         byte[] bytes = screenShot.EncodeToPNG();
-        string filename = string.Format(Application.dataPath + "/Player Images/" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".png");
+        string filename = string.Format(Application.dataPath + "/Player Images/" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + "." + photoNum + ".png");
         System.IO.File.WriteAllBytes(filename, bytes);
         Debug.Log(string.Format("Took screenshot to: {0}", filename));
         yield return null;
