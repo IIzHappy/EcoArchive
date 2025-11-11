@@ -5,4 +5,5 @@ public class AnimalAsset : ScriptableObject
 {
     public string _name;
     public Sprite _icon;
+    public bool _collected;
 }

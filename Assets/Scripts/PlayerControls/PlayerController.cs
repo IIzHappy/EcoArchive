@@ -127,10 +127,11 @@ public class PlayerController : MonoBehaviour
     public void Jump()
     {
         if (_isGrounded) rb.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
+        _isGrounded = false;
     }
     void GroundedCheck()
     {
-        _isGrounded = Physics.Raycast(_groundCheck.position, Vector3.down, _groundedThreshold);
+        _isGrounded = Physics.Raycast(_groundCheck.position, Vector3.down, _groundedThreshold, LayerMask.GetMask("Ground"));
     }
 
     public void Interact()
