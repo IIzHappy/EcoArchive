@@ -7,11 +7,11 @@ public class NetController : MonoBehaviour
     public float _swingTime = 1.2f;
     public float _swingResetTime = 0.3f;
 
-    [SerializeField] Collider _collider;
+    Collider _collider;
 
     void Start()
     {
-        
+        _collider = GetComponent<Collider>();
     }
 
     void Update()
