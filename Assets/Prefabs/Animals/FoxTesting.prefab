@@ -87,6 +87,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdcd7e40c467099418a3dd7475fe3c08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chaseDistance: 5
+  foxPosition: {fileID: 0}
+  isChasing: 0
+  chaseTime: 10
+  chaseTimer: 0
 --- !u!54 &6347739459317093963
 Rigidbody:
   m_ObjectHideFlags: 0

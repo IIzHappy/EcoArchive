@@ -4,12 +4,12 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - DeerPoints
   - Animals
   - Bones
   - Bugs
   - FoxPoints
   - RatPoints
+  - Prey
   layers:
   - Default
   - TransparentFX
