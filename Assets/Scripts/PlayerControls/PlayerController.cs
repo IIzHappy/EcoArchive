@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     float _cameraPitch;
     float _rotation;
 
+    bool _canRotate = true;
+
     [Header("Collection Menu")]
     public GameObject _collection;
     bool _collectionOpen;
@@ -51,6 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+        _collection.SetActive(false);
     }
 
     void LateUpdate()
@@ -107,8 +110,11 @@ public class PlayerController : MonoBehaviour
 
     private void CameraRotation()
     {
-        _cameraPitch += look.y * -_cameraSens;
-        _rotation += look.x * _cameraSens;
+        if (_canRotate)
+        {
+            _cameraPitch += look.y * -_cameraSens;
+            _rotation += look.x * _cameraSens;
+        }
 
         _cameraPitch = Mathf.Clamp(_cameraPitch, _bottomClamp, _topClamp);
 
@@ -171,5 +177,7 @@ public class PlayerController : MonoBehaviour
     {
         _collectionOpen = !_collectionOpen;
         _collection.SetActive(_collectionOpen);
+        Cursor.lockState = _collectionOpen ? CursorLockMode.None : CursorLockMode.Locked;
+        _canRotate = !_collectionOpen;
     }
 }

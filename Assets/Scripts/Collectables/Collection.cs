@@ -10,10 +10,12 @@ public class Collection : MonoBehaviour
 {
     public static Collection Instance { get; private set; }
 
+    public List<Photo> _photos;
     [SerializeField] Dictionary<AnimalAsset, GameObject> _animals = new Dictionary<AnimalAsset, GameObject>();
     [SerializeField] Dictionary<Bug, GameObject> _bugs = new Dictionary<Bug, GameObject>();
     [SerializeField] Dictionary<Bone, GameObject> _bones = new Dictionary<Bone, GameObject>();
 
+    [SerializeField] GameObject _photoIcons;
     [SerializeField] GameObject _animalIcons;
     [SerializeField] GameObject _bugIcons;
     [SerializeField] GameObject _boneIcons;
@@ -152,5 +154,13 @@ public class Collection : MonoBehaviour
         _bones[bone].GetComponent<Image>().sprite = bone._icon;
         _bones[bone].GetComponentInChildren<TMP_Text>().text = bone._name + " - " + bone._numCollected;
         Debug.Log(bone._name + " collected");
+    }
+
+    public void AddPhoto(Photo newPhoto)
+    {
+        _photos.Add(newPhoto);
+        GameObject _newPhoto = Instantiate(_iconPrefab, _photoIcons.transform);
+        _newPhoto.GetComponent<Image>().sprite = newPhoto._photo;
+        _newPhoto.transform.GetComponentInChildren<TMP_Text>().text = newPhoto.name;
     }
 }

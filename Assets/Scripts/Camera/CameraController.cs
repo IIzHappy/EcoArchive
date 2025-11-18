@@ -152,6 +152,12 @@ public class CameraController : MonoBehaviour
         byte[] bytes = screenShot.EncodeToPNG();
         string filename = string.Format(Application.dataPath + "/Player Images/" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + "." + photoNum + ".png");
         System.IO.File.WriteAllBytes(filename, bytes);
+        screenShot.Apply();
+        Photo photo = ScriptableObject.CreateInstance<Photo>();
+        photo._photo = Sprite.Create(screenShot, new Rect(0, 0, screenShot.width, screenShot.height), new Vector2(0.5f, 0.5f), 100f);
+        photo.name = filename;
+        //add score to the photo
+        Collection.Instance.AddPhoto(photo);
         Debug.Log(string.Format("Took screenshot to: {0}", filename));
         yield return null;
     }
