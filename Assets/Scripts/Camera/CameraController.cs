@@ -155,7 +155,7 @@ public class CameraController : MonoBehaviour
         screenShot.Apply();
         Photo photo = ScriptableObject.CreateInstance<Photo>();
         photo._photo = Sprite.Create(screenShot, new Rect(0, 0, screenShot.width, screenShot.height), new Vector2(0.5f, 0.5f), 100f);
-        photo.name = filename;
+        photo.name = System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
         //add score to the photo
         Collection.Instance.AddPhoto(photo);
         Debug.Log(string.Format("Took screenshot to: {0}", filename));
