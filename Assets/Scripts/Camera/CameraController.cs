@@ -77,7 +77,7 @@ public class CameraController : MonoBehaviour
 
             if (Input.anyKey)
             {
-                if (Input.GetKey("g"))
+                if (Input.GetKey("c"))
                 {
                     //Aperture
                     dof.aperture.value += adjVal;
