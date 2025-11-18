@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54d9e66514c1ff14aa2f13e6421c7c99, type: 3}
-  m_Name: Rib Bone
+  m_Name: Snake Vertebrae
   m_EditorClassIdentifier: 
-  _name: Rib Bone
+  _name: Snake Vertebrae
   _icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   _numCollected: 0
