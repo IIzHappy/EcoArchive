@@ -92,6 +92,8 @@ MonoBehaviour:
   isChasing: 0
   chaseTime: 10
   chaseTimer: 0
+  chaseRecharge: 10
+  chaseRecharging: 0
 --- !u!54 &6347739459317093963
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -138,8 +140,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.100718, y: 0.9050884, z: 1.7538757}
-  m_Center: {x: 0.00000035762787, y: 0.0031563044, z: -0.18715689}
+  m_Size: {x: 1.100718, y: 0.8112903, z: 1.7538757}
+  m_Center: {x: 0.00000035762787, y: 0.050055355, z: -0.18715692}
 --- !u!195 &7269512663289728153
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -159,6 +161,6 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
-  m_BaseOffset: 0.4
+  m_BaseOffset: 0.3
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
