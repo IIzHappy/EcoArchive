@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private Camera cam;
     [SerializeField] private Camera playerCam;
+    [SerializeField] private Camera VFCam;
 
     [SerializeField] GameObject UI;
     [SerializeField] GameObject camUI;
@@ -124,13 +125,16 @@ public class CameraController : MonoBehaviour
                 else
                 {
                     cam.focalLength +=  adjVal * 10f;
+                    VFCam.focalLength +=  adjVal * 10f;
                     if (cam.focalLength > 100f)
                     {
                         cam.focalLength = 100f;
+                        VFCam.focalLength = 100f;
                     }
                     else if (cam.focalLength < 20f)
                     {
                         cam.focalLength = 20;
+                        VFCam.focalLength = 20;
                     }
                 }
             }
