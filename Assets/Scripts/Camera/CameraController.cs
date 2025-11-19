@@ -144,6 +144,7 @@ public class CameraController : MonoBehaviour
 
     private IEnumerator TakePhoto()
     {
+        yield return new WaitForEndOfFrame();
         RenderTexture rt = new RenderTexture(resWidth, resHeight, 24);
         cam.targetTexture = rt;
         Texture2D screenShot = new Texture2D(resWidth, resHeight, TextureFormat.RGB24, false);
