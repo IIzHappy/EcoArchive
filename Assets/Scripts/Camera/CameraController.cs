@@ -16,6 +16,10 @@ public class CameraController : MonoBehaviour
     [SerializeField] VolumeProfile volumeProfile;
     DepthOfField dof;
 
+    [SerializeField] RenderTexture viewFinder;
+
+    [SerializeField] GameObject flashLight;
+
     public float adjVal;
 
     public int photoNum = 0;
@@ -23,6 +27,7 @@ public class CameraController : MonoBehaviour
     int resWidth, resHeight;
 
     public bool VF = false;
+    public bool flash = false;
 
     private void Start()
     {
@@ -100,6 +105,7 @@ public class CameraController : MonoBehaviour
                     {
                         cam.shutterSpeed = 0.1f;
                     }
+                    VFCam.shutterSpeed = cam.shutterSpeed;
                 }
 
                 else if (Input.GetKey("f"))
@@ -122,20 +128,24 @@ public class CameraController : MonoBehaviour
                     dof.focusDistance.value += adjVal;
                 }
 
+                else if (Input.GetKeyDown("z"))
+                {
+                    flash = !flash;
+                }
+
                 else
                 {
                     cam.focalLength +=  adjVal * 10f;
-                    VFCam.focalLength +=  adjVal * 10f;
                     if (cam.focalLength > 100f)
                     {
                         cam.focalLength = 100f;
-                        VFCam.focalLength = 100f;
                     }
                     else if (cam.focalLength < 20f)
                     {
                         cam.focalLength = 20;
-                        VFCam.focalLength = 20;
                     }
+
+                    VFCam.focalLength = cam.focalLength;
                 }
             }
         }
@@ -146,16 +156,18 @@ public class CameraController : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         RenderTexture rt = new RenderTexture(resWidth, resHeight, 24);
-        cam.targetTexture = rt;
+        VFCam.targetTexture = rt;
         Texture2D screenShot = new Texture2D(resWidth, resHeight, TextureFormat.RGB24, false);
-        cam.Render();
+        if (flash) flashLight.SetActive(true);
+        VFCam.Render();
         RenderTexture.active = rt;
         screenShot.ReadPixels(new Rect(0, 0, resWidth, resHeight), 0, 0);
-        cam.targetTexture = null;
-        RenderTexture.active = null;
+        VFCam.targetTexture = viewFinder;
         Destroy(rt);
+        yield return new WaitForEndOfFrame();
         byte[] bytes = screenShot.EncodeToPNG();
         string filename = string.Format(Application.dataPath + "/Player Images/" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + "." + photoNum + ".png");
+        yield return new WaitForEndOfFrame();
         System.IO.File.WriteAllBytes(filename, bytes);
         screenShot.Apply();
         Photo photo = ScriptableObject.CreateInstance<Photo>();
@@ -164,6 +176,8 @@ public class CameraController : MonoBehaviour
         //add score to the photo
         Collection.Instance.AddPhoto(photo);
         Debug.Log(string.Format("Took screenshot to: {0}", filename));
+        yield return new WaitForSeconds(0.5f);
+        flashLight.SetActive(false);
         yield return null;
     }
 }
