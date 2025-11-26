@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
     public GameObject _collection;
     bool _collectionOpen;
 
+    public GameObject _dayNight;
+
     [Header("Interactables")]
     [SerializeField] GameObject _crosshair;
     bool _interactable;
@@ -177,6 +179,7 @@ public class PlayerController : MonoBehaviour
     {
         _collectionOpen = !_collectionOpen;
         _collection.SetActive(_collectionOpen);
+        _dayNight.SetActive(!_collectionOpen);
         Cursor.lockState = _collectionOpen ? CursorLockMode.None : CursorLockMode.Locked;
         _canRotate = !_collectionOpen;
     }

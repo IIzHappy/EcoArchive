@@ -1498,6 +1498,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6347739459317093963, guid: acfab9bfbbef55945b0a148effcf40ab, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2252,7 +2256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &823822327
 Transform:
   m_ObjectHideFlags: 0
@@ -5032,7 +5036,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 1
       - m_Target: {fileID: 621302444}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -5044,7 +5048,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 1
 --- !u!114 &2073658798
 MonoBehaviour:
@@ -5255,7 +5259,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 562283747173949413, guid: 209598e244503a0499c9f941a460aba0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2394633582939699591, guid: 209598e244503a0499c9f941a460aba0, type: 3}
       propertyPath: m_Name
@@ -5309,6 +5313,10 @@ PrefabInstance:
       propertyPath: camUI
       value: 
       objectReference: {fileID: 1802596287}
+    - target: {fileID: 3160055827129496927, guid: 209598e244503a0499c9f941a460aba0, type: 3}
+      propertyPath: _dayNight
+      value: 
+      objectReference: {fileID: 268298445}
     - target: {fileID: 3160055827129496927, guid: 209598e244503a0499c9f941a460aba0, type: 3}
       propertyPath: _crosshair
       value: 
