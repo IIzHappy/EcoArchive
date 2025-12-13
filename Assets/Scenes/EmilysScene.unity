@@ -8571,9 +8571,12 @@ MonoBehaviour:
   UI: {fileID: 1439199475}
   camUI: {fileID: 1076620393}
   volumeProfile: {fileID: 11400000, guid: b9b870b7e652d344ca0ea3f2c0d42fff, type: 2}
+  viewFinder: {fileID: 0}
+  flashLight: {fileID: 0}
   adjVal: 0
   photoNum: 0
   VF: 0
+  flash: 0
 --- !u!1 &379707300
 GameObject:
   m_ObjectHideFlags: 0
@@ -47344,9 +47347,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5265272702321444315, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5996304612046093034, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
       propertyPath: m_Name
       value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996304612046093034, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6526298923430339121, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
       propertyPath: m_LocalPosition.x
