@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
         {
             if (_curWin != null)
             {
-                _curWin.gameObject.SetActive(false);
+                _curWin.CloseWindow();
             }
             else
             {
@@ -36,6 +36,6 @@ public class UIManager : MonoBehaviour
 
     public void OpenWindow(UIWindow window)
     {
-
+        
     }
 }

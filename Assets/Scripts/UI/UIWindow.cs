@@ -2,17 +2,18 @@ using UnityEngine;
 
 public class UIWindow : MonoBehaviour
 {
-    UIWindow _prevWin;
-    string _windowName;
+    public UIWindow _prevWin;
+    protected string _windowName;
 
-    public void Awake()
+    //window open
+    public virtual void Awake()
     {
         _prevWin = UIManager.Instance._curWin;
         UIManager.Instance._curWin = this;
     }
 
     //attach to esc and x button
-    public void CloseWindow()
+    public virtual void CloseWindow()
     {
         if (_prevWin != null)
         {
