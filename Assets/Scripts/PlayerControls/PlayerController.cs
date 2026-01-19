@@ -178,7 +178,13 @@ public class PlayerController : MonoBehaviour
     public void CollectionMenu()
     {
         _collectionOpen = !_collectionOpen;
-        _collection.SetActive(_collectionOpen);
+        if (!_collectionOpen)
+        {
+            _collection.GetComponent<UIWindow>().CloseWindow();
+        } else
+        {
+            _collection.SetActive(true);
+        }
         _dayNight.SetActive(!_collectionOpen);
         Cursor.lockState = _collectionOpen ? CursorLockMode.None : CursorLockMode.Locked;
         _canRotate = !_collectionOpen;

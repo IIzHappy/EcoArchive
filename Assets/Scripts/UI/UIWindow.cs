@@ -8,7 +8,10 @@ public class UIWindow : MonoBehaviour
     //window open
     public virtual void Awake()
     {
-        _prevWin = UIManager.Instance._curWin;
+        if (_prevWin == null)
+        {
+            _prevWin = UIManager.Instance._curWin;
+        }
         UIManager.Instance._curWin = this;
     }
 
@@ -21,8 +24,10 @@ public class UIWindow : MonoBehaviour
         }
         else
         {
-            //unpause game
+            UIManager.Instance._curWin = null;
+            UIManager.Instance.UnpauseGame();
         }
+        _prevWin = null;
         gameObject.SetActive(false);
     }
 }

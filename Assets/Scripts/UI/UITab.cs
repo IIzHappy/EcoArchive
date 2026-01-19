@@ -25,7 +25,7 @@ public class UITab : UIWindow
 
     public void CloseTab()
     {
-
+        _prevWin = null;
         gameObject.SetActive(false);
     }
 
@@ -38,8 +38,10 @@ public class UITab : UIWindow
         }
         else
         {
-            //unpause game
+            UIManager.Instance._curWin = null;
+            UIManager.Instance.UnpauseGame();
         }
+        _prevWin = null;
         gameObject.SetActive(false);
     }
 }

@@ -29,13 +29,32 @@ public class UIManager : MonoBehaviour
             }
             else
             {
-                //open options menu
+                _pauseMenu.gameObject.SetActive(true);
+                PauseGame();
             }
         }
     }
 
+    public void PauseGame()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
+    public void UnpauseGame()
+    {
+        if (_curWin == null)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
+
+    /*
     public void OpenWindow(UIWindow window)
     {
-        
+        if (window._prevWin == null)
+        {
+            window._prevWin = UIManager.Instance._curWin;
+        }
+        UIManager.Instance._curWin = window;
     }
+    */
 }
