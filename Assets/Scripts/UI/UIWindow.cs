@@ -3,16 +3,17 @@ using UnityEngine;
 public class UIWindow : MonoBehaviour
 {
     public UIWindow _prevWin;
-    protected string _windowName;
+    public string _windowName;
 
     //window open
-    public virtual void Awake()
+    public virtual void OnEnable()
     {
         if (_prevWin == null)
         {
             _prevWin = UIManager.Instance._curWin;
         }
         UIManager.Instance._curWin = this;
+        Debug.Log(_windowName);
     }
 
     //attach to esc and x button
