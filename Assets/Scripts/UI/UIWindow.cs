@@ -13,6 +13,7 @@ public class UIWindow : MonoBehaviour
             _prevWin = UIManager.Instance._curWin;
         }
         UIManager.Instance._curWin = this;
+        UIManager.Instance.OpenWindows();
         Debug.Log(_windowName);
     }
 
@@ -26,7 +27,7 @@ public class UIWindow : MonoBehaviour
         else
         {
             UIManager.Instance._curWin = null;
-            UIManager.Instance.UnpauseGame();
+            UIManager.Instance.CloseWindows();
         }
         _prevWin = null;
         gameObject.SetActive(false);
