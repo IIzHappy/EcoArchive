@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class UIManager : MonoBehaviour
 {
@@ -6,44 +7,91 @@ public class UIManager : MonoBehaviour
     
     public UIWindow _curWin;
 
-    [SerializeField] UIWindow _pauseMenu;
+    [SerializeField] UIWindow _escMenu;
+    [SerializeField] UIWindow _collectionMenu;
+
+    [SerializeField] GameObject _dayNight;
+
+    [SerializeField] bool _inGame = true;
+    public bool _freezeOnPause = true;
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        PlayerInputs.Instance.UpdateUIManager(this);
     }
 
-    void Update()
+    public void OpenWindows()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (_freezeOnPause)
         {
-            if (_curWin != null)
-            {
-                _curWin.CloseWindow();
-            }
-            else
-            {
-                _pauseMenu.gameObject.SetActive(true);
-                PauseGame();
-            }
+            PauseGame();
+        }
+        if (_inGame)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
+    public void CloseWindows()
+    {
+        if (_freezeOnPause && _curWin == null)
+        {
+            UnpauseGame();
+        }
+        if (_inGame)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
     public void PauseGame()
     {
-        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0;
+        PlayerInputs.Instance._playerActive = false;
+        _dayNight.SetActive(false);
+        Debug.Log("Game paused");
     }
     public void UnpauseGame()
     {
         if (_curWin == null)
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1;
+            PlayerInputs.Instance._playerActive = true;
+            _dayNight.SetActive(true);
+            Debug.Log("Game unpaused");
+        }
+    }
+
+
+    public void EscapePressed()
+    {
+        if (_curWin != null)
+        {
+            _curWin.CloseWindow();
+        }
+        else
+        {
+            _escMenu.gameObject.SetActive(true);
+            OpenWindows();
+        }
+    }
+    public void CollectionPressed()
+    {
+        if (_inGame)
+        {
+            if (_collectionMenu == null)
+            {
+                Debug.LogWarning("Set collection menu");
+                return;
+            }
+
+            if (_curWin == null) {
+                _collectionMenu.gameObject.SetActive(true);
+            }
+            else if (_curWin == _collectionMenu)
+            {
+                _collectionMenu.CloseWindow();
+            }
         }
     }
 

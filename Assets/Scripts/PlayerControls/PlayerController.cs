@@ -37,14 +37,6 @@ public class PlayerController : MonoBehaviour
     float _cameraPitch;
     float _rotation;
 
-    bool _canRotate = true;
-
-    [Header("Collection Menu")]
-    public GameObject _collection;
-    bool _collectionOpen;
-
-    public GameObject _dayNight;
-
     [Header("Interactables")]
     [SerializeField] GameObject _crosshair;
     bool _interactable;
@@ -55,7 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
-        _collection.SetActive(false);
+        PlayerInputs.Instance._playerActive = true;
     }
 
     void LateUpdate()
@@ -112,11 +104,8 @@ public class PlayerController : MonoBehaviour
 
     private void CameraRotation()
     {
-        if (_canRotate)
-        {
-            _cameraPitch += look.y * -_cameraSens;
-            _rotation += look.x * _cameraSens;
-        }
+        _cameraPitch += look.y * -_cameraSens;
+        _rotation += look.x * _cameraSens;
 
         _cameraPitch = Mathf.Clamp(_cameraPitch, _bottomClamp, _topClamp);
 
@@ -173,20 +162,5 @@ public class PlayerController : MonoBehaviour
         _interactable = false;
         _curInteractable = null;
         _crosshair.SetActive(false);
-    }
-
-    public void CollectionMenu()
-    {
-        _collectionOpen = !_collectionOpen;
-        if (!_collectionOpen)
-        {
-            _collection.GetComponent<UIWindow>().CloseWindow();
-        } else
-        {
-            _collection.SetActive(true);
-        }
-        _dayNight.SetActive(!_collectionOpen);
-        Cursor.lockState = _collectionOpen ? CursorLockMode.None : CursorLockMode.Locked;
-        _canRotate = !_collectionOpen;
     }
 }
