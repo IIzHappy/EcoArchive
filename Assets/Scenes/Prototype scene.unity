@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _time: 540
-  _fullDayTime: 1440
+  _fullDayTime: 1200
   _timeText: {fileID: 388588217}
   _timeIcon: {fileID: 1598533591}
   _sunTransform: {fileID: 574156151}
@@ -2935,6 +2935,14 @@ PrefabInstance:
     - target: {fileID: 6526298923430339121, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247036679396143306, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 32.41827
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247036679396143306, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 29.75846
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

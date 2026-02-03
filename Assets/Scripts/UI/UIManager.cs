@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] bool _inGame = true;
     public bool _freezeOnPause = true;
 
-    private void Awake()
+    private void Start()
     {
         Instance = this;
         PlayerInputs.Instance.UpdateUIManager(this);
