@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FoxTesting
       objectReference: {fileID: 0}
+    - target: {fileID: 3952659653627435672, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -8332556786731846980, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4039022864529267377, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
