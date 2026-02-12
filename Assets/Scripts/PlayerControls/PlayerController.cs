@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [Header("Character Input")]
     public Vector2 move;
     public Vector2 look;
+    bool _isMoving;
     [SerializeField] int walkState = 0;
     //0-walk
     //1-sprint
@@ -29,6 +30,8 @@ public class PlayerController : MonoBehaviour
 
     private float _speed;
 
+    PlayerSound _playerSound;
+
     [Header("Camera")]
     public Camera _playerCam;
     [SerializeField] float _topClamp = 90f;
@@ -48,6 +51,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         PlayerInputs.Instance._playerActive = true;
+        _playerSound = GetComponent<PlayerSound>();
     }
 
     void LateUpdate()
@@ -82,7 +86,14 @@ public class PlayerController : MonoBehaviour
         float targetSpeed = 0;
         if (move != Vector2.zero)
         {
+            _isMoving = true;
+            //start walk sound
             targetSpeed = _moveSpeed[walkState];
+        }
+        else if (_isMoving)
+        {
+            _isMoving = false;
+            //stop walk sound
         }
 
         float currentHorizontalSpeed = _speed;
