@@ -67,9 +67,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5126930423313728079}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6347739459317093963}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
       insertIndex: -1
@@ -77,31 +74,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7269512663289728153}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1166097301892468183}
   m_SourcePrefab: {fileID: 100100000, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
 --- !u!1 &3752231161712809340 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
   m_PrefabInstance: {fileID: 4094884274753644589}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5126930423313728079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3752231161712809340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdcd7e40c467099418a3dd7475fe3c08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chaseDistance: 5
-  foxPosition: {fileID: 0}
-  isChasing: 0
-  chaseTime: 10
-  chaseTimer: 0
-  chaseRecharge: 10
-  chaseRecharging: 0
 --- !u!54 &6347739459317093963
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -160,7 +141,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.5
-  m_Speed: 1
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -172,6 +153,21 @@ NavMeshAgent:
   m_BaseOffset: 0.3
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1166097301892468183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3752231161712809340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ac59f67ac61e234dab8f6739b67a759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sampleRadius: 50
+  sampleInterval: 0
+  maxSampleAttempts: 10
 --- !u!4 &4564762092501684166 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
