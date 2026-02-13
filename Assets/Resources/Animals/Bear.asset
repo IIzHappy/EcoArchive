@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6383ad209c48c04ab6ea3ae6d7473f4, type: 3}
-  m_Name: Fox
+  m_Name: Bear
   m_EditorClassIdentifier: 
-  _name: Fox
-  _icon: {fileID: 21300000, guid: 06f37ddf63c4cf44c92b7682c2f09998, type: 3}
+  _name: Bear
+  _icon: {fileID: 21300000, guid: 6506020ee85bb3d488c9eccbbb371d58, type: 3}
   _collected: 1
