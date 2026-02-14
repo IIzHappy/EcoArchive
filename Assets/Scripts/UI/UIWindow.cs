@@ -8,28 +8,38 @@ public class UIWindow : MonoBehaviour
     //window open
     public virtual void OnEnable()
     {
-        if (_prevWin == null)
+        if (UIManager.Instance._curWin != null)
         {
-            _prevWin = UIManager.Instance._curWin;
+            if (UIManager.Instance._curWin._prevWin != this)
+            {
+                _prevWin = UIManager.Instance._curWin;
+            }
+        }
+        else
+        {
+            UIManager.Instance.OpenWindows();
         }
         UIManager.Instance._curWin = this;
-        UIManager.Instance.OpenWindows();
         Debug.Log(_windowName);
     }
 
     //attach to esc and x button
     public virtual void CloseWindow()
     {
-        if (_prevWin != null)
+        if (UIManager.Instance._curWin == this)
         {
-            _prevWin.gameObject.SetActive(true);
+
+            if (_prevWin != null)
+            {
+                _prevWin.gameObject.SetActive(true);
+            }
+            else
+            {
+                UIManager.Instance._curWin = null;
+                UIManager.Instance.CloseWindows();
+            }
+            _prevWin = null;
+            gameObject.SetActive(false);
         }
-        else
-        {
-            UIManager.Instance._curWin = null;
-            UIManager.Instance.CloseWindows();
-        }
-        _prevWin = null;
-        gameObject.SetActive(false);
     }
 }
