@@ -110,6 +110,8 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
+    - _FlowAngle: 0
+    - _FlowSpeed: 0.1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -121,7 +123,7 @@ Material:
     - _ReceiveShadows: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SpecularHeight: 5
+    - _SpecularHeight: 0.1
     - _SpecularHighlights: 1
     - _SpecularSize: 10
     - _SpecularSpeed: 1
