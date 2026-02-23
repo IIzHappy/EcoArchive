@@ -7,9 +7,9 @@ using UnityEngine.AI;
 public class PredatorBase : AnimalNavBase
 {
     
-    [SerializeField] private float chaseDuration = 5f;
-    [SerializeField] private float chaseCooldown = 8f;
-    [SerializeField] private float chaseChance = 0.4f;
+    [SerializeField] protected float chaseDuration = 5f;
+    [SerializeField] protected float chaseCooldown = 8f;
+    [SerializeField] protected float chaseChance = 0.4f;
 
     private Transform currentPrey;
     private float chaseTimer;

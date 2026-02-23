@@ -24,8 +24,8 @@ public class AnimalNavBase : MonoBehaviour
     [SerializeField] protected float sampleRadius = 10f;
     [SerializeField] protected int maxSampleAttempts = 10;
 
-    [SerializeField] private float idleMinTime = 5f;
-    [SerializeField] private float idleMaxTime = 10f;
+    [SerializeField] private float idleMinTime = 2f;
+    [SerializeField] private float idleMaxTime = 5f;
 
     private float idleTimer;
 

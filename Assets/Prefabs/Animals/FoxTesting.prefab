@@ -303,9 +303,6 @@ PrefabInstance:
       addedObject: {fileID: 7269512663289728153}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1166097301892468183}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2356109943462423975}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
       insertIndex: -1
@@ -325,6 +322,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7459420544054823117}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 635638030670495138}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4356999358933971137}
   m_SourcePrefab: {fileID: 100100000, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
 --- !u!1 &3752231161712809340 stripped
 GameObject:
@@ -380,21 +383,6 @@ NavMeshAgent:
   m_BaseOffset: 0.3
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1166097301892468183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3752231161712809340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac59f67ac61e234dab8f6739b67a759, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sampleRadius: 50
-  sampleInterval: 0
-  maxSampleAttempts: 10
 --- !u!136 &2356109943462423975
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -554,6 +542,48 @@ CapsuleCollider:
   m_Height: 0.13
   m_Direction: 2
   m_Center: {x: 0, y: 0.03, z: 0.38}
+--- !u!135 &635638030670495138
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3752231161712809340}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4356999358933971137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3752231161712809340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c934f490ca0537419a43f19bbb3a32e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  sampleRadius: 10
+  maxSampleAttempts: 10
+  idleMinTime: 5
+  idleMaxTime: 10
+  fleeDistance: 12
+  playerTag: Player
+  safeDistance: 15
+  fleeMultiplier: 1.5
 --- !u!4 &4564762092501684166 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}

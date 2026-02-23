@@ -62,6 +62,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f66cd38692514a145ac7aace3aba28de, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2791400190269465590}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f66cd38692514a145ac7aace3aba28de, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7908774567375357161}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f66cd38692514a145ac7aace3aba28de, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4125036671839728768}
   m_SourcePrefab: {fileID: 100100000, guid: f66cd38692514a145ac7aace3aba28de, type: 3}
 --- !u!1 &4046247437373196763 stripped
 GameObject:
@@ -111,3 +117,44 @@ NavMeshAgent:
   m_BaseOffset: 0.22427931
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!135 &7908774567375357161
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4046247437373196763}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 5
+  m_Center: {x: 0, y: -0.06874918, z: -0.048252434}
+--- !u!114 &4125036671839728768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4046247437373196763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772d678bd0908874b95a24753e056029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  sampleRadius: 10
+  maxSampleAttempts: 10
+  idleMinTime: 5
+  idleMaxTime: 10
+  chaseDuration: 5
+  chaseCooldown: 8
+  chaseChance: 0.4
