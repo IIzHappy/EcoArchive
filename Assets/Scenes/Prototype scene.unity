@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _time: 540
-  _fullDayTime: 1200
+  _secsPerDay: 1440
   _timeText: {fileID: 388588217}
   _timeIcon: {fileID: 1598533591}
   _sunTransform: {fileID: 574156151}
@@ -414,7 +414,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7fe62c534f6ebaf4e955b1d4cd6d145a, type: 2}
+  - {fileID: 2100000, guid: 79f1271710096da4a8e059caa51b9438, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
