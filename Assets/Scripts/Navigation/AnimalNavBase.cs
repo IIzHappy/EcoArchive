@@ -6,46 +6,128 @@ using UnityEngine.AI;
 
 public class AnimalNavBase : MonoBehaviour
 {
-    [SerializeField] float sampleRadius = 10f;
-    [SerializeField] float sampleInterval;
-    [SerializeField] int maxSampleAttempts = 10;
-    private NavMeshAgent agent;
-    private float moveTimer;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+    public enum AnimalState
     {
-        agent = GetComponent<NavMeshAgent>();
-        sampleInterval = Random.Range(2f, 6f);
+        Idle,
+        Roaming,
+        Chasing,
+        Fleeing,
+        Unique,
+        Resting
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    [SerializeField] protected AnimalState currentState;
+    public AnimalState CurrentState => currentState; 
+
+ 
+    [SerializeField] protected float sampleRadius = 10f;
+    [SerializeField] protected int maxSampleAttempts = 10;
+
+    [SerializeField] private float idleMinTime = 5f;
+    [SerializeField] private float idleMaxTime = 10f;
+
+    private float idleTimer;
+
+    protected NavMeshAgent agent;
+
+    private float moveTimer;
+    protected float sampleInterval;
+
+    protected virtual void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        SetState(AnimalState.Roaming);
+        SetNewSampleInterval();
+    }
+
+    protected virtual void Update()
     {
         moveTimer += Time.deltaTime;
-        if (moveTimer >= sampleInterval && !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        AnimalUpdate();
+    }
+
+    protected virtual void AnimalUpdate()
+    {
+        switch (currentState)
         {
-            Move();
-            moveTimer = 0f;
-            sampleInterval = Random.Range(2f, 6f);
+            case AnimalState.Roaming:
+                HandleRoaming();
+                break;
+
+            case AnimalState.Resting:
+                HandleResting();
+                break;
+
+            case AnimalState.Chasing:
+            case AnimalState.Fleeing:
+
+                break;
         }
     }
 
-    private void Move()
+    protected virtual void HandleRoaming()
+    {
+        if (moveTimer >= sampleInterval &&
+       !agent.pathPending &&
+       agent.remainingDistance <= agent.stoppingDistance)
+        {
+           
+            if (Random.value < 0.2f) 
+            {
+                SetState(AnimalState.Resting);
+                idleTimer = Random.Range(idleMinTime, idleMaxTime);
+                return;
+            }
+
+            Move();
+            moveTimer = 0f;
+            SetNewSampleInterval();
+        }
+    }
+
+    protected virtual void Move()
     {
         for (int i = 0; i < maxSampleAttempts; i++)
         {
             float angle = Random.Range(-135f, 125f);
-            Vector3 randDirection = Quaternion.Euler(0f, angle, 0f) * transform.forward;
+            Vector3 randDirection =
+                Quaternion.Euler(0f, angle, 0f) * transform.forward;
+
             float randDistance = Random.Range(0f, sampleRadius);
+            Vector3 targetPos = transform.position + randDirection * randDistance;
 
-            Vector3 targetPOS = transform.position + randDirection * randDistance;
-            //randDirection.y = 0f;
-
-            if (NavMesh.SamplePosition(targetPOS, out NavMeshHit hit, sampleRadius, NavMesh.AllAreas))
+            if (NavMesh.SamplePosition(targetPos, out NavMeshHit hit,
+                sampleRadius, NavMesh.AllAreas))
             {
                 agent.SetDestination(hit.position);
                 return;
             }
         }
+    }
+
+    protected virtual void HandleResting()
+    {
+        idleTimer -= Time.deltaTime;
+
+        if (agent.hasPath)
+        {
+            agent.ResetPath();
+        }
+
+        if (idleTimer <= 0f)
+        {
+            SetState(AnimalState.Roaming);
+        }
+    }
+
+    protected virtual void SetState(AnimalState newState)
+    {
+        currentState = newState;
+    }
+
+    protected void SetNewSampleInterval()
+    {
+        sampleInterval = Random.Range(2f, 6f);
     }
 }
