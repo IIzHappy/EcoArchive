@@ -171,8 +171,8 @@ public class CameraController : MonoBehaviour
         screenShot.Apply();
         Photo photo = ScriptableObject.CreateInstance<Photo>();
         photo._photo = Sprite.Create(screenShot, new Rect(0, 0, screenShot.width, screenShot.height), new Vector2(0.5f, 0.5f), 100f);
-        photo.name = System.DateTime.Now.ToString();
-        //add score to the photo
+        photo.name = ScorePhoto().ToString() + " pts";
+        Debug.Log(photo.name);
         Collection.Instance.AddPhoto(photo);
         Debug.Log(string.Format("Took screenshot to: {0}", filename));
         yield return new WaitForSeconds(0.5f);
@@ -182,8 +182,39 @@ public class CameraController : MonoBehaviour
 
     private int ScorePhoto()
     {
-        int score = 0;
-
-        return score;
+        float score = 0;
+        float percent = 0;
+        int animal = LayerMask.NameToLayer("Animal");
+        for (int i = 0; i < 240; i++)
+        {
+            for (int j = 0; j < 135; j++)
+            {
+                RaycastHit check;
+                Ray temp = cam.ScreenPointToRay(new Vector3(0 + (i*8), 0 + (j*8), 0));
+                Physics.Raycast(temp, out check);
+                if (check.collider != null)
+                {
+                    if (check.collider.gameObject.layer == animal)
+                    {
+                        percent++;
+                    }
+                }
+            }
+        }
+        float diff;
+        Debug.Log(percent);
+        percent = percent / 324;
+        if (Mathf.Abs(percent - 70) < Mathf.Abs(percent - 40))
+        {
+            diff = Mathf.Abs(percent - 70f);
+            Debug.Log(diff + " Closer 70");
+        }
+        else
+        {
+            diff = Mathf.Abs(percent - 40);
+            Debug.Log(diff + " Closer 40");
+        }
+        score += (1000 - (diff * 25));
+        return Mathf.RoundToInt(score);
     }
 }
