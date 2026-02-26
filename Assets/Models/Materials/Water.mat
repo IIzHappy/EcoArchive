@@ -45,20 +45,20 @@ Material:
     - _Blend: 2
     - _DstBlend: 1
     - _DstBlendAlpha: 1
-    - _FlowAngle: -50
+    - _FlowAngle: 150
     - _FlowSpeed: 0.2
     - _Smoothness: 1
-    - _SpecularHeight: 0.8
+    - _SpecularHeight: 0.05
     - _SpecularSize: 25
     - _SpecularSpeed: 2
     - _SpecularThickness: 4
     - _Surface: 1
     - _WaterDepth: 0.02
     - _WaterTransparency: 0.56
-    - _WaveAmplitude: 0.83
-    - _WaveFrequency: 5.49
-    - _WaveSpeed: 0.58
-    - _WhiteEdgeDepth: 0.2
+    - _WaveAmplitude: 0.03
+    - _WaveFrequency: 0.39
+    - _WaveSpeed: 0.06
+    - _WhiteEdgeDepth: 0.35
     - _ZWrite: 0
     m_Colors:
     - _BaseColor: {r: 0, g: 0.39096957, b: 0.5345911, a: 1}
@@ -67,6 +67,6 @@ Material:
     - _FlowSize: {r: 2, g: 0.3, b: 0, a: 0}
     - _ShallowColour: {r: 0.18396229, g: 0.92428523, b: 1, a: 0.15686275}
     - _SpecularColour: {r: 0.54509795, g: 0.89019614, b: 0.92549026, a: 0.43137255}
-    - _WhiteEdgeColour: {r: 0.8537736, g: 0.99458414, b: 1, a: 0.79607844}
+    - _WhiteEdgeColour: {r: 0.8537736, g: 0.99458414, b: 1, a: 0.6117647}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
