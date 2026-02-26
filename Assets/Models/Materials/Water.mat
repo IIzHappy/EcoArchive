@@ -48,6 +48,7 @@ Material:
     - _FlowAngle: -50
     - _FlowSpeed: 0.2
     - _Smoothness: 1
+    - _SpecularHeight: 0.8
     - _SpecularSize: 25
     - _SpecularSpeed: 2
     - _SpecularThickness: 4
@@ -57,6 +58,7 @@ Material:
     - _WaveAmplitude: 0.83
     - _WaveFrequency: 5.49
     - _WaveSpeed: 0.58
+    - _WhiteEdgeDepth: 0.2
     - _ZWrite: 0
     m_Colors:
     - _BaseColor: {r: 0, g: 0.39096957, b: 0.5345911, a: 1}
