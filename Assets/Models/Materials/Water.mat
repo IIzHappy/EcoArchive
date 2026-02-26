@@ -46,7 +46,7 @@ Material:
     - _DstBlend: 1
     - _DstBlendAlpha: 1
     - _FlowAngle: 150
-    - _FlowSpeed: 0.2
+    - _FlowSpeed: 0.03
     - _Smoothness: 1
     - _SpecularHeight: 0.05
     - _SpecularSize: 25
