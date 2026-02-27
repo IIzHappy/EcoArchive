@@ -5622,7 +5622,6 @@ Transform:
   - {fileID: 365962270}
   - {fileID: 268298446}
   - {fileID: 672775280}
-  - {fileID: 1757732281}
   m_Father: {fileID: 2128138442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1212141961
@@ -7683,15 +7682,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757732280}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.7729642}
+  m_LocalPosition: {x: 0, y: 0, z: 1030}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1186303848}
+  m_Father: {fileID: 875215111}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 959.77814, y: 535.43207}
+  m_AnchoredPosition: {x: 470.00006, y: 455}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1757732282
@@ -9288,6 +9287,30 @@ PrefabInstance:
       propertyPath: m_NeverAutoSwitchControlSchemes
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2173388848398720914, guid: 209598e244503a0499c9f941a460aba0, type: 3}
+      propertyPath: m_Dithering
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173388848398720914, guid: 209598e244503a0499c9f941a460aba0, type: 3}
+      propertyPath: m_RenderShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173388848398720914, guid: 209598e244503a0499c9f941a460aba0, type: 3}
+      propertyPath: m_AllowXRRendering
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173388848398720914, guid: 209598e244503a0499c9f941a460aba0, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173388848398720914, guid: 209598e244503a0499c9f941a460aba0, type: 3}
+      propertyPath: m_RequiresDepthTextureOption
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173388848398720914, guid: 209598e244503a0499c9f941a460aba0, type: 3}
+      propertyPath: m_RequiresOpaqueTextureOption
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2394633582939699591, guid: 209598e244503a0499c9f941a460aba0, type: 3}
       propertyPath: m_Name
       value: Player
@@ -9408,6 +9431,18 @@ PrefabInstance:
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 8400000, guid: 31fa2be1e5377b94c9486de9b28247dd, type: 2}
+    - target: {fileID: 5904250890647729632, guid: 209598e244503a0499c9f941a460aba0, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5904250890647729632, guid: 209598e244503a0499c9f941a460aba0, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5904250890647729632, guid: 209598e244503a0499c9f941a460aba0, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6241813682007633593, guid: 209598e244503a0499c9f941a460aba0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.06040001
@@ -9554,6 +9589,9 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 7760444166191528119, guid: 209598e244503a0499c9f941a460aba0, type: 3}
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2650432514925126482, guid: 209598e244503a0499c9f941a460aba0, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 1757732281}
     - targetCorrespondingSourceObject: {fileID: 2650432514925126482, guid: 209598e244503a0499c9f941a460aba0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1955694898}
