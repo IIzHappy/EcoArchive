@@ -6004,6 +6004,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 595889953035770761, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
+      propertyPath: m_DetailObjectDistance
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 941353886176774487, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
