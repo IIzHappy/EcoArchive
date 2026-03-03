@@ -25,17 +25,21 @@ public class DayNightCycle : MonoBehaviour
 
     public void UpdateTime()
     {
+        //update time
         _time += Time.deltaTime;
         _timeText.text = GetTime();
+        //next day
         if (_time > _secsPerDay)
         {
             Debug.Log("next day");
             _day++;
             _time = 0;
         }
+        //light and icon rotation
         _sunTransform.rotation = Quaternion.Euler(new Vector3((_time-_secsPerDay /4)/_secsPerDay *360, 0, 0));
-        _timeIcon.rectTransform.rotation = Quaternion.Euler(new Vector3(0, 0, -(_time - _secsPerDay / 4) / _secsPerDay * 360));
+        _timeIcon.rectTransform.rotation = Quaternion.Euler(new Vector3(0, 0, (_time - _secsPerDay) / _secsPerDay * 360));
 
+        //day vs night light adjustment i think
         if (_time < _secsPerDay / 2)
         {
             _intensity = 1 - (_secsPerDay / 2 - _time) / (_secsPerDay / 2);
