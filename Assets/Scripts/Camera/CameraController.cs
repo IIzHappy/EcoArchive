@@ -171,17 +171,17 @@ public class CameraController : MonoBehaviour
         screenShot.Apply();
         Photo photo = ScriptableObject.CreateInstance<Photo>();
         photo._photo = Sprite.Create(screenShot, new Rect(0, 0, screenShot.width, screenShot.height), new Vector2(0.5f, 0.5f), 100f);
-        photo.name = ScorePhoto().ToString() + " pts";
-        Debug.Log(photo.name);
-        Collection.Instance.AddPhoto(photo);
+        //photo._score = ScorePhoto();
+        StartCoroutine(ScorePhoto(photo));
         Debug.Log(string.Format("Took screenshot to: {0}", filename));
         yield return new WaitForSeconds(0.5f);
         flashLight.SetActive(false);
         yield return null;
     }
 
-    private int ScorePhoto()
+    private IEnumerator ScorePhoto(Photo photo)
     {
+        Debug.Log("LDSUBHJA");
         float score = 0;
         float percent = 0;
         int animal = LayerMask.NameToLayer("Animal");
@@ -200,9 +200,12 @@ public class CameraController : MonoBehaviour
                     }
                 }
             }
+            if (i%80 == 0)
+            {
+                yield return new WaitForEndOfFrame();
+            }
         }
         float diff;
-        Debug.Log(percent);
         percent = percent / 324;
         if (Mathf.Abs(percent - 70) < Mathf.Abs(percent - 40))
         {
@@ -214,7 +217,12 @@ public class CameraController : MonoBehaviour
             diff = Mathf.Abs(percent - 40);
             Debug.Log(diff + " Closer 40");
         }
+
+        //Final score application
         score += (1000 - (diff * 25));
-        return Mathf.RoundToInt(score);
+        photo._score = score; 
+        photo.name = (photo._score.ToString() + " pts.");
+        Collection.Instance.AddPhoto(photo);
+        Debug.Log(photo.name);
     }
 }
