@@ -210,10 +210,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
-  m_Height: 5.6
+  m_Radius: 0.64036185
+  m_Height: 5.862537
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.13126849, z: 0.24036185}
 --- !u!1001 &4094884274753644589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -402,10 +402,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.078250885
+  m_Radius: 0.11
   m_Height: 0.5910835
   m_Direction: 2
-  m_Center: {x: 0.0023241043, y: -0.038433246, z: -0.019636333}
+  m_Center: {x: 0, y: -0.04683739, z: -0.019636333}
 --- !u!136 &3416629662119676597
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -517,8 +517,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.08
-  m_Center: {x: 0, y: 0.06, z: 0.3}
+  m_Radius: 0.08251667
+  m_Center: {x: 0, y: 0.060000002, z: 0.305}
 --- !u!136 &7459420544054823117
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -538,10 +538,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
+  m_Radius: 0.031141758
   m_Height: 0.13
   m_Direction: 2
-  m_Center: {x: 0, y: 0.03, z: 0.38}
+  m_Center: {x: 0, y: 0.033792093, z: 0.38}
 --- !u!135 &635638030670495138
 SphereCollider:
   m_ObjectHideFlags: 0

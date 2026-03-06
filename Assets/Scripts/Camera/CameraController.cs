@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using System.Collections;
+using System.Linq;
+using System.Collections.Generic;
 
 public class CameraController : MonoBehaviour
 {
@@ -18,6 +20,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] RenderTexture viewFinder;
 
     [SerializeField] GameObject flashLight;
+
+    public List<Texture2D> photos = new List<Texture2D>();
 
     public float adjVal;
 
@@ -164,14 +168,15 @@ public class CameraController : MonoBehaviour
         VFCam.targetTexture = viewFinder;
         Destroy(rt);
         yield return new WaitForEndOfFrame();
-        byte[] bytes = screenShot.EncodeToPNG();
+        //byte[] bytes = screenShot.EncodeToPNG();
         string filename = string.Format(Application.dataPath + "/Player Images/" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + "." + photoNum + ".png");
+        screenShot.name = filename;
         yield return new WaitForEndOfFrame();
-        System.IO.File.WriteAllBytes(filename, bytes);
+        //System.IO.File.WriteAllBytes(filename, bytes);
         screenShot.Apply();
+        photos.Add(screenShot);
         Photo photo = ScriptableObject.CreateInstance<Photo>();
         photo._photo = Sprite.Create(screenShot, new Rect(0, 0, screenShot.width, screenShot.height), new Vector2(0.5f, 0.5f), 100f);
-        //photo._score = ScorePhoto();
         StartCoroutine(ScorePhoto(photo));
         Debug.Log(string.Format("Took screenshot to: {0}", filename));
         yield return new WaitForSeconds(0.5f);
@@ -181,10 +186,13 @@ public class CameraController : MonoBehaviour
 
     private IEnumerator ScorePhoto(Photo photo)
     {
-        Debug.Log("LDSUBHJA");
+        GameObject[] subjects = new GameObject[10];
+        int subjectsNum = 0;
         float score = 0;
         float percent = 0;
+        float act = 0;
         int animal = LayerMask.NameToLayer("Animal");
+
         for (int i = 0; i < 240; i++)
         {
             for (int j = 0; j < 135; j++)
@@ -197,6 +205,11 @@ public class CameraController : MonoBehaviour
                     if (check.collider.gameObject.layer == animal)
                     {
                         percent++;
+                        if (!subjects.Contains(check.collider.gameObject) && subjects.Contains(null))
+                        {
+                            subjects[subjectsNum] = check.collider.gameObject;
+                            subjectsNum++;
+                        }
                     }
                 }
             }
@@ -205,6 +218,12 @@ public class CameraController : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
+
+        foreach(GameObject cur in subjects)
+        {
+
+        }
+
         float diff;
         percent = percent / 324;
         if (Mathf.Abs(percent - 70) < Mathf.Abs(percent - 40))
@@ -219,10 +238,20 @@ public class CameraController : MonoBehaviour
         }
 
         //Final score application
-        score += (1000 - (diff * 25));
+        score += (1000 - (diff * (25)));
         photo._score = score; 
         photo.name = (photo._score.ToString() + " pts.");
         Collection.Instance.AddPhoto(photo);
         Debug.Log(photo.name);
+    }
+
+    public void SavePhotos()
+    {
+        foreach (Texture2D cur in photos)
+        {
+            byte[] bytes = cur.EncodeToPNG();
+            System.IO.File.WriteAllBytes(cur.name, bytes);
+        }
+        photos.Clear();
     }
 }
