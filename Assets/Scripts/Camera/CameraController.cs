@@ -221,7 +221,41 @@ public class CameraController : MonoBehaviour
 
         foreach(GameObject cur in subjects)
         {
+            float tempAct = 0;
+            switch (cur.GetComponent<AnimalNavBase>().CurrentState)
+            {
+                case AnimalNavBase.AnimalState.Idle:
+                    tempAct = 1;
+                break;
 
+                case AnimalNavBase.AnimalState.Roaming:
+                    tempAct = .95f;
+                break;
+
+                case AnimalNavBase.AnimalState.Chasing:
+                    tempAct = .75f;
+                break;
+
+                case AnimalNavBase.AnimalState.Fleeing:
+                    tempAct = .75f;
+                break;
+
+                case AnimalNavBase.AnimalState.Unique:
+                    tempAct = .5f;
+                break;
+
+                case AnimalNavBase.AnimalState.Resting:
+                    tempAct = .6f;
+                break;
+
+                default:
+                    tempAct = 1f;
+                break;
+            }
+            if (tempAct < act)
+            {
+                act = tempAct;
+            }
         }
 
         float diff;
@@ -238,7 +272,7 @@ public class CameraController : MonoBehaviour
         }
 
         //Final score application
-        score += (1000 - (diff * (25)));
+        score += (1000 - (diff * (25*act)));
         photo._score = score; 
         photo.name = (photo._score.ToString() + " pts.");
         Collection.Instance.AddPhoto(photo);
