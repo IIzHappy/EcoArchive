@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Snake Vertebrae
   m_EditorClassIdentifier: 
   _name: Snake Vertebrae
-  _icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  _icon: {fileID: 21300000, guid: 291c45b58759f804d98282c7af788c16, type: 3}
   _numCollected: 0
