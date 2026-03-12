@@ -27,15 +27,26 @@ public class PlayerInputs : MonoBehaviour
 
     public void OnMove(InputValue value)
     {
-        if (!_playerActive) return;
-        _playerController.move = value.Get<Vector2>();
-        Debug.Log("sdfdsgf");
+        if (!_playerActive)
+        {
+            _playerController.move = new Vector2(0, 0);
+        }
+        else
+        {
+            _playerController.move = value.Get<Vector2>();
+        }
     }
 
     public void OnLook(InputValue value)
     {
-        if (!_playerActive) return;
-        _playerController.look = value.Get<Vector2>();
+        if (!_playerActive)
+        {
+            _playerController.look = new Vector2(0, 0);
+        }
+        else
+        {
+            _playerController.look = value.Get<Vector2>();
+        }
     }
 
     public void OnJump(InputValue value)
@@ -46,14 +57,12 @@ public class PlayerInputs : MonoBehaviour
 
     public void OnSprint(InputValue value)
     {
-        if (!_playerActive) return;
         _playerController._sprintDown = value.isPressed;
         _playerController.UpdateWalkState();
     }
 
     public void OnSlowWalk(InputValue value)
     {
-        if (!_playerActive) return;
         _playerController._slowWalkDown = value.isPressed;
         _playerController.UpdateWalkState();
     }
