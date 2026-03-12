@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] UIWindow _collectionMenu;
 
     [SerializeField] GameObject _dayNight;
+    [SerializeField] GameObject _eventFeed;
 
     [SerializeField] bool _inGame = true;
     public bool _freezeOnPause = true;
@@ -49,6 +50,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0;
         PlayerInputs.Instance._playerActive = false;
         _dayNight.SetActive(false);
+        _eventFeed.SetActive(false);
     }
     public void UnpauseGame()
     {
@@ -57,9 +59,9 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 1;
             PlayerInputs.Instance._playerActive = true;
             _dayNight.SetActive(true);
+            _eventFeed.SetActive(true);
         }
     }
-
 
     public void EscapePressed()
     {
@@ -92,15 +94,4 @@ public class UIManager : MonoBehaviour
             }
         }
     }
-
-    /*
-    public void OpenWindow(UIWindow window)
-    {
-        if (window._prevWin == null)
-        {
-            window._prevWin = UIManager.Instance._curWin;
-        }
-        UIManager.Instance._curWin = window;
-    }
-    */
 }
