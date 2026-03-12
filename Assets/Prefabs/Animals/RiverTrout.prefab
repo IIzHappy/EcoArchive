@@ -59,6 +59,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6a1968fca7adf2a43b12c0e9551be868, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5440198665848000656}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6a1968fca7adf2a43b12c0e9551be868, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2172961444841032350}
   m_SourcePrefab: {fileID: 100100000, guid: 6a1968fca7adf2a43b12c0e9551be868, type: 3}
 --- !u!1 &5260753595220123247 stripped
 GameObject:
@@ -88,3 +91,26 @@ CapsuleCollider:
   m_Height: 0.52285767
   m_Direction: 2
   m_Center: {x: -0.00036621094, y: -0.018684387, z: 0.013015747}
+--- !u!114 &2172961444841032350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5260753595220123247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_LoopMode: 1
+  m_Method: 0
+  m_Duration: 1
+  m_MaxSpeed: 10
+  m_EasingMode: 0
+  m_AlignmentMode: 2
+  m_ObjectForwardAxis: 2
+  m_ObjectUpAxis: 1
+  m_StartOffset: 0
