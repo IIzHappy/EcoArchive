@@ -49,7 +49,6 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0;
         PlayerInputs.Instance._playerActive = false;
         _dayNight.SetActive(false);
-        Debug.Log("Game paused");
     }
     public void UnpauseGame()
     {
@@ -58,7 +57,6 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 1;
             PlayerInputs.Instance._playerActive = true;
             _dayNight.SetActive(true);
-            Debug.Log("Game unpaused");
         }
     }
 
