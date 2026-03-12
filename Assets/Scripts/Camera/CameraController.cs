@@ -191,7 +191,10 @@ public class CameraController : MonoBehaviour
         float score = 0;
         float percent = 0;
         float act = 0;
+        float frameMult = 1;
         int animal = LayerMask.NameToLayer("Animal");
+        LayerMask boxes = ~LayerMask.GetMask("Lines");
+        LayerMask lines = ~LayerMask.GetMask("Boxes");
 
         for (int i = 0; i < 240; i++)
         {
@@ -258,29 +261,27 @@ public class CameraController : MonoBehaviour
             }
             RaycastHit hit;
             Ray frame = new Ray(cur.transform.Find("Chest").transform.position, cam.transform.position);
-            Physics.Raycast(frame, out hit);
+            Physics.Raycast(frame, out hit, lines);
             GameObject third = hit.collider.gameObject;
-            if (third.layer == LayerMask.NameToLayer("Animal Ref Point") && (third.name == "R 3 Line" || third.name == "L 3 Line"))
+            if (third.name == "R 3 Line" || third.name == "L 3 Line")
             {
                 frame = new Ray(cur.transform.Find("Head").transform.position, cam.transform.position);
-                Physics.Raycast(frame, out hit);
+                Physics.Raycast(frame, out hit, boxes);
                 third = hit.collider.gameObject;
                 if (third.name == "C 3 Line")
                 {
-
+                    if (frameMult < 2.5f) frameMult = 2.5f;
                 }
             }
         }
 
+        //for (int i = 0; i < 16; i++)
+        //{
+        //    for (int j = 0; j < 270;  j++)
+        //    {
 
-
-        for (int i = 0; i < 16; i++)
-        {
-            for (int j = 0; j < 270;  j++)
-            {
-
-            }
-        }
+        //    }
+        //}
 
         float diff;
         percent = percent / 324;
@@ -296,7 +297,7 @@ public class CameraController : MonoBehaviour
         }
 
         //Final score application
-        score += (1000 - (diff * (25*act)));
+        score = ((1000 * frameMult) - (diff * 25 * act * frameMult));
         photo._score = score; 
         photo.name = (photo._score.ToString() + " pts.");
         Collection.Instance.AddPhoto(photo);

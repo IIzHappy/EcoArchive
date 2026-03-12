@@ -1474,8 +1474,8 @@ GameObject:
   - component: {fileID: 220956146}
   - component: {fileID: 220956149}
   - component: {fileID: 220956147}
-  m_Layer: 7
-  m_Name: C 3 Line
+  m_Layer: 9
+  m_Name: C 3 Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5340,9 +5340,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 996943360}
-  - component: {fileID: 996943363}
   - component: {fileID: 996943361}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: L 3 Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5359,7 +5358,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.15, y: -0.01, z: 0.4}
-  m_LocalScale: {x: 0.04, y: 0.3, z: 0.01}
+  m_LocalScale: {x: 0.02, y: 0.3, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2453629478099499291}
@@ -5385,14 +5384,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &996943363
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996943359}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1021205549 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7132262515525201747, guid: 7053ddcceb12ab34cac2837dce0a25d3, type: 3}
@@ -6967,9 +6958,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1477335207}
-  - component: {fileID: 1477335210}
   - component: {fileID: 1477335208}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: R 3 Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6986,7 +6976,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.025, y: -0.01, z: 0.4}
-  m_LocalScale: {x: 0.04, y: 0.3, z: 0.01}
+  m_LocalScale: {x: 0.02, y: 0.3, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2453629478099499291}
@@ -7012,14 +7002,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1477335210
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1477335206}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1492529410
 GameObject:
   m_ObjectHideFlags: 0
@@ -8291,9 +8273,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1764755275}
-  - component: {fileID: 1764755278}
   - component: {fileID: 1764755276}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: B 3 Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8310,7 +8291,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.06, y: -0.06, z: 0.4}
-  m_LocalScale: {x: 0.55, y: 0.04, z: 0.01}
+  m_LocalScale: {x: 0.55, y: 0.02, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2453629478099499291}
@@ -8336,14 +8317,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1764755278
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764755274}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1770972490 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4564762092501684166, guid: acfab9bfbbef55945b0a148effcf40ab, type: 3}
@@ -9134,9 +9107,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1870655820}
-  - component: {fileID: 1870655823}
   - component: {fileID: 1870655821}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: T 3 Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9153,7 +9125,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.06, y: 0.04, z: 0.4}
-  m_LocalScale: {x: 0.55, y: 0.04, z: 0.01}
+  m_LocalScale: {x: 0.55, y: 0.02, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2453629478099499291}
@@ -9179,14 +9151,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1870655823
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870655819}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1871259706
 GameObject:
   m_ObjectHideFlags: 0

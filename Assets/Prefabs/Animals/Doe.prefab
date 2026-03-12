@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3327469509319885518}
   - component: {fileID: 5442915526778391407}
   m_Layer: 7
-  m_Name: Chesr
+  m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
