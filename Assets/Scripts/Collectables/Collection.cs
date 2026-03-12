@@ -136,7 +136,7 @@ public class Collection : MonoBehaviour
         animal._collected = true;
         _animals[animal].GetComponent<Image>().sprite = animal._icon;
         _animals[animal].GetComponentInChildren<TMP_Text>().text = animal._name;
-        Debug.Log(animal._name + " collected");
+        EventFeed.Instance.makeNotif(animal._icon, animal._name + " discovered");
     }
 
     public void AddBug(Bug bug)
@@ -144,7 +144,7 @@ public class Collection : MonoBehaviour
         bug._numCollected++;
         _bugs[bug].GetComponent<Image>().sprite = bug._icon;
         _bugs[bug].GetComponentInChildren<TMP_Text>().text = bug._name + "-" + bug._numCollected;
-        Debug.Log(bug._name + " collected");
+        EventFeed.Instance.makeNotif(bug._icon, bug._name + " collected");
     }
 
     public void AddBone(Bone bone)
@@ -152,7 +152,7 @@ public class Collection : MonoBehaviour
         bone._numCollected++;
         _bones[bone].GetComponent<Image>().sprite = bone._icon;
         _bones[bone].GetComponentInChildren<TMP_Text>().text = bone._name + " - " + bone._numCollected;
-        Debug.Log(bone._name + " collected");
+        EventFeed.Instance.makeNotif(bone._icon, bone._name + " collected");
     }
 
     public void AddPhoto(Photo newPhoto)
