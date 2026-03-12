@@ -256,6 +256,30 @@ public class CameraController : MonoBehaviour
             {
                 act = tempAct;
             }
+            RaycastHit hit;
+            Ray frame = new Ray(cur.transform.Find("Chest").transform.position, cam.transform.position);
+            Physics.Raycast(frame, out hit);
+            GameObject third = hit.collider.gameObject;
+            if (third.layer == LayerMask.NameToLayer("Animal Ref Point") && (third.name == "R 3 Line" || third.name == "L 3 Line"))
+            {
+                frame = new Ray(cur.transform.Find("Head").transform.position, cam.transform.position);
+                Physics.Raycast(frame, out hit);
+                third = hit.collider.gameObject;
+                if (third.name == "C 3 Line")
+                {
+
+                }
+            }
+        }
+
+
+
+        for (int i = 0; i < 16; i++)
+        {
+            for (int j = 0; j < 270;  j++)
+            {
+
+            }
         }
 
         float diff;
