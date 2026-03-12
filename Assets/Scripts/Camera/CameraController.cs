@@ -259,29 +259,55 @@ public class CameraController : MonoBehaviour
             {
                 act = tempAct;
             }
-            RaycastHit hit;
-            Ray frame = new Ray(cur.transform.Find("Chest").transform.position, cam.transform.position);
-            Physics.Raycast(frame, out hit, lines);
-            GameObject third = hit.collider.gameObject;
-            if (third.name == "R 3 Line" || third.name == "L 3 Line")
+
+            RaycastHit hitChest;
+            RaycastHit hitHind;
+            RaycastHit hitHeadL;
+            RaycastHit hitHeadB;
+            Ray frameChest = new Ray(cur.transform.Find("Chest").transform.position, cam.transform.position);
+            Ray frameHind = new Ray(cur.transform.Find("Hind").transform.position, cam.transform.position);
+            Ray frameHead = new Ray(cur.transform.Find("Head").transform.position, cam.transform.position);
+            Physics.Raycast(frameChest, out hitChest, lines);
+            Physics.Raycast(frameHind, out hitHind, lines);
+            Physics.Raycast(frameHead, out hitHeadL, lines);
+            Physics.Raycast(frameHead, out hitHeadB, boxes);
+            GameObject thirdChest = hitChest.collider.gameObject;
+            GameObject thirdHind = hitHind.collider.gameObject;
+            GameObject thirdHeadL = hitHeadL.collider.gameObject;
+            GameObject thirdHeadB = hitHeadB.collider.gameObject;
+
+            if (thirdChest.name == "R 3 Line" || thirdChest.name == "L 3 Line")
             {
-                frame = new Ray(cur.transform.Find("Head").transform.position, cam.transform.position);
-                Physics.Raycast(frame, out hit, boxes);
-                third = hit.collider.gameObject;
-                if (third.name == "C 3 Line")
+                if (thirdHeadB.name == "C 3 Line")
                 {
                     if (frameMult < 2.5f) frameMult = 2.5f;
                 }
             }
+
+            if (thirdChest.name == "R 3 Line")
+            {
+                if (thirdHind.name == "L 3 Line")
+                {
+                    if (frameMult < 2f) frameMult = 2f;
+                }
+            }
+            else if (thirdChest.name == "L 3 Line")
+            {
+                if (thirdHind.name == "R 3 Line")
+                {
+                    if (frameMult < 2f) frameMult = 2f;
+                }
+            }
+
+            if (thirdChest.name == "R 3 Line" && thirdHind.name == "R 3 Line" && thirdHeadL.name == "R 3 Line")
+            {
+                if (frameMult < 3f) frameMult = 3f;
+            }
+            else if (thirdChest.name == "R 3 Line" && thirdHind.name == "R 3 Line" && thirdHeadL.name == "R 3 Line")
+            {
+                if (frameMult < 3f) frameMult = 3f;
+            }
         }
-
-        //for (int i = 0; i < 16; i++)
-        //{
-        //    for (int j = 0; j < 270;  j++)
-        //    {
-
-        //    }
-        //}
 
         float diff;
         percent = percent / 324;
