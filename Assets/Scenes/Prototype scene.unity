@@ -8395,6 +8395,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 79f1271710096da4a8e059caa51b9438, type: 2}
+    - target: {fileID: 3540720131907317312, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
+      propertyPath: m_DrawInstanced
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5996304612046093034, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
       propertyPath: m_Name
       value: Environment
