@@ -123,9 +123,10 @@ Material:
     - _Surface: 0
     - _WindHeight: 0.08
     - _WindIntensity: 0.005
-    - _WindScale: 50
-    - _WindSpeed: 0.05
-    - _WindWaveSpeed: 1
+    - _WindScale: 0.2
+    - _WindSpeed: 0.08
+    - _WindStrength: 0.4
+    - _WindWaveSpeed: 0.8
     - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 1
@@ -140,6 +141,8 @@ Material:
     - _NearColour: {r: 0.31817472, g: 0.6037736, b: 0.26486292, a: 1}
     - _NearFarRange: {r: 20, g: 100, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _WindMovement: {r: 6, g: 0, b: 0, a: 0}
+    - _WindMovementDirection: {r: 6, g: 0.0001, b: 0, a: 0}
     - _WindWaveContrast: {r: 0, g: 6, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
