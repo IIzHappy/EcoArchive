@@ -1,10 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-using System.Collections;
-using System.Linq;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using UnityEngine.SocialPlatforms;
 
 public class CameraController : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class CameraController : MonoBehaviour
     [SerializeField] GameObject flashLight;
 
     public List<Texture2D> photos = new List<Texture2D>();
+
+    LayerMask ignore = ~LayerMask.GetMask("Lines", "Boxes");
+    int animal = LayerMask.NameToLayer("Animal");
 
     public float adjVal;
 
@@ -129,7 +133,7 @@ public class CameraController : MonoBehaviour
                 if (Input.GetKey("f"))
                 {
                     //focal distance
-                    dof.focusDistance.value += adjVal/5f;
+                    dof.focusDistance.value += adjVal / 5f;
                     if (dof.focusDistance.value > 1.8f)
                     {
                         dof.focusDistance.value = 1.8f;
@@ -145,9 +149,29 @@ public class CameraController : MonoBehaviour
                     flash = !flash;
                 }
 
+                else if (Input.GetKeyDown("x"))
+                {
+                    for (int i = 0; i < 240; i++)
+                    {
+                        for (int j = 0; j < 135; j++)
+                        {
+                            RaycastHit check;
+                            Ray temp = cam.ScreenPointToRay(new Vector3(0 + (i * 8), 0 + (j * 8), 0));
+                            Physics.Raycast(temp, out check, Mathf.Infinity, ignore);
+                            if (check.collider != null)
+                            {
+                                if (check.collider.gameObject.layer == animal)
+                                {
+                                    dof.focusDistance.value = check.distance * 20f;
+                                }
+                            }
+                        }
+                    }
+                }
+
                 else
                 {
-                    cam.focalLength +=  adjVal * 10f;
+                    cam.focalLength += adjVal * 10f;
                     if (cam.focalLength > 100f)
                     {
                         cam.focalLength = 100f;
@@ -202,8 +226,6 @@ public class CameraController : MonoBehaviour
         float act = 1;
         float frameMult = 1;
         float focus = 0.15f;
-        int animal = LayerMask.NameToLayer("Animal");
-        LayerMask ignore = ~LayerMask.GetMask("Lines", "Boxes");
         LayerMask boxes = ~LayerMask.GetMask("Lines");
         LayerMask lines = ~LayerMask.GetMask("Boxes");
 
