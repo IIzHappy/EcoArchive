@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
         if (!_canControl) return;
         _rotateCam.RotateCam();
         Move();
+        InteractCheck();
     }
 
     public void UpdateWalkState()
