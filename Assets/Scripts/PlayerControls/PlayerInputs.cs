@@ -25,30 +25,6 @@ public class PlayerInputs : MonoBehaviour
         _uiManager = uiManager;
     }
 
-    public void OnMove(InputValue value)
-    {
-        if (!_playerActive)
-        {
-            _playerController.move = new Vector2(0, 0);
-        }
-        else
-        {
-            _playerController.move = value.Get<Vector2>();
-        }
-    }
-
-    public void OnLook(InputValue value)
-    {
-        if (!_playerActive)
-        {
-            _playerController.look = new Vector2(0, 0);
-        }
-        else
-        {
-            _playerController.look = value.Get<Vector2>();
-        }
-    }
-
     public void OnJump(InputValue value)
     {
         if (!_playerActive) return;
