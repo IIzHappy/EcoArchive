@@ -7,7 +7,12 @@ public class PlayerSound : MonoBehaviour
     //1-sprint
     //2-slow walk
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float[] _stepInterval = { 0.8f, 0.6f, 1.2f };
+
+    public AudioClip[] _stepSound;
+
+    PlayerController _player;
+
     void Start()
     {
         
@@ -25,6 +30,11 @@ public class PlayerSound : MonoBehaviour
     }
 
     public void StartMoving()
+    {
+
+    }
+
+    void PlayStepSound()
     {
 
     }

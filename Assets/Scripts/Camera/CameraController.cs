@@ -25,8 +25,8 @@ public class CameraController : MonoBehaviour
 
     public List<Texture2D> photos = new List<Texture2D>();
 
-    LayerMask ignore = ~LayerMask.GetMask("Lines", "Boxes");
-    int animal = LayerMask.NameToLayer("Animal");
+    LayerMask ignore;
+    int animal;
 
     public float adjVal;
 
@@ -39,6 +39,8 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
+        ignore = ~LayerMask.GetMask("Lines", "Boxes");
+        animal = LayerMask.NameToLayer("Animal");
         cam.usePhysicalProperties = true;
         DepthOfField test;
 

@@ -5,7 +5,9 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public CharacterController _playerController;
+    public bool _canControl = true;
 
+    [SerializeField] PlayerRotateCam _rotateCam;
 
     [Header("Player")]
     int walkState = 0;
@@ -42,14 +44,16 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         _playerController = GetComponent<CharacterController>();
-        /*
-        PlayerInputs.Instance._playerActive = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        _rotateCam = GetComponentInChildren<PlayerRotateCam>();
+        PlayerInputs.Instance.PauseGame(false);
         _playerSound = GetComponent<PlayerSound>();
-        */
     }
 
     void Update()
     {
+        if (!_canControl) return;
+        _rotateCam.RotateCam();
         Move();
     }
 

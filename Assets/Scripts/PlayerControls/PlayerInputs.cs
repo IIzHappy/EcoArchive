@@ -18,7 +18,13 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] PlayerController _playerController;
     [SerializeField] UIManager _uiManager;
 
-    public bool _playerActive;
+    bool _playerActive;
+
+    public void PauseGame(bool pause)
+    {
+        _playerActive = !pause;
+        _playerController._canControl = _playerActive;
+    }
 
     public void UpdateUIManager(UIManager uiManager)
     {
