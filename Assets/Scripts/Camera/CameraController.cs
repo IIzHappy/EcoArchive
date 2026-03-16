@@ -4,6 +4,7 @@ using UnityEngine.Rendering.Universal;
 using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class CameraController : MonoBehaviour
 {
@@ -86,49 +87,57 @@ public class CameraController : MonoBehaviour
 
             if (Input.anyKey)
             {
-                if (Input.GetKey("c"))
-                {
-                    //Aperture
-                    dof.aperture.value += adjVal;
-                    if (dof.aperture.value > 32)
-                    {
-                        dof.aperture.value = 32;
-                    }
-                    else if (dof.aperture.value < 0.95f)
-                    {
-                        dof.aperture.value = 0.95f;
-                    }
-                }
+                //if (Input.GetKey("c"))
+                //{
+                //    //Aperture
+                //    dof.aperture.value += adjVal;
+                //    if (dof.aperture.value > 32)
+                //    {
+                //        dof.aperture.value = 32;
+                //    }
+                //    else if (dof.aperture.value < 0.95f)
+                //    {
+                //        dof.aperture.value = 0.95f;
+                //    }
+                //}
 
-                else if (Input.GetKey("x"))
-                {
-                    //Shutter Speed
-                    cam.shutterSpeed += adjVal;
-                    if (cam.shutterSpeed > 0.1f)
-                    {
-                        cam.shutterSpeed = 0.1f;
-                    }
-                    VFCam.shutterSpeed = cam.shutterSpeed;
-                }
+                //else if (Input.GetKey("x"))
+                //{
+                //    //Shutter Speed
+                //    cam.shutterSpeed += adjVal;
+                //    if (cam.shutterSpeed > 0.1f)
+                //    {
+                //        cam.shutterSpeed = 0.1f;
+                //    }
+                //    VFCam.shutterSpeed = cam.shutterSpeed;
+                //}
 
-                else if (Input.GetKey("f"))
-                {
-                    //focal length
-                    dof.focalLength.value += adjVal;
-                    if (dof.focalLength.value > 135f)
-                    {
-                        dof.focalLength.value = 135;
-                    }
-                    else if (dof.focalLength.value < 35f)
-                    {
-                        dof.focalLength.value = 35;
-                    }
-                }
+                //if (Input.GetKey("f"))
+                //{
+                //    //focal length
+                //    dof.focalLength.value += adjVal;
+                //    if (dof.focalLength.value > 70f)
+                //    {
+                //        dof.focalLength.value = 70;
+                //    }
+                //    else if (dof.focalLength.value < 5f)
+                //    {
+                //        dof.focalLength.value = 5;
+                //    }
+                //}
 
-                else if (Input.GetKey("r"))
+                if (Input.GetKey("f"))
                 {
                     //focal distance
-                    dof.focusDistance.value += adjVal;
+                    dof.focusDistance.value += adjVal/5f;
+                    if (dof.focusDistance.value > 1.8f)
+                    {
+                        dof.focusDistance.value = 1.8f;
+                    }
+                    else if (dof.focusDistance.value < 1.4f)
+                    {
+                        dof.focusDistance.value = 1.4f;
+                    }
                 }
 
                 else if (Input.GetKeyDown("z"))
@@ -192,6 +201,7 @@ public class CameraController : MonoBehaviour
         float percent = 0;
         float act = 1;
         float frameMult = 1;
+        float focus = 0.15f;
         int animal = LayerMask.NameToLayer("Animal");
         LayerMask ignore = ~LayerMask.GetMask("Lines", "Boxes");
         LayerMask boxes = ~LayerMask.GetMask("Lines");
@@ -268,9 +278,9 @@ public class CameraController : MonoBehaviour
                 RaycastHit hitHind;
                 RaycastHit hitHeadL;
                 RaycastHit hitHeadB;
-                Ray frameChest = new Ray(cur.transform.Find("Chest").transform.position, cam.transform.position);
-                Ray frameHind = new Ray(cur.transform.Find("Hind").transform.position, cam.transform.position);
-                Ray frameHead = new Ray(cur.transform.Find("Head").transform.position, cam.transform.position);
+                Ray frameChest = new Ray(cur.transform.Find("Chest").transform.position, (cam.transform.position - cur.transform.Find("Chest").transform.position));
+                Ray frameHind = new Ray(cur.transform.Find("Hind").transform.position, (cam.transform.position - cur.transform.Find("Hind").transform.position).normalized);
+                Ray frameHead = new Ray(cur.transform.Find("Head").transform.position, (cam.transform.position - cur.transform.Find("Head").transform.position).normalized);
                 Physics.Raycast(frameChest, out hitChest, Mathf.Infinity, lines);
                 Physics.Raycast(frameHind, out hitHind, Mathf.Infinity, lines);
                 Physics.Raycast(frameHead, out hitHeadL, Mathf.Infinity, lines);
@@ -315,6 +325,12 @@ public class CameraController : MonoBehaviour
                 {
                     if (frameMult < 3f) frameMult = 3f;
                 }
+
+                Debug.Log(hitChest.distance + " + " + dof.focusDistance);
+                if (hitChest.distance >= 20f * dof.focusDistance.GetValue<float>() && focus != 1)
+                {
+                    focus = 1;
+                }
             }
         }
 
@@ -332,8 +348,8 @@ public class CameraController : MonoBehaviour
         }
 
         //Final score application
-        Debug.Log("(1000 * " + frameMult + ") - (" + diff + " * 25 * " + act + " * " + frameMult + ")");
-        score = ((1000 * frameMult) - (diff * 25 * act * frameMult));
+        Debug.Log("(1000 * " + frameMult + " * " + focus + ") - (" + diff + " * 25 * " + act + " * " + frameMult + ")");
+        score = ((1000 * frameMult * focus) - (diff * 25 * act * frameMult));
         photo._score = score; 
         photo.name = (photo._score.ToString() + " pts.");
         Collection.Instance.AddPhoto(photo);
