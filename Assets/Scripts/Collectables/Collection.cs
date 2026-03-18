@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
 
 public class Collection : MonoBehaviour
 {
@@ -38,27 +39,57 @@ public class Collection : MonoBehaviour
 
     public void LoadCollection()
     {
-        AnimalAsset[] allAnimals = Resources.LoadAll<AnimalAsset>("Animals");
-        foreach (var animal in allAnimals)
+        if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
         {
-            _animals.Add(animal, null);
-        }
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
+            Save save = (Save)bf.Deserialize(file);
+            file.Close();
 
-        Bug[] allBugs = Resources.LoadAll<Bug>("Bugs");
-        foreach (var bug in allBugs)
+            foreach (AnimalAsset animal in save._animals)
+            {
+                _animals.Add(animal, null);
+            }
+            foreach (Bug bug in save._bugs)
+            {
+                _bugs.Add(bug, null);
+            }
+            foreach (Bone bone in save._bones)
+            {
+                _bones.Add(bone, null);
+            }
+            InstantiateAnimals();
+            InstantiateBugs();
+            InstantiateBones();
+
+            Debug.Log("Game save loaded.");
+        }
+        else
         {
-            _bugs.Add(bug, null);
-        }
+            AnimalAsset[] allAnimals = Resources.LoadAll<AnimalAsset>("Animals");
+            foreach (var animal in allAnimals)
+            {
+                _animals.Add(animal, null);
+            }
 
-        Bone[] allBones = Resources.LoadAll<Bone>("Bones");
-        foreach (var bone in allBones)
-        {
-            _bones.Add(bone, null);
-        }
+            Bug[] allBugs = Resources.LoadAll<Bug>("Bugs");
+            foreach (var bug in allBugs)
+            {
+                _bugs.Add(bug, null);
+            }
 
-        InstantiateAnimals();
-        InstantiateBugs();
-        InstantiateBones();
+            Bone[] allBones = Resources.LoadAll<Bone>("Bones");
+            foreach (var bone in allBones)
+            {
+                _bones.Add(bone, null);
+            }
+
+            InstantiateAnimals();
+            InstantiateBugs();
+            InstantiateBones();
+
+            Debug.Log("New game loaded.");
+        }
     }
 
     public void ResetCollection()
@@ -161,5 +192,33 @@ public class Collection : MonoBehaviour
         GameObject _newPhoto = Instantiate(_iconPrefab, _photoIcons.transform);
         _newPhoto.GetComponent<Image>().sprite = newPhoto._photo;
         _newPhoto.transform.GetComponentInChildren<TMP_Text>().text = newPhoto.name;
+    }
+
+    public List<AnimalAsset> GetAnimals()
+    {
+        List<AnimalAsset> animals = new List<AnimalAsset>();
+        foreach (AnimalAsset animal in _animals.Keys)
+        {
+            animals.Add(animal);
+        }
+        return animals;
+    }
+    public List<Bug> GetBugs()
+    {
+        List<Bug> bugs = new List<Bug>();
+        foreach (Bug bug in _bugs.Keys)
+        {
+            bugs.Add(bug);
+        }
+        return bugs;
+    }
+    public List<Bone> GetBones()
+    {
+        List<Bone> bones = new List<Bone>();
+        foreach (Bone bone in _bones.Keys)
+        {
+            bones.Add(bone);
+        }
+        return bones;
     }
 }
