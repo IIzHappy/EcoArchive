@@ -32,9 +32,6 @@ public class PlayerController : MonoBehaviour
     PlayerSound _playerSound;
     bool _isMoving;
 
-    [Header("Camera")]
-    public Camera _playerCam;
-
     [Header("Interactables")]
     [SerializeField] GameObject _crosshair;
     bool _interactable;
@@ -53,7 +50,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (!_canControl) return;
-        _rotateCam.RotateCam();
+        if (Cursor.lockState == CursorLockMode.Locked) _rotateCam.RotateCam();
         Move();
         InteractCheck();
     }
@@ -100,11 +97,11 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 GetLookDir()
     {
-        return _playerCam.transform.forward;
+        return _rotateCam.transform.forward;
     }
     public Transform GetEyePos()
     {
-        return _playerCam.transform;
+        return _rotateCam.transform;
     }
 
     public void Interact()

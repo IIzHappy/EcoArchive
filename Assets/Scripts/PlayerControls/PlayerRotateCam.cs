@@ -7,13 +7,21 @@ public class PlayerRotateCam : MonoBehaviour
     public float _mouseSensX = 100f;
     public float _mouseSensY = 100f;
 
-    float _xRotation = 90;
+    float _xRotation = 0;
 
     [SerializeField] float _topClamp = 90f;
     [SerializeField] float _bottomClamp = -90f;
+
+    bool _firstMouseInput = true;
     
     public void RotateCam()
     {
+        if (_firstMouseInput)
+        {
+            _firstMouseInput = false;
+            return;
+        }
+
         float mouseX = Input.GetAxis("Mouse X") * _mouseSensX * 100 * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * _mouseSensY * 100 * Time.deltaTime;
 
