@@ -15965,14 +15965,14 @@ PrefabInstance:
     - {fileID: 4831228508429789391, guid: 209598e244503a0499c9f941a460aba0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2650432514925126482, guid: 209598e244503a0499c9f941a460aba0, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 4820014659805212932, guid: 209598e244503a0499c9f941a460aba0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2017299922}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 209598e244503a0499c9f941a460aba0, type: 3}
 --- !u!4 &722525085 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2650432514925126482, guid: 209598e244503a0499c9f941a460aba0, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4820014659805212932, guid: 209598e244503a0499c9f941a460aba0, type: 3}
   m_PrefabInstance: {fileID: 722525084}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &725361509
@@ -48332,6 +48332,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: InitialMountains
       objectReference: {fileID: 0}
+    - target: {fileID: 595889953035770761, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
+      propertyPath: m_DetailObjectDensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 595889953035770761, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
+      propertyPath: m_DetailObjectDistance
+      value: 114
+      objectReference: {fileID: 0}
+    - target: {fileID: 595889953035770761, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
+      propertyPath: m_TreeMotionVectorModeOverride
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 941353886176774487, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -48343,6 +48355,14 @@ PrefabInstance:
     - target: {fileID: 1778936830561342976, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
       propertyPath: m_Name
       value: InitialMountains
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838645755759876991, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838645755759876991, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.46
       objectReference: {fileID: 0}
     - target: {fileID: 1920681518198750118, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
       propertyPath: m_Name

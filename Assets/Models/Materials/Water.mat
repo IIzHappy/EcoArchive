@@ -48,7 +48,7 @@ Material:
     - _FlowAngle: 150
     - _FlowSpeed: 0.03
     - _Smoothness: 1
-    - _SpecularHeight: 0.05
+    - _SpecularHeight: 0.04
     - _SpecularSize: 25
     - _SpecularSpeed: 2
     - _SpecularThickness: 4
