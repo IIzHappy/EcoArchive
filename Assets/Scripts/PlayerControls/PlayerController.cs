@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     int walkState = 0;
     public bool _sprintDown;
     public bool _slowWalkDown;
-    public int[] _moveSpeed = new int[3];
+    public float[] _moveSpeed = new float[3];
     //0-walk
     //1-sprint
     //2-slow walk
@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     public float _jumpHeight = 3f;
 
     PlayerSound _playerSound;
-    bool _isMoving;
+    bool _movingOnGround;
 
     [Header("Interactables")]
     [SerializeField] GameObject _crosshair;
@@ -60,14 +60,16 @@ public class PlayerController : MonoBehaviour
         if (_sprintDown)
         {
             walkState = 1;
-            return;
         }
         else if (_slowWalkDown)
         {
             walkState = 2;
-            return;
         }
-        walkState = 0;
+        else
+        {
+            walkState = 0;
+        }
+        _playerSound.UpdateWalkState(walkState);
     }
 
     private void Move()
@@ -87,6 +89,17 @@ public class PlayerController : MonoBehaviour
         if (_isGrounded && _velocity.y < 0)
         {
             _velocity.y = -1f;
+        }
+
+        bool movingOnGround = false;
+        if (_isGrounded && (x != 0 || z != 0))
+        {
+            movingOnGround = true;
+        }
+        if (_movingOnGround != movingOnGround)
+        {
+            _movingOnGround = movingOnGround;
+            _playerSound.UpdateMoving(movingOnGround);
         }
     }
 
