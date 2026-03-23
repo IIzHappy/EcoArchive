@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e1b96fbb720169b478a5998527b4e9ec
+guid: 6550241288f07044a8e07e8fc4254f54
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Mountain
-    second: {fileID: 2100000, guid: 61962770e781e24499f75bf67b50a771, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: 1f05d7c462acd974eba6c899016aaa47, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
