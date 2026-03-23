@@ -116,6 +116,9 @@ Material:
     - _GroundBlend: 0.5
     - _GroundBlendHeight: 0
     - _HorizonBlend: 1
+    - _HorizonColourBlend: 0.5
+    - _HorizonSplitRadius: 0.5
+    - _HorizonSunriseRadius: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -124,6 +127,9 @@ Material:
     - _ReceiveShadows: 1
     - _SkyBlend: 0.5
     - _SkyBlendHeight: -0.5
+    - _SkyRotation: 0
+    - _SkyTopBlend: 1
+    - _SkyTopHeight: 0.5
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -135,10 +141,17 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DayColour: {r: 0.45490196, g: 0.7137255, b: 0.8117647, a: 1}
+    - _DayRainyColour: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GroundColour: {r: 0.15241182, g: 0.19891784, b: 0.23584902, a: 1}
-    - _HorizonColour: {r: 0.83971167, g: 0.94953144, b: 0.9622642, a: 1}
-    - _SkyColour: {r: 0.4554112, g: 0.7154989, b: 0.8113208, a: 1}
+    - _HorizonColour: {r: 0.654902, g: 0.7411765, b: 0.7490197, a: 1}
+    - _NightColour: {r: 0, g: 0, b: 0, a: 0}
+    - _SkyColour: {r: 0.41960788, g: 0.65882355, b: 0.74901956, a: 1}
+    - _SkyTopColour: {r: 0.28627452, g: 0.58431375, b: 0.7490196, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SunriseColour: {r: 0.654902, g: 0.7411765, b: 0.7490196, a: 1}
+    - _TestCOlour1: {r: 0.8773585, g: 0, b: 0, a: 0}
+    - _TestCOlour2: {r: 0.11132706, g: 0.8784314, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
