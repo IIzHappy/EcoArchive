@@ -580,12 +580,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4833b1c33b256284f9546fc62bc84784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skyColourIndex: 0
   _skyColours:
   - {fileID: 11400000, guid: dad05db37de636242a6a6fb68a4b1e2b, type: 2}
   - {fileID: 11400000, guid: b4b9d4b03ca68ff48854b123f1d0f648, type: 2}
   - {fileID: 11400000, guid: 3091b4e0577bb4448bdd7809f1937465, type: 2}
   - {fileID: 11400000, guid: 61eb145fbf2096c4da872dc12d8b3da0, type: 2}
-  _skyColourIndex: 0
   _skyboxMaterial: {fileID: 2100000, guid: de5f3f80dfb92954fb95a7e04a2c2fec, type: 2}
 --- !u!1 &45788025
 GameObject:
@@ -10040,15 +10040,19 @@ PrefabInstance:
     - target: {fileID: 5249221830384337513, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
       propertyPath: '_stepSound.Array.data[0]'
       value: 
-      objectReference: {fileID: 8300000, guid: ca7e7cd1db640234dbcf0d79d381379a, type: 3}
+      objectReference: {fileID: 8300000, guid: a0f402f94b38b8144890ce1481c9b5f6, type: 3}
     - target: {fileID: 5249221830384337513, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
       propertyPath: '_stepSound.Array.data[1]'
       value: 
-      objectReference: {fileID: 8300000, guid: 30ba4227d4e04d44dbf57e2f99e3caf5, type: 3}
+      objectReference: {fileID: 8300000, guid: a0f402f94b38b8144890ce1481c9b5f6, type: 3}
     - target: {fileID: 5249221830384337513, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
       propertyPath: '_stepSound.Array.data[2]'
       value: 
-      objectReference: {fileID: 8300000, guid: b6d4f572a40aa0640b1ee399863d8048, type: 3}
+      objectReference: {fileID: 8300000, guid: a0f402f94b38b8144890ce1481c9b5f6, type: 3}
+    - target: {fileID: 5249221830384337513, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
+      propertyPath: '_stepSound.Array.data[3]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5249221830384337513, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
       propertyPath: '_stepInterval.Array.data[0]'
       value: 0.55
