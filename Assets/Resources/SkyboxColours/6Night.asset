@@ -19,5 +19,5 @@ MonoBehaviour:
   _sunrise: {r: 0.5631748, g: 0.5660378, b: 0.32840872, a: 1}
   _sunriseRadius: 0
   _skyBlendHeight: -0.5
-  _starIntensity: 15
+  _starIntensity: 10
   StartTimeSeconds: 360
