@@ -6,6 +6,8 @@ using UnityEngine.UI;
 [ExecuteAlways]
 public class DayNightCycle : MonoBehaviour
 {
+    public bool _running = false;
+
     [SerializeField] float _time;
     [SerializeField] float _startTime;
     public float _secsPerDay = 1440;
@@ -27,16 +29,21 @@ public class DayNightCycle : MonoBehaviour
         _time = _startTime;
         _skyboxController = GetComponent<SkyboxController>();
         _skyboxController._secsPerDay = _secsPerDay;
+        _running = true;
     }
     void Update()
     {
-        UpdateTime();
-        if (_skyboxController != null)
+        if (_running)
         {
-            _skyboxController.UpdateTime(_time);
-        } else
-        {
-            _skyboxController  = GetComponent<SkyboxController>();
+            UpdateTime();
+            if (_skyboxController != null)
+            {
+                _skyboxController.UpdateTime(_time);
+            }
+            else
+            {
+                _skyboxController = GetComponent<SkyboxController>();
+            }
         }
     }
 
