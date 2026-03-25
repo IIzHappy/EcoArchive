@@ -543,16 +543,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d224d2d3c0b654492f2a8f3fa42ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _time: 540
+  _time: 528.5438
+  _startTime: 540
   _secsPerDay: 1440
   _timeText: {fileID: 388588217}
   _timeIcon: {fileID: 1598533591}
   _sunTransform: {fileID: 574156151}
   _sun: {fileID: 574156150}
-  _day: 0
-  _intensity: 1
+  _day: 19
+  _intensity: 0.8354461
   _fogDay: {r: 0.8962264, g: 0.6968107, b: 0.28324133, a: 1}
   _fogNight: {r: 0.056069765, g: 0.25707757, b: 0.7924528, a: 1}
+  _skyboxController: {fileID: 33159275}
 --- !u!4 &33159274
 Transform:
   m_ObjectHideFlags: 0
@@ -580,13 +582,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4833b1c33b256284f9546fc62bc84784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skyColourIndex: 0
   _skyColours:
+  - {fileID: 11400000, guid: 19a961e0f14246a48a6cfa17992ef9d0, type: 2}
+  - {fileID: 11400000, guid: 61eb145fbf2096c4da872dc12d8b3da0, type: 2}
   - {fileID: 11400000, guid: dad05db37de636242a6a6fb68a4b1e2b, type: 2}
+  - {fileID: 11400000, guid: 1af9023de8602a34b952f789a12dc674, type: 2}
   - {fileID: 11400000, guid: b4b9d4b03ca68ff48854b123f1d0f648, type: 2}
   - {fileID: 11400000, guid: 3091b4e0577bb4448bdd7809f1937465, type: 2}
-  - {fileID: 11400000, guid: 61eb145fbf2096c4da872dc12d8b3da0, type: 2}
   _skyboxMaterial: {fileID: 2100000, guid: de5f3f80dfb92954fb95a7e04a2c2fec, type: 2}
+  _secsPerDay: 1440
 --- !u!1 &45788025
 GameObject:
   m_ObjectHideFlags: 0
@@ -3567,7 +3571,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00:00
+  m_text: 08:48
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9812b862aaf4bf84f8e71499b371cb04, type: 2}
   m_sharedMaterial: {fileID: -6561103868516873824, guid: 9812b862aaf4bf84f8e71499b371cb04, type: 2}
@@ -4967,7 +4971,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.8354461
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5029,7 +5033,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574156149}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.35947537, y: 0, z: 0, w: 0.9331546}
   m_LocalPosition: {x: -0.000000022351742, y: 3, z: 0.000000033527613}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11956,7 +11960,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598533589}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.9140274, w: 0.40565252}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfc6e6e5e0f03974ba9ddb1a30ffe5a6, type: 3}
-  m_Name: Night
+  m_Name: 1Day
   m_EditorClassIdentifier: 
-  _skyTop: {r: 0.0016019917, g: 0.004247332, b: 0.03773582, a: 1}
-  _sky: {r: 0.017933426, g: 0.030498408, b: 0.122641504, a: 1}
-  _horizon: {r: 0.023529414, g: 0.03529412, b: 0.121568635, a: 1}
-  _sunrise: {r: 0.023529414, g: 0.03529412, b: 0.121568635, a: 1}
+  _startTime: 15:00
+  _skyTop: {r: 0.28627452, g: 0.58431375, b: 0.7490196, a: 1}
+  _sky: {r: 0.41960788, g: 0.65882355, b: 0.74901956, a: 1}
+  _horizon: {r: 0.654902, g: 0.7411765, b: 0.7490197, a: 1}
+  _sunrise: {r: 0.654902, g: 0.7411765, b: 0.7490196, a: 1}
   _sunriseRadius: 0
+  _skyBlendHeight: -0.5
+  StartTimeSeconds: 1020

@@ -3,9 +3,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[ExecuteAlways]
 public class DayNightCycle : MonoBehaviour
 {
-    public float _time;
+    [SerializeField] float _time;
+    [SerializeField] float _startTime;
     public float _secsPerDay = 1440;
 
     public TMP_Text _timeText;
@@ -18,36 +20,54 @@ public class DayNightCycle : MonoBehaviour
     public Color _fogDay;
     public Color _fogNight;
 
+    public SkyboxController _skyboxController;
+
+    private void Start()
+    {
+        _time = _startTime;
+        _skyboxController = GetComponent<SkyboxController>();
+        _skyboxController._secsPerDay = _secsPerDay;
+    }
     void Update()
     {
         UpdateTime();
+        if (_skyboxController != null)
+        {
+            _skyboxController.UpdateTime(_time);
+        } else
+        {
+            _skyboxController  = GetComponent<SkyboxController>();
+        }
     }
 
     public void UpdateTime()
     {
-        //update time
+        //update time and loop
         _time += Time.deltaTime;
-        _timeText.text = GetTime();
-        //next day
-        if (_time > _secsPerDay)
-        {
-            Debug.Log("next day");
-            _day++;
-            _time = 0;
-        }
-        //light and icon rotation
-        _sunTransform.rotation = Quaternion.Euler(new Vector3((_time-_secsPerDay /4)/_secsPerDay *360, 0, 0));
-        _timeIcon.rectTransform.rotation = Quaternion.Euler(new Vector3(0, 0, (_time - _secsPerDay) / _secsPerDay * 360));
+        _time = Mathf.Repeat(_time, _secsPerDay);
 
-        //day vs night light adjustment i think
-        if (_time < _secsPerDay / 2)
+        //update day after reset
+        if (_time < Time.deltaTime)
         {
-            _intensity = 1 - (_secsPerDay / 2 - _time) / (_secsPerDay / 2);
+            _day++;
+            Debug.Log("next day");
         }
-        else
-        {
-            _intensity = 1 - (_secsPerDay / 2 - _time) / (-_secsPerDay / 2);
-        }
+
+        _timeText.text = GetTime();
+
+        float normalizedTime = _time / _secsPerDay;
+
+        //sun rotation
+        float sunAngle = (normalizedTime - 0.25f) * 360f;
+        _sunTransform.rotation = Quaternion.Euler(sunAngle, 0, 0);
+
+        //UI icon rotation
+        _timeIcon.rectTransform.rotation =
+            Quaternion.Euler(0, 0, normalizedTime * 360f);
+
+        //light intensity
+        _intensity = Mathf.Clamp01(Mathf.Cos(normalizedTime * Mathf.PI * 2) * -0.5f + 0.5f);
+        _sun.intensity = _intensity;
     }
 
     public string GetTime()
