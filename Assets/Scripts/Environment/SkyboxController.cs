@@ -135,6 +135,7 @@ public class SkyboxController : MonoBehaviour
         _skyboxMaterial.SetColor("_SunriseColour", current._sunrise);
         _skyboxMaterial.SetFloat("_HorizonSunriseRadius", current._sunriseRadius);
         _skyboxMaterial.SetFloat("_SkyBlendHeight", current._skyBlendHeight);
+        _skyboxMaterial.SetFloat("_StarIntensity", current._starIntensity);
 
         _skyboxMaterial.SetColor("_SkyTopColour2", next._skyTop);
         _skyboxMaterial.SetColor("_SkyColour2", next._sky);
@@ -142,6 +143,7 @@ public class SkyboxController : MonoBehaviour
         _skyboxMaterial.SetColor("_SunriseColour2", next._sunrise);
         _skyboxMaterial.SetFloat("_HorizonSunriseRadius2", next._sunriseRadius);
         _skyboxMaterial.SetFloat("_SkyBlendHeight2", next._skyBlendHeight);
+        _skyboxMaterial.SetFloat("_StarIntensity2", next._starIntensity);
 
         _skyboxMaterial.SetFloat("_TimeBlend", Mathf.Clamp01(timeBlend));
     }

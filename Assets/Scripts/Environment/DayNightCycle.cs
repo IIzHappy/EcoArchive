@@ -33,24 +33,25 @@ public class DayNightCycle : MonoBehaviour
     }
     void Update()
     {
-        if (_running)
+        UpdateTime();
+
+        if (_skyboxController != null)
         {
-            UpdateTime();
-            if (_skyboxController != null)
-            {
-                _skyboxController.UpdateTime(_time);
-            }
-            else
-            {
-                _skyboxController = GetComponent<SkyboxController>();
-            }
+            _skyboxController.UpdateTime(_time);
+        }
+        else
+        {
+            _skyboxController = GetComponent<SkyboxController>();
         }
     }
 
     public void UpdateTime()
     {
+        if (_running)
+        {
+            _time += Time.deltaTime;
+        }
         //update time and loop
-        _time += Time.deltaTime;
         _time = Mathf.Repeat(_time, _secsPerDay);
 
         //update day after reset

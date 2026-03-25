@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfc6e6e5e0f03974ba9ddb1a30ffe5a6, type: 3}
-  m_Name: 0Day
+  m_Name: 7Sunrise
   m_EditorClassIdentifier: 
-  _startTime: 10:30
-  _skyTop: {r: 0.28627452, g: 0.58431375, b: 0.7490196, a: 1}
-  _sky: {r: 0.41960788, g: 0.65882355, b: 0.74901956, a: 1}
-  _horizon: {r: 0.654902, g: 0.7411765, b: 0.7490197, a: 1}
-  _sunrise: {r: 0.654902, g: 0.7411765, b: 0.7490196, a: 1}
-  _sunriseRadius: 0
-  _skyBlendHeight: -0.5
+  _startTime: 08:00
+  _skyTop: {r: 0.043137256, g: 0.2220803, b: 0.49019608, a: 1}
+  _sky: {r: 0.0465023, g: 0.29156414, b: 0.5188679, a: 1}
+  _horizon: {r: 0.08904416, g: 0.4059045, b: 0.6509434, a: 1}
+  _sunrise: {r: 0.8679245, g: 0.45097175, b: 0.028657902, a: 255}
+  _sunriseRadius: 0.2
+  _skyBlendHeight: 0
   _starIntensity: 0
-  StartTimeSeconds: 540
+  StartTimeSeconds: 480

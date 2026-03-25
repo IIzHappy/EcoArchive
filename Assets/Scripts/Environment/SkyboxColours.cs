@@ -11,5 +11,7 @@ public class SkyboxColours : ScriptableObject
     public float _sunriseRadius = 0.5f;
     public float _skyBlendHeight = -0.5f;
 
+    public float _starIntensity = 0;
+
     [HideInInspector] public float StartTimeSeconds;
 }
