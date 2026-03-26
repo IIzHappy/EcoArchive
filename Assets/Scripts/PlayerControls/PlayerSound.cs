@@ -66,7 +66,6 @@ public class PlayerSound : MonoBehaviour
     void PlayStepSound()
     {
         //randomize sound
-        Debug.Log("step");
         _audioSource.PlayOneShot(_stepSound[_walkState]);
     }
 }

@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
         }
 
         bool movingOnGround = false;
-        if (_isGrounded && (x != 0 || z != 0))
+        if (_isGrounded && (x > 0.2 || x < -0.2 || z > 0.2 || z < -0.2))
         {
             movingOnGround = true;
         }
