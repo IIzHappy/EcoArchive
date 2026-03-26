@@ -103,11 +103,16 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _CloudDensity: 10
+    - _CloudAlpha: 19.03
+    - _CloudAlphaThreshold: -0.03
+    - _CloudDensity: 1.33
+    - _CloudDistortMoveSpeed: 0.001
+    - _CloudDistortRotation: 30
+    - _CloudDistortSize: 150
     - _CloudEdgeStrength: 50
     - _CloudMoveSpeed: 0.002
     - _CloudRotation: 0
-    - _CloudSize: 20
+    - _CloudSize: 100
     - _CouldEdgeColourStrength: 32
     - _Cull: 2
     - _Cutoff: 0.5
@@ -135,7 +140,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _CloudColour: {r: 0.43943578, g: 0.650691, b: 0.745283, a: 0.9215686}
+    - _CloudColour: {r: 0.876691, g: 0.896842, b: 0.9339623, a: 1}
+    - _CloudOffset: {r: 0, g: 1, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
