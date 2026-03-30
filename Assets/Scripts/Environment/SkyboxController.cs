@@ -7,6 +7,7 @@ public class SkyboxController : MonoBehaviour
 {
     public List<SkyboxColours> _skyColours = new List<SkyboxColours>();
     public Material _skyboxMaterial;
+    public Material _cloudMaterial;
 
     public float _secsPerDay = 1440;
 
@@ -136,6 +137,9 @@ public class SkyboxController : MonoBehaviour
         _skyboxMaterial.SetFloat("_HorizonSunriseRadius", current._sunriseRadius);
         _skyboxMaterial.SetFloat("_SkyBlendHeight", current._skyBlendHeight);
         _skyboxMaterial.SetFloat("_StarIntensity", current._starIntensity);
+        _cloudMaterial.SetColor("_CloudColour", current._cloudColour);
+        _cloudMaterial.SetColor("_CloudMidColour", current._cloudMidColour);
+        _cloudMaterial.SetColor("_CloudEdgeColour", current._cloudEdgeColour);
 
         _skyboxMaterial.SetColor("_SkyTopColour2", next._skyTop);
         _skyboxMaterial.SetColor("_SkyColour2", next._sky);
@@ -144,7 +148,11 @@ public class SkyboxController : MonoBehaviour
         _skyboxMaterial.SetFloat("_HorizonSunriseRadius2", next._sunriseRadius);
         _skyboxMaterial.SetFloat("_SkyBlendHeight2", next._skyBlendHeight);
         _skyboxMaterial.SetFloat("_StarIntensity2", next._starIntensity);
+        _cloudMaterial.SetColor("_CloudColour2", next._cloudColour);
+        _cloudMaterial.SetColor("_CloudMidColour2", next._cloudMidColour);
+        _cloudMaterial.SetColor("_CloudEdgeColour2", next._cloudEdgeColour);
 
         _skyboxMaterial.SetFloat("_TimeBlend", Mathf.Clamp01(timeBlend));
+        _cloudMaterial.SetFloat("_TimeBlend", Mathf.Clamp01(timeBlend));
     }
 }

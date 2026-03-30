@@ -13,5 +13,9 @@ public class SkyboxColours : ScriptableObject
 
     public float _starIntensity = 0;
 
+    public Color _cloudColour;
+    public Color _cloudMidColour;
+    public Color _cloudEdgeColour;
+
     [HideInInspector] public float StartTimeSeconds;
 }
