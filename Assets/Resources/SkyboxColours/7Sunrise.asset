@@ -20,7 +20,9 @@ MonoBehaviour:
   _sunriseRadius: 0.2
   _skyBlendHeight: 0
   _starIntensity: 0
-  _cloudColour: {r: 0.9257076, g: 0.9009434, b: 1, a: 0}
-  _cloudMidColour: {r: 0.5061855, g: 0.6853236, b: 0.8584906, a: 0}
-  _cloudEdgeColour: {r: 0.8207547, g: 0.57551837, b: 0.5536223, a: 0}
+  _cloudColour: {r: 1, g: 1, b: 1, a: 0}
+  _cloudMidColour: {r: 0.7877358, g: 0.80268407, b: 1, a: 0}
+  _cloudEdgeColour: {r: 0.41247368, g: 0.28235295, b: 0.5058824, a: 0}
+  _cloudMidSize: 0.4
+  _cloudEdgeSize: 0.08
   StartTimeSeconds: 480

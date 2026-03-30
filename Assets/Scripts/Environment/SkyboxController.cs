@@ -140,6 +140,8 @@ public class SkyboxController : MonoBehaviour
         _cloudMaterial.SetColor("_CloudColour", current._cloudColour);
         _cloudMaterial.SetColor("_CloudMidColour", current._cloudMidColour);
         _cloudMaterial.SetColor("_CloudEdgeColour", current._cloudEdgeColour);
+        _cloudMaterial.SetFloat("_MidColourSize", current._cloudMidSize);
+        _cloudMaterial.SetFloat("_EdgeColourSize", current._cloudEdgeSize);
 
         _skyboxMaterial.SetColor("_SkyTopColour2", next._skyTop);
         _skyboxMaterial.SetColor("_SkyColour2", next._sky);
@@ -151,6 +153,8 @@ public class SkyboxController : MonoBehaviour
         _cloudMaterial.SetColor("_CloudColour2", next._cloudColour);
         _cloudMaterial.SetColor("_CloudMidColour2", next._cloudMidColour);
         _cloudMaterial.SetColor("_CloudEdgeColour2", next._cloudEdgeColour);
+        _cloudMaterial.SetFloat("_MidColourSize2", next._cloudMidSize);
+        _cloudMaterial.SetFloat("_EdgeColourSize2", next._cloudEdgeSize);
 
         _skyboxMaterial.SetFloat("_TimeBlend", Mathf.Clamp01(timeBlend));
         _cloudMaterial.SetFloat("_TimeBlend", Mathf.Clamp01(timeBlend));

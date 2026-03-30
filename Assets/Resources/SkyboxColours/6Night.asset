@@ -23,4 +23,6 @@ MonoBehaviour:
   _cloudColour: {r: 0.3019608, g: 0.3137255, b: 0.3882353, a: 0}
   _cloudMidColour: {r: 0.22516909, g: 0.27336726, b: 0.41509432, a: 0}
   _cloudEdgeColour: {r: 0.55428976, g: 0.6792453, b: 0.6779269, a: 0}
+  _cloudMidSize: 0.4
+  _cloudEdgeSize: 0.6
   StartTimeSeconds: 360

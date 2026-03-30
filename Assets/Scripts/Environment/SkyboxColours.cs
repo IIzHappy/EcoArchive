@@ -16,6 +16,8 @@ public class SkyboxColours : ScriptableObject
     public Color _cloudColour;
     public Color _cloudMidColour;
     public Color _cloudEdgeColour;
+    public float _cloudMidSize = 0.4f;
+    public float _cloudEdgeSize = 0.05f;
 
     [HideInInspector] public float StartTimeSeconds;
 }

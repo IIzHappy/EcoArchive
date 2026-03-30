@@ -121,13 +121,15 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EdgeCOlourSize: 0
-    - _EdgeColourSize: 0.05
+    - _EdgeColourSize: 0.1
+    - _EdgeColourSize2: 0.6
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
     - _MidColourSize: 0.4
+    - _MidColourSize2: 0.4
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -144,11 +146,11 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _CloudColour: {r: 0.9257076, g: 0.9009434, b: 1, a: 0}
+    - _CloudColour: {r: 1, g: 1, b: 1, a: 0}
     - _CloudColour2: {r: 0.8784314, g: 0.8980392, b: 0.93333334, a: 0}
-    - _CloudEdgeColour: {r: 0.8207547, g: 0.57551837, b: 0.5536223, a: 0}
+    - _CloudEdgeColour: {r: 0.42352945, g: 0.62352943, b: 0.6862745, a: 0}
     - _CloudEdgeColour2: {r: 0.6784314, g: 0.7921569, b: 0.83137256, a: 0}
-    - _CloudMidColour: {r: 0.5061855, g: 0.6853236, b: 0.8584906, a: 0}
+    - _CloudMidColour: {r: 0.7783019, g: 0.980104, b: 1, a: 0}
     - _CloudMidColour2: {r: 0.49803922, g: 0.63529414, b: 0.6784314, a: 0}
     - _CloudOffset: {r: 0, g: 0.08, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
