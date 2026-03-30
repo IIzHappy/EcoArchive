@@ -103,7 +103,7 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _CloudAlpha: 19.03
+    - _CloudAlpha: 15
     - _CloudAlphaThreshold: -0.03
     - _CloudDensity: 1.33
     - _CloudDistortMoveSpeed: 0.001
@@ -141,7 +141,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _TimeBlend: 0.4
+    - _TimeBlend: 0.45416096
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
