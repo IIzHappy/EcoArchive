@@ -1,8 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.Rendering.HighDefinition;
-using System.Collections;
+using UnityEngine.SocialPlatforms;
 
 public class CameraController : MonoBehaviour
 {
@@ -20,6 +23,11 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] GameObject flashLight;
 
+    public List<Texture2D> photos = new List<Texture2D>();
+
+    LayerMask ignore;
+    int animal;
+
     public float adjVal;
 
     public int photoNum = 0;
@@ -31,6 +39,8 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
+        ignore = ~LayerMask.GetMask("Lines", "Boxes");
+        animal = LayerMask.NameToLayer("Animal");
         cam.usePhysicalProperties = true;
         DepthOfField test;
 
@@ -83,49 +93,57 @@ public class CameraController : MonoBehaviour
 
             if (Input.anyKey)
             {
-                if (Input.GetKey("c"))
-                {
-                    //Aperture
-                    dof.aperture.value += adjVal;
-                    if (dof.aperture.value > 32)
-                    {
-                        dof.aperture.value = 32;
-                    }
-                    else if (dof.aperture.value < 0.95f)
-                    {
-                        dof.aperture.value = 0.95f;
-                    }
-                }
+                //if (Input.GetKey("c"))
+                //{
+                //    //Aperture
+                //    dof.aperture.value += adjVal;
+                //    if (dof.aperture.value > 32)
+                //    {
+                //        dof.aperture.value = 32;
+                //    }
+                //    else if (dof.aperture.value < 0.95f)
+                //    {
+                //        dof.aperture.value = 0.95f;
+                //    }
+                //}
 
-                else if (Input.GetKey("x"))
-                {
-                    //Shutter Speed
-                    cam.shutterSpeed += adjVal;
-                    if (cam.shutterSpeed > 0.1f)
-                    {
-                        cam.shutterSpeed = 0.1f;
-                    }
-                    VFCam.shutterSpeed = cam.shutterSpeed;
-                }
+                //else if (Input.GetKey("x"))
+                //{
+                //    //Shutter Speed
+                //    cam.shutterSpeed += adjVal;
+                //    if (cam.shutterSpeed > 0.1f)
+                //    {
+                //        cam.shutterSpeed = 0.1f;
+                //    }
+                //    VFCam.shutterSpeed = cam.shutterSpeed;
+                //}
 
-                else if (Input.GetKey("f"))
-                {
-                    //focal length
-                    dof.focalLength.value += adjVal;
-                    if (dof.focalLength.value > 135f)
-                    {
-                        dof.focalLength.value = 135;
-                    }
-                    else if (dof.focalLength.value < 35f)
-                    {
-                        dof.focalLength.value = 35;
-                    }
-                }
+                //if (Input.GetKey("f"))
+                //{
+                //    //focal length
+                //    dof.focalLength.value += adjVal;
+                //    if (dof.focalLength.value > 70f)
+                //    {
+                //        dof.focalLength.value = 70;
+                //    }
+                //    else if (dof.focalLength.value < 5f)
+                //    {
+                //        dof.focalLength.value = 5;
+                //    }
+                //}
 
-                else if (Input.GetKey("r"))
+                if (Input.GetKey("f"))
                 {
                     //focal distance
-                    dof.focusDistance.value += adjVal;
+                    dof.focusDistance.value += adjVal / 5f;
+                    if (dof.focusDistance.value > 1.8f)
+                    {
+                        dof.focusDistance.value = 1.8f;
+                    }
+                    else if (dof.focusDistance.value < 1.4f)
+                    {
+                        dof.focusDistance.value = 1.4f;
+                    }
                 }
 
                 else if (Input.GetKeyDown("z"))
@@ -133,9 +151,29 @@ public class CameraController : MonoBehaviour
                     flash = !flash;
                 }
 
+                else if (Input.GetKeyDown("x"))
+                {
+                    for (int i = 0; i < 240; i++)
+                    {
+                        for (int j = 0; j < 135; j++)
+                        {
+                            RaycastHit check;
+                            Ray temp = cam.ScreenPointToRay(new Vector3(0 + (i * 8), 0 + (j * 8), 0));
+                            Physics.Raycast(temp, out check, Mathf.Infinity, ignore);
+                            if (check.collider != null)
+                            {
+                                if (check.collider.gameObject.layer == animal)
+                                {
+                                    dof.focusDistance.value = check.distance * 20f;
+                                }
+                            }
+                        }
+                    }
+                }
+
                 else
                 {
-                    cam.focalLength +=  adjVal * 10f;
+                    cam.focalLength += adjVal * 10f;
                     if (cam.focalLength > 100f)
                     {
                         cam.focalLength = 100f;
@@ -165,19 +203,190 @@ public class CameraController : MonoBehaviour
         VFCam.targetTexture = viewFinder;
         Destroy(rt);
         yield return new WaitForEndOfFrame();
-        byte[] bytes = screenShot.EncodeToPNG();
+        //byte[] bytes = screenShot.EncodeToPNG();
         string filename = string.Format(Application.dataPath + "/Player Images/" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + "." + photoNum + ".png");
+        screenShot.name = filename;
         yield return new WaitForEndOfFrame();
-        System.IO.File.WriteAllBytes(filename, bytes);
+        //System.IO.File.WriteAllBytes(filename, bytes);
         screenShot.Apply();
+        photos.Add(screenShot);
         Photo photo = ScriptableObject.CreateInstance<Photo>();
         photo._photo = Sprite.Create(screenShot, new Rect(0, 0, screenShot.width, screenShot.height), new Vector2(0.5f, 0.5f), 100f);
-        photo.name = System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
-        //add score to the photo
-        Collection.Instance.AddPhoto(photo);
+        StartCoroutine(ScorePhoto(photo));
         Debug.Log(string.Format("Took screenshot to: {0}", filename));
         yield return new WaitForSeconds(0.5f);
         flashLight.SetActive(false);
         yield return null;
+    }
+
+    private IEnumerator ScorePhoto(Photo photo)
+    {
+        GameObject[] subjects = new GameObject[10];
+        int subjectsNum = 0;
+        float score = 0;
+        float percent = 0;
+        float act = 1;
+        float frameMult = 1;
+        float focus = 0.15f;
+        LayerMask boxes = ~LayerMask.GetMask("Lines");
+        LayerMask lines = ~LayerMask.GetMask("Boxes");
+
+        for (int i = 0; i < 240; i++)
+        {
+            for (int j = 0; j < 135; j++)
+            {
+                RaycastHit check;
+                Ray temp = cam.ScreenPointToRay(new Vector3(0 + (i*8), 0 + (j*8), 0));
+                Physics.Raycast(temp, out check, Mathf.Infinity, ignore);
+                if (check.collider != null)
+                {
+                    if (check.collider.gameObject.layer == animal)
+                    {
+                        percent++;
+                        if (!subjects.Contains(check.collider.gameObject) && subjects.Contains(null))
+                        {
+                            subjects[subjectsNum] = check.collider.gameObject;
+                            subjectsNum++;
+                        }
+                    }
+                }
+            }
+            if (i%80 == 0)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
+        foreach(GameObject cur in subjects)
+        {
+            if (cur != null)
+            {
+                float tempAct = 1f;
+                AnimalNavBase navBase = cur.GetComponent(typeof(AnimalNavBase)) as AnimalNavBase;
+                switch (navBase.CurrentState)
+                {
+                    case AnimalNavBase.AnimalState.Idle:
+                        tempAct = 1;
+                        break;
+
+                    case AnimalNavBase.AnimalState.Roaming:
+                        tempAct = .95f;
+                        break;
+
+                    case AnimalNavBase.AnimalState.Chasing:
+                        tempAct = .75f;
+                        break;
+
+                    case AnimalNavBase.AnimalState.Fleeing:
+                        tempAct = .75f;
+                        break;
+
+                    case AnimalNavBase.AnimalState.Unique:
+                        tempAct = .5f;
+                        break;
+
+                    case AnimalNavBase.AnimalState.Resting:
+                        tempAct = .6f;
+                        break;
+
+                    default:
+                        tempAct = 1f;
+                        break;
+                }
+                if (tempAct < act)
+                {
+                    act = tempAct;
+                }
+
+                RaycastHit hitChest;
+                RaycastHit hitHind;
+                RaycastHit hitHeadL;
+                RaycastHit hitHeadB;
+                Ray frameChest = new Ray(cur.transform.Find("Chest").transform.position, (cam.transform.position - cur.transform.Find("Chest").transform.position));
+                Ray frameHind = new Ray(cur.transform.Find("Hind").transform.position, (cam.transform.position - cur.transform.Find("Hind").transform.position).normalized);
+                Ray frameHead = new Ray(cur.transform.Find("Head").transform.position, (cam.transform.position - cur.transform.Find("Head").transform.position).normalized);
+                Physics.Raycast(frameChest, out hitChest, Mathf.Infinity, lines);
+                Physics.Raycast(frameHind, out hitHind, Mathf.Infinity, lines);
+                Physics.Raycast(frameHead, out hitHeadL, Mathf.Infinity, lines);
+                Physics.Raycast(frameHead, out hitHeadB, Mathf.Infinity, boxes);
+                GameObject thirdChest = null;
+                GameObject thirdHind = null;
+                GameObject thirdHeadL = null;
+                GameObject thirdHeadB = null;
+                if (hitChest.collider.gameObject != null) thirdChest = hitChest.collider.gameObject;
+                if (hitHind.collider.gameObject != null) thirdHind = hitHind.collider.gameObject;
+                if (hitHeadL.collider.gameObject != null) thirdHeadL = hitHeadL.collider.gameObject;
+                if (hitHeadB.collider.gameObject != null) thirdHeadB = hitHeadB.collider.gameObject;
+
+                if (thirdChest.name == "R 3 Line" || thirdChest.name == "L 3 Line")
+                {
+                    if (thirdHeadB.name == "C 3 Line")
+                    {
+                        if (frameMult < 2.5f) frameMult = 2.5f;
+                    }
+                }
+
+                if (thirdChest.name == "R 3 Line")
+                {
+                    if (thirdHind.name == "L 3 Line")
+                    {
+                        if (frameMult < 2f) frameMult = 2f;
+                    }
+                }
+                else if (thirdChest.name == "L 3 Line")
+                {
+                    if (thirdHind.name == "R 3 Line")
+                    {
+                        if (frameMult < 2f) frameMult = 2f;
+                    }
+                }
+
+                if (thirdChest.name == "R 3 Line" && thirdHind.name == "R 3 Line" && thirdHeadL.name == "R 3 Line")
+                {
+                    if (frameMult < 3f) frameMult = 3f;
+                }
+                else if (thirdChest.name == "R 3 Line" && thirdHind.name == "R 3 Line" && thirdHeadL.name == "R 3 Line")
+                {
+                    if (frameMult < 3f) frameMult = 3f;
+                }
+
+                Debug.Log(hitChest.distance + " + " + dof.focusDistance);
+                if (hitChest.distance >= 20f * dof.focusDistance.GetValue<float>() && focus != 1)
+                {
+                    focus = 1;
+                }
+            }
+        }
+
+        float diff;
+        percent = percent / 324;
+        if (Mathf.Abs(percent - 70) < Mathf.Abs(percent - 40))
+        {
+            diff = Mathf.Abs(percent - 70f);
+            Debug.Log(diff + " Closer 70");
+        }
+        else
+        {
+            diff = Mathf.Abs(percent - 40);
+            Debug.Log(diff + " Closer 40");
+        }
+
+        //Final score application
+        Debug.Log("(1000 * " + frameMult + " * " + focus + ") - (" + diff + " * 25 * " + act + " * " + frameMult + ")");
+        score = ((1000 * frameMult * focus) - (diff * 25 * act * frameMult));
+        photo._score = score; 
+        photo.name = (photo._score.ToString() + " pts.");
+        Collection.Instance.AddPhoto(photo);
+        Debug.Log(photo.name);
+    }
+
+    public void SavePhotos()
+    {
+        foreach (Texture2D cur in photos)
+        {
+            byte[] bytes = cur.EncodeToPNG();
+            System.IO.File.WriteAllBytes(cur.name, bytes);
+        }
+        photos.Clear();
     }
 }

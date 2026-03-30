@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &430170159151650820
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 225.1901
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 102.38801
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -366.26596
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+      propertyPath: m_Name
+      value: Catfish
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3262029475134174288}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3072323009455102289}
+  m_SourcePrefab: {fileID: 100100000, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+--- !u!1 &664611532649801045 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+  m_PrefabInstance: {fileID: 430170159151650820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &3262029475134174288
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664611532649801045}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.08005832
+  m_Height: 0.92394567
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.0030937195, z: -0.03359759}
+--- !u!114 &3072323009455102289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664611532649801045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_LoopMode: 1
+  m_Method: 0
+  m_Duration: 60
+  m_MaxSpeed: 10
+  m_EasingMode: 0
+  m_AlignmentMode: 1
+  m_ObjectForwardAxis: 2
+  m_ObjectUpAxis: 1
+  m_StartOffset: 0
