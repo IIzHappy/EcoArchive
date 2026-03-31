@@ -7,7 +7,7 @@ using static UnityEngine.GraphicsBuffer;
 public class Save
 {
     public bool[] _animals;
-    //public List<Bug> _bugs = new List<Bug>();
-    //public List<Bone> _bones = new List<Bone>();
+    public int[] _bugs;
+    public int[] _bones;
     public List<LoadablePhoto> _loadablePhotos = new List<LoadablePhoto>();
 }

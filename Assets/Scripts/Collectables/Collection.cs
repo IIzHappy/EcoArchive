@@ -15,7 +15,9 @@ public class Collection : MonoBehaviour
     [SerializeField] Dictionary<AnimalAsset, GameObject> _animals = new Dictionary<AnimalAsset, GameObject>();
     private bool[] _animalsFound;
     [SerializeField] Dictionary<Bug, GameObject> _bugs = new Dictionary<Bug, GameObject>();
+    private int[] _bugsFound;
     [SerializeField] Dictionary<Bone, GameObject> _bones = new Dictionary<Bone, GameObject>();
+    private int[] _bonesFound;
 
     [SerializeField] GameObject _photoIcons;
     [SerializeField] GameObject _animalIcons;
@@ -37,6 +39,8 @@ public class Collection : MonoBehaviour
     private void Start()
     {
         _animalsFound = new bool[_animals.Count()];
+        _bugsFound = new int[_bugs.Count()];
+        _bonesFound = new int[_bones.Count()];
         LoadCollection();
     }
 
@@ -58,14 +62,20 @@ public class Collection : MonoBehaviour
                     animal._collected = true;
                 }
             }
-            //foreach (Bug bug in save._bugs)
-            //{
-            //    _bugs.Add(bug, null);
-            //}
-            //foreach (Bone bone in save._bones)
-            //{
-            //    _bones.Add(bone, null);
-            //}
+            foreach (Bug bug in _bugs.Keys)
+            {
+                if (_bugsFound[i] > 0)
+                {
+                    bug._numCollected = _bugsFound[i];
+                }
+            }
+            foreach (Bone bone in _bones.Keys)
+            {
+                if (_bonesFound[i] > 0)
+                {
+                    bone._numCollected = _bonesFound[i];
+                }
+            }
             foreach (LoadablePhoto loadablePhoto in save._loadablePhotos)
             {
                 Photo photo = ScriptableObject.CreateInstance<Photo>();
@@ -213,6 +223,16 @@ public class Collection : MonoBehaviour
 
     public void AddBug(Bug bug)
     {
+        int i = 0;
+        foreach (Bug key in _bugs.Keys)
+        {
+            if (key == bug)
+            {
+                _bugsFound[i] += 1;
+                return;
+            }
+            i++;
+        }
         bug._numCollected++;
         _bugs[bug].GetComponent<Image>().sprite = bug._icon;
         _bugs[bug].GetComponentInChildren<TMP_Text>().text = bug._name + "-" + bug._numCollected;
@@ -221,6 +241,16 @@ public class Collection : MonoBehaviour
 
     public void AddBone(Bone bone)
     {
+        int i = 0;
+        foreach (Bone key in _bones.Keys)
+        {
+            if (key == bone)
+            {
+                _bonesFound[i] += 1;
+                return;
+            }
+            i++;
+        }
         bone._numCollected++;
         _bones[bone].GetComponent<Image>().sprite = bone._icon;
         _bones[bone].GetComponentInChildren<TMP_Text>().text = bone._name + " - " + bone._numCollected;
@@ -244,23 +274,13 @@ public class Collection : MonoBehaviour
     {
         return _animalsFound;
     }
-    public List<Bug> GetBugs()
+    public int[] GetBugs()
     {
-        List<Bug> bugs = new List<Bug>();
-        foreach (Bug bug in _bugs.Keys)
-        {
-            bugs.Add(bug);
-        }
-        return bugs;
+        return _bugsFound;
     }
-    public List<Bone> GetBones()
+    public int[] GetBones()
     {
-        List<Bone> bones = new List<Bone>();
-        foreach (Bone bone in _bones.Keys)
-        {
-            bones.Add(bone);
-        }
-        return bones;
+        return _bonesFound;
     }
 
     public List<LoadablePhoto> GetPhotos()

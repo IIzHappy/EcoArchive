@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 
-[Serializable]
 [CreateAssetMenu(fileName = "Bone", menuName = "Scriptable Objects/Bone")]
 public class Bone : ScriptableObject
 {

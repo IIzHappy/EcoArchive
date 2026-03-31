@@ -21,8 +21,8 @@ public class GameSave : MonoBehaviour
     {
         Save save = new Save();
         save._animals = _collection.GetAnimals();
-        //save._bugs = _collection.GetBugs();
-        //save._bones = _collection.GetBones();
+        save._bugs = _collection.GetBugs();
+        save._bones = _collection.GetBones();
         save._loadablePhotos = Collection.Instance.GetPhotos();
 
         return save;
