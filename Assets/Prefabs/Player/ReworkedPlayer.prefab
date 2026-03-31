@@ -722,8 +722,8 @@ Transform:
   m_GameObject: {fileID: 2628383737624178864}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.21, y: -0.225, z: -1.63}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.21, y: -0.402, z: -1.63}
+  m_LocalScale: {x: 1, y: 0.82491815, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8795175944768437399}
@@ -770,9 +770,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerController: {fileID: 4761842791530842888}
+  _canControl: 1
+  _rotateCam: {fileID: 0}
   _sprintDown: 0
   _slowWalkDown: 0
-  _moveSpeed: 080000000f00000002000000
+  _moveSpeed: []
   _gravity: -9.81
   _groundCheck: {fileID: 7382506997491705924}
   _groundedThreshold: 0.2
@@ -780,7 +782,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _jumpHeight: 3
-  _playerCam: {fileID: 6142840780637692878}
   _crosshair: {fileID: 0}
   _interactDistance: 3
 --- !u!114 &5249221830384337513
@@ -795,6 +796,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60439dbd5f8398a498e8b5deba0f4b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isMoving: 0
+  _stepInterval:
+  - 0.8
+  - 0.6
+  - 1.2
+  _stepSound: []
+  _audioSource: {fileID: 0}
 --- !u!114 &1707931490052382207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,7 +847,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerController: {fileID: 8327984455575829167}
   _uiManager: {fileID: 0}
-  _playerActive: 1
 --- !u!1 &3277740836860323909
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +912,7 @@ MonoBehaviour:
   viewFinder: {fileID: 8400000, guid: 31fa2be1e5377b94c9486de9b28247dd, type: 2}
   flashLight: {fileID: 8812314934545369125}
   photos: []
+  save: 
   adjVal: 0
   photoNum: 0
   VF: 0
