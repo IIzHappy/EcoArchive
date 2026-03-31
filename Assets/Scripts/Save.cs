@@ -6,7 +6,8 @@ using static UnityEngine.GraphicsBuffer;
 [System.Serializable]
 public class Save
 {
-    public List<AnimalAsset> _animals = new List<AnimalAsset>();
-    public List<Bug> _bugs = new List<Bug>();
-    public List<Bone> _bones = new List<Bone>();
+    public bool[] _animals;
+    //public List<Bug> _bugs = new List<Bug>();
+    //public List<Bone> _bones = new List<Bone>();
+    public List<LoadablePhoto> _loadablePhotos = new List<LoadablePhoto>();
 }

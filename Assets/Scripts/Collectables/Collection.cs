@@ -11,7 +11,9 @@ public class Collection : MonoBehaviour
     public static Collection Instance { get; private set; }
 
     public List<Photo> _photos;
+    public List<LoadablePhoto> _loadablePhotos;
     [SerializeField] Dictionary<AnimalAsset, GameObject> _animals = new Dictionary<AnimalAsset, GameObject>();
+    private bool[] _animalsFound;
     [SerializeField] Dictionary<Bug, GameObject> _bugs = new Dictionary<Bug, GameObject>();
     [SerializeField] Dictionary<Bone, GameObject> _bones = new Dictionary<Bone, GameObject>();
 
@@ -34,6 +36,7 @@ public class Collection : MonoBehaviour
     }
     private void Start()
     {
+        _animalsFound = new bool[_animals.Count()];
         LoadCollection();
     }
 
@@ -46,17 +49,31 @@ public class Collection : MonoBehaviour
             Save save = (Save)bf.Deserialize(file);
             file.Close();
 
-            foreach (AnimalAsset animal in save._animals)
+            _animalsFound = save._animals;
+            int i = 0;
+            foreach (AnimalAsset animal in _animals.Keys)
             {
-                _animals.Add(animal, null);
+                if (_animalsFound[i])
+                {
+                    animal._collected = true;
+                }
             }
-            foreach (Bug bug in save._bugs)
+            //foreach (Bug bug in save._bugs)
+            //{
+            //    _bugs.Add(bug, null);
+            //}
+            //foreach (Bone bone in save._bones)
+            //{
+            //    _bones.Add(bone, null);
+            //}
+            foreach (LoadablePhoto loadablePhoto in save._loadablePhotos)
             {
-                _bugs.Add(bug, null);
-            }
-            foreach (Bone bone in save._bones)
-            {
-                _bones.Add(bone, null);
+                Photo photo = ScriptableObject.CreateInstance<Photo>();
+                photo.name = loadablePhoto._photoName;
+                photo._score = loadablePhoto._score;
+                Texture2D image = LoadTexture(loadablePhoto._filePath);
+                photo._photo = Sprite.Create(image, new Rect(0, 0, image.width, image.height), new Vector2(0.5f, 0.5f), 100f);
+                AddPhoto(photo);
             }
             InstantiateAnimals();
             InstantiateBugs();
@@ -90,6 +107,20 @@ public class Collection : MonoBehaviour
 
             Debug.Log("New game loaded.");
         }
+    }
+
+    public Texture2D LoadTexture(string FilePath)
+    {
+        Texture2D Tex2D;
+        byte[] FileData;
+
+        if (File.Exists(FilePath))
+        {
+            FileData = File.ReadAllBytes(FilePath);
+            Tex2D = new Texture2D(2, 2);
+            if (Tex2D.LoadImage(FileData))  return Tex2D;
+        }
+        return null;
     }
 
     public void ResetCollection()
@@ -164,6 +195,16 @@ public class Collection : MonoBehaviour
     public void FoundAnimal(AnimalAsset animal)
     {
         if (animal._collected) return;
+        int i = 0;
+        foreach (AnimalAsset key in _animals.Keys)
+        {
+            if (key == animal)
+            {
+                _animalsFound[i] = true;
+                return;
+            }
+            i++;
+        }
         animal._collected = true;
         _animals[animal].GetComponent<Image>().sprite = animal._icon;
         _animals[animal].GetComponentInChildren<TMP_Text>().text = animal._name;
@@ -194,14 +235,14 @@ public class Collection : MonoBehaviour
         _newPhoto.transform.GetComponentInChildren<TMP_Text>().text = newPhoto.name;
     }
 
-    public List<AnimalAsset> GetAnimals()
+    public void AddLoadablePhoto(LoadablePhoto newLoadablePhoto)
     {
-        List<AnimalAsset> animals = new List<AnimalAsset>();
-        foreach (AnimalAsset animal in _animals.Keys)
-        {
-            animals.Add(animal);
-        }
-        return animals;
+        _loadablePhotos.Add(newLoadablePhoto);
+    }
+
+    public bool[] GetAnimals()
+    {
+        return _animalsFound;
     }
     public List<Bug> GetBugs()
     {
@@ -220,5 +261,10 @@ public class Collection : MonoBehaviour
             bones.Add(bone);
         }
         return bones;
+    }
+
+    public List<LoadablePhoto> GetPhotos()
+    {
+        return _loadablePhotos;
     }
 }

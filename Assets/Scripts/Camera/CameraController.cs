@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.SocialPlatforms;
+using System.IO;
 
 public class CameraController : MonoBehaviour
 {
@@ -24,6 +24,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] GameObject flashLight;
 
     public List<Texture2D> photos = new List<Texture2D>();
+    public List<bool> save = new List<bool>();
 
     LayerMask ignore;
     int animal;
@@ -31,6 +32,7 @@ public class CameraController : MonoBehaviour
     public float adjVal;
 
     public int photoNum = 0;
+    private string filename;
 
     int resWidth, resHeight;
 
@@ -50,6 +52,10 @@ public class CameraController : MonoBehaviour
         if (volumeProfile.TryGet<DepthOfField>(out test))
         {
             dof = test;
+        }
+        if (!Directory.Exists(Application.persistentDataPath + "/Player Images/"))
+        {
+            Directory.CreateDirectory(Application.persistentDataPath + "/Player Images/");
         }
     }
 
@@ -204,12 +210,13 @@ public class CameraController : MonoBehaviour
         Destroy(rt);
         yield return new WaitForEndOfFrame();
         //byte[] bytes = screenShot.EncodeToPNG();
-        string filename = string.Format(Application.dataPath + "/Player Images/" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + "." + photoNum + ".png");
+        filename = string.Format(Application.persistentDataPath + "/Player Images/" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + "." + photoNum + ".png");
         screenShot.name = filename;
         yield return new WaitForEndOfFrame();
         //System.IO.File.WriteAllBytes(filename, bytes);
         screenShot.Apply();
         photos.Add(screenShot);
+        save.Add(true);
         Photo photo = ScriptableObject.CreateInstance<Photo>();
         photo._photo = Sprite.Create(screenShot, new Rect(0, 0, screenShot.width, screenShot.height), new Vector2(0.5f, 0.5f), 100f);
         StartCoroutine(ScorePhoto(photo));
@@ -372,21 +379,27 @@ public class CameraController : MonoBehaviour
         }
 
         //Final score application
-        Debug.Log("(1000 * " + frameMult + " * " + focus + ") - (" + diff + " * 25 * " + act + " * " + frameMult + ")");
-        score = ((1000 * frameMult * focus) - (diff * 25 * act * frameMult));
+        Debug.Log("(1000 * " + frameMult + " * " + focus + ") - (" + diff + " * 25 * " + act + " * " + frameMult + " * " + focus + ")");
+        score = ((1000 * frameMult * focus) - (diff * 25 * act * frameMult * focus));
         photo._score = score; 
         photo.name = (photo._score.ToString() + " pts.");
+        LoadablePhoto loadablePhoto = new LoadablePhoto(photo.name, filename, photo._score);
+        Collection.Instance.AddLoadablePhoto(loadablePhoto);
         Collection.Instance.AddPhoto(photo);
         Debug.Log(photo.name);
     }
 
     public void SavePhotos()
     {
-        foreach (Texture2D cur in photos)
+        for (int i = 0; i < photos.Count(); i++)
         {
-            byte[] bytes = cur.EncodeToPNG();
-            System.IO.File.WriteAllBytes(cur.name, bytes);
+            if (save[i])
+            {
+                byte[] bytes = photos[i].EncodeToPNG();
+                System.IO.File.WriteAllBytes(photos[i].name, bytes);
+            }
         }
         photos.Clear();
+        save.Clear();
     }
 }

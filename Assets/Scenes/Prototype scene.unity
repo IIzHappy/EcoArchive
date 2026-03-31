@@ -692,6 +692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4833b1c33b256284f9546fc62bc84784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skyColourIndex: 0
   _skyColours:
   - {fileID: 11400000, guid: d7cff81b822286540b3cfa61c5e51ab3, type: 2}
   - {fileID: 11400000, guid: 19a961e0f14246a48a6cfa17992ef9d0, type: 2}
@@ -700,7 +701,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1af9023de8602a34b952f789a12dc674, type: 2}
   - {fileID: 11400000, guid: b4b9d4b03ca68ff48854b123f1d0f648, type: 2}
   - {fileID: 11400000, guid: 3091b4e0577bb4448bdd7809f1937465, type: 2}
-  - {fileID: 11400000, guid: 3210a8fcde5b37745917074a1a6606c8, type: 2}
+  - {fileID: 11400000, guid: 61eb145fbf2096c4da872dc12d8b3da0, type: 2}
   _skyboxMaterial: {fileID: 2100000, guid: de5f3f80dfb92954fb95a7e04a2c2fec, type: 2}
   _cloudMaterial: {fileID: 2100000, guid: b3c7c41a90dc23444b30725a68453a68, type: 2}
   _secsPerDay: 1440
@@ -4811,6 +4812,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 769906019}
+        m_TargetAssemblyTypeName: GameSave, Assembly-CSharp
+        m_MethodName: SaveGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &554526126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6857,6 +6870,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 176480440126308335, guid: 5810e45e6ce883c4ebf9b33e27b17e08, type: 3}
   m_PrefabInstance: {fileID: 1116003113}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &769906018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2628383737624178864, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
+  m_PrefabInstance: {fileID: 1235809836}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &769906019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769906018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a164114c27ce3c48bc492520f929d14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &774172347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10261,10 +10291,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3413655495203844023, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
       insertIndex: 3
       addedObject: {fileID: 1911811487}
-    - targetCorrespondingSourceObject: {fileID: 3413655495203844023, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2628383737624178864, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 783186635}
-    m_AddedComponents: []
+      addedObject: {fileID: 769906019}
   m_SourcePrefab: {fileID: 100100000, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
 --- !u!114 &1235809837 stripped
 MonoBehaviour:
@@ -15798,6 +15828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _photos: []
+  _loadablePhotos: []
   _photoIcons: {fileID: 4967119482840082624}
   _animalIcons: {fileID: 481310342563272225}
   _bugIcons: {fileID: 6867721809325592140}

@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
@@ -5,8 +6,6 @@ using UnityEngine;
 public class GameSave : MonoBehaviour
 {
     Collection _collection;
-
-    
 
     public void SaveGame()
     {
@@ -22,8 +21,9 @@ public class GameSave : MonoBehaviour
     {
         Save save = new Save();
         save._animals = _collection.GetAnimals();
-        save._bugs = _collection.GetBugs();
-        save._bones = _collection.GetBones();
+        //save._bugs = _collection.GetBugs();
+        //save._bones = _collection.GetBones();
+        save._loadablePhotos = Collection.Instance.GetPhotos();
 
         return save;
     }

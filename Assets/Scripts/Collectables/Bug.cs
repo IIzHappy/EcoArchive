@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 
+[Serializable]
 [CreateAssetMenu(fileName = "Bug", menuName = "Scriptable Objects/Bug")]
 public class Bug : ScriptableObject
 {
