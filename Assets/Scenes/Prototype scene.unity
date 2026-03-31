@@ -652,8 +652,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d224d2d3c0b654492f2a8f3fa42ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _running: 0
-  _time: 630
+  _running: 1
+  _time: 574.63293
   _startTime: 540
   _secsPerDay: 1440
   _timeText: {fileID: 388588217}
@@ -661,7 +661,7 @@ MonoBehaviour:
   _sunTransform: {fileID: 574156151}
   _sun: {fileID: 574156150}
   _day: 27
-  _intensity: 0.9619398
+  _intensity: 0.9027482
   _fogDay: {r: 0.8962264, g: 0.6968107, b: 0.28324133, a: 1}
   _fogNight: {r: 0.056069765, g: 0.25707757, b: 0.7924528, a: 1}
   _skyboxController: {fileID: 33159275}
@@ -692,16 +692,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4833b1c33b256284f9546fc62bc84784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skyColourIndex: 0
   _skyColours:
   - {fileID: 11400000, guid: d7cff81b822286540b3cfa61c5e51ab3, type: 2}
   - {fileID: 11400000, guid: 19a961e0f14246a48a6cfa17992ef9d0, type: 2}
+  - {fileID: 11400000, guid: 61eb145fbf2096c4da872dc12d8b3da0, type: 2}
   - {fileID: 11400000, guid: 61eb145fbf2096c4da872dc12d8b3da0, type: 2}
   - {fileID: 11400000, guid: dad05db37de636242a6a6fb68a4b1e2b, type: 2}
   - {fileID: 11400000, guid: 1af9023de8602a34b952f789a12dc674, type: 2}
   - {fileID: 11400000, guid: b4b9d4b03ca68ff48854b123f1d0f648, type: 2}
   - {fileID: 11400000, guid: 3091b4e0577bb4448bdd7809f1937465, type: 2}
-  - {fileID: 11400000, guid: 61eb145fbf2096c4da872dc12d8b3da0, type: 2}
   _skyboxMaterial: {fileID: 2100000, guid: de5f3f80dfb92954fb95a7e04a2c2fec, type: 2}
   _cloudMaterial: {fileID: 2100000, guid: b3c7c41a90dc23444b30725a68453a68, type: 2}
   _secsPerDay: 1440
@@ -3685,7 +3684,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10:30
+  m_text: 09:34
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9812b862aaf4bf84f8e71499b371cb04, type: 2}
   m_sharedMaterial: {fileID: -6561103868516873824, guid: 9812b862aaf4bf84f8e71499b371cb04, type: 2}
@@ -5097,7 +5096,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.9619398
+  m_Intensity: 0.9027482
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5159,7 +5158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574156149}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.55557024, y: 0, z: 0, w: 0.8314696}
+  m_LocalRotation: {x: 0.45133108, y: 0, z: 0, w: 0.8923566}
   m_LocalPosition: {x: -0.000000022351742, y: 3, z: 0.000000033527613}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7129,7 +7128,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 146980331}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &783186636
 MonoBehaviour:
@@ -10776,6 +10775,14 @@ PrefabInstance:
       propertyPath: m_DrawInstanced
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5333432280334292226, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5333432280334292226, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.37
+      objectReference: {fileID: 0}
     - target: {fileID: 5996304612046093034, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
       propertyPath: m_Name
       value: Environment
@@ -10827,6 +10834,10 @@ PrefabInstance:
     - target: {fileID: 7247036679396143306, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
       propertyPath: m_LocalScale.z
       value: 29.75846
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621961539746582254, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -12151,7 +12162,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598533589}
-  m_LocalRotation: {x: -0, y: -0, z: 0.9807853, w: 0.19509037}
+  m_LocalRotation: {x: -0, y: -0, z: 0.9501307, w: 0.31185213}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17706,3 +17717,4 @@ SceneRoots:
   - {fileID: 670004297}
   - {fileID: 2016006027}
   - {fileID: 15650988}
+  - {fileID: 783186635}
