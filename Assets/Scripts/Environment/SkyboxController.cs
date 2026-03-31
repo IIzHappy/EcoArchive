@@ -67,7 +67,7 @@ public class SkyboxController : MonoBehaviour
 
         float blend = GetBlend(time, startTime, endTime, _secsPerDay);
 
-        ChangeColours(prev, next, blend);
+        ChangeColours(prev, next, blend, time);
     }
 
     int GetFirstIndex()
@@ -128,7 +128,7 @@ public class SkyboxController : MonoBehaviour
         return (float)TimeSpan.ParseExact(timeString, @"hh\:mm", null).TotalMinutes;
     }
 
-    void ChangeColours(SkyboxColours current, SkyboxColours next, float timeBlend)
+    void ChangeColours(SkyboxColours current, SkyboxColours next, float timeBlend, float time)
     {
         _skyboxMaterial.SetColor("_SkyTopColour", current._skyTop);
         _skyboxMaterial.SetColor("_SkyColour", current._sky);
@@ -155,6 +155,9 @@ public class SkyboxController : MonoBehaviour
         _cloudMaterial.SetColor("_CloudEdgeColour2", next._cloudEdgeColour);
         _cloudMaterial.SetFloat("_MidColourSize2", next._cloudMidSize);
         _cloudMaterial.SetFloat("_EdgeColourSize2", next._cloudEdgeSize);
+
+        float startTime = time < 720 ? time + 1440 : time;
+        _skyboxMaterial.SetFloat("_StarTime", time);
 
         _skyboxMaterial.SetFloat("_TimeBlend", Mathf.Clamp01(timeBlend));
         _cloudMaterial.SetFloat("_TimeBlend", Mathf.Clamp01(timeBlend));
