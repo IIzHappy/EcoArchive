@@ -3,22 +3,7 @@ guid: 672d90d5bb2ef29489dffe6a3d4cb71c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SalmonEyes
-    second: {fileID: 2100000, guid: 6f2e33a15c6f5f84b9f8b71dcb65894a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SalmonFin
-    second: {fileID: 2100000, guid: 46a0ec16eca1e23449efd9a3252e256e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SalmonSkin
-    second: {fileID: 2100000, guid: 6a68dc164a609c1468d8dfc6f75217e9, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

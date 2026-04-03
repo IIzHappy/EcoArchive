@@ -3,27 +3,7 @@ guid: a6f801f81b5936e46b7ed4480c79a6cd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CatfishEye
-    second: {fileID: 2100000, guid: 40fcc0ef6243503498df47ea5ff46291, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CatfishFins
-    second: {fileID: 2100000, guid: b89461673d583684c97c665f2a79ebc3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CatfishSkin
-    second: {fileID: 2100000, guid: 8f63962d2fd3e0c4087c4aa87cb7fc4f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CatfishWhiskers
-    second: {fileID: 2100000, guid: 05e6fbca9075e754d81e368dc8359689, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

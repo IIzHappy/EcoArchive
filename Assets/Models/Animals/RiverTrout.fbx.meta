@@ -3,22 +3,7 @@ guid: 6a1968fca7adf2a43b12c0e9551be868
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: RiverTroutEye
-    second: {fileID: 2100000, guid: 5a987c073aa0041449998d1211911a4c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: RiverTroutFin
-    second: {fileID: 2100000, guid: 5b07cb5283a582948bc8c35931b6bf55, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: RiverTroutSkin
-    second: {fileID: 2100000, guid: 9df3fe2ca0ceb4a4483b06c68952c897, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
