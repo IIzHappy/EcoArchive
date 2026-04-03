@@ -26,6 +26,8 @@ public class CameraController : MonoBehaviour
     public List<Texture2D> photos = new List<Texture2D>();
     public List<bool> save = new List<bool>();
 
+    private bool camUsable = true;
+
     LayerMask ignore;
     int animal;
 
@@ -61,7 +63,7 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1) && camUsable)
         {
             VF = true;
             UI.SetActive(false);
@@ -401,5 +403,10 @@ public class CameraController : MonoBehaviour
         }
         photos.Clear();
         save.Clear();
+    }
+
+    public void SetCamUseable(bool allow)
+    {
+        camUsable = allow;
     }
 }
