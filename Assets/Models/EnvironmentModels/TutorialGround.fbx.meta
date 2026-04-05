@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: af7635b70b99d2c40a265ad129f185fb
+guid: d7fd50d48724a0f4ea57c8e7fc96c9d6
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,23 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: BlueBase
-    second: {fileID: 2100000, guid: bd2f332a9de4e7d4382d25812f9474c2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: GreyBase
-    second: {fileID: 2100000, guid: 3f35b422761f73c448301b74a882e8d7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LighterGreyBase
-    second: {fileID: 2100000, guid: fc6835ff49eab8148a6eb4ed4aa1e717, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TempMesh
-    second: {fileID: 2100000, guid: 032695f5fd128934ea31cf83d144c6e7, type: 2}
+      name: TutorialGround
+    second: {fileID: 2100000, guid: 18805b3336fcfc24db52248ba5dde24b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

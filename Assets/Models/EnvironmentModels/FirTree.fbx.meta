@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: af7635b70b99d2c40a265ad129f185fb
+guid: 1084ad9776cf79542b3441af086527c6
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,23 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: BlueBase
-    second: {fileID: 2100000, guid: bd2f332a9de4e7d4382d25812f9474c2, type: 2}
+      name: Branches
+    second: {fileID: 2100000, guid: aa61aafebcc9d6244b702a0d526963a7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: GreyBase
-    second: {fileID: 2100000, guid: 3f35b422761f73c448301b74a882e8d7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LighterGreyBase
-    second: {fileID: 2100000, guid: fc6835ff49eab8148a6eb4ed4aa1e717, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TempMesh
-    second: {fileID: 2100000, guid: 032695f5fd128934ea31cf83d144c6e7, type: 2}
+      name: Trunk
+    second: {fileID: 2100000, guid: 30719c9a6bef0ef4bb9e071ce57a80be, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
