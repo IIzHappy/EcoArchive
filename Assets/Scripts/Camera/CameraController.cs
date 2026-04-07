@@ -27,6 +27,7 @@ public class CameraController : MonoBehaviour
     public List<bool> save = new List<bool>();
 
     private bool camUsable = true;
+    public bool advancedCam = false;
 
     LayerMask ignore;
     int animal;
