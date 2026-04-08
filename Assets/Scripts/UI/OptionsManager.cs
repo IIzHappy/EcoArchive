@@ -10,6 +10,18 @@ public class OptionsManager : MonoBehaviour
     [SerializeField] PlayerRotateCam playerController;
     [SerializeField] CameraController cameraController;
     [SerializeField] TMP_Text text;
+    [SerializeField] Slider[] sliders;
+
+    public void SetSliders(float[] settings)
+    {
+        if (sliders != null)
+        {
+            sliders[0].value = settings[0];
+            sliders[1].value = settings[1];
+            sliders[2].value = settings[2];
+            sliders[3].value = settings[3] / 150;
+        }
+    }
 
     public void setMasterVolume(Slider slider)
     {
@@ -28,8 +40,8 @@ public class OptionsManager : MonoBehaviour
 
     public void SetSensitivity(Slider slider)
     {
-        playerController._mouseSensX = slider.value*250;
-        playerController._mouseSensY = slider.value*250;
+        playerController._mouseSensX = slider.value*150;
+        playerController._mouseSensY = slider.value*150;
     }
 
     public void ToggleAdvanced()
@@ -43,5 +55,13 @@ public class OptionsManager : MonoBehaviour
         {
             text.text = "Inactive";
         }
+    }
+
+    public float[] GetSettings()
+    {
+        float amb;
+        ambientSource.audioMixer.GetFloat("Master", out amb);
+        float[] settings = {AudioListener.volume, musicSource.volume, amb, playerController._mouseSensX};
+        return settings;
     }
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class GameSave : MonoBehaviour
 {
-    Collection _collection;
+    [SerializeField] Collection _collection;
+    [SerializeField] OptionsManager settings;
 
     public void SaveGame()
     {
@@ -24,6 +25,7 @@ public class GameSave : MonoBehaviour
         save._bugs = _collection.GetBugs();
         save._bones = _collection.GetBones();
         save._loadablePhotos = Collection.Instance.GetPhotos();
+        save._settings = settings.GetSettings();
 
         return save;
     }

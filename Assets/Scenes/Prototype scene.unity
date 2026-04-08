@@ -578,7 +578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _running: 1
-  _time: 693.03345
+  _time: 574.60925
   _startTime: 540
   _secsPerDay: 1440
   _timeText: {fileID: 388588217}
@@ -586,7 +586,7 @@ MonoBehaviour:
   _sunTransform: {fileID: 574156151}
   _sun: {fileID: 574156150}
   _day: 32
-  _intensity: 0.9965428
+  _intensity: 0.9027177
   _fogDay: {r: 0.8962264, g: 0.6968107, b: 0.28324133, a: 1}
   _fogNight: {r: 0.056069765, g: 0.25707757, b: 0.7924528, a: 1}
   _skyboxController: {fileID: 33159275}
@@ -3509,7 +3509,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.9965428
+  m_Intensity: 0.9027177
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3571,7 +3571,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574156149}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.664307, y: 0, z: 0, w: 0.7474599}
+  m_LocalRotation: {x: 0.45128497, y: 0, z: 0, w: 0.8923799}
   m_LocalPosition: {x: -0.000000022351742, y: 3, z: 0.000000033527613}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4686,6 +4686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a164114c27ce3c48bc492520f929d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collection: {fileID: 2072410724}
+  settings: {fileID: 1223671276604272093}
 --- !u!4 &777381949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6615022977450140388, guid: f83321368171b854bb4d1a5a7ad37366, type: 3}
@@ -11179,6 +11181,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc087082282beaf498642ba8caa68003, type: 3}
+--- !u!114 &2072410724 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4122388216548705702, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
+  m_PrefabInstance: {fileID: 1223671276604272090}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033f8b3fe47d2b84293f39a9f3241d04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2073911281 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6618671141759084346, guid: 65b40242490bb7a44b1339d20b4b401f, type: 3}
@@ -11349,6 +11362,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4122388216548705702, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 1223671276604272093}
     - target: {fileID: 4122388216548705702, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
       propertyPath: _animalAssets.Array.size
       value: 18
@@ -11623,11 +11640,11 @@ PrefabInstance:
       objectReference: {fileID: 769906019}
     - target: {fileID: 6055735811579675400, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.058797956
+      value: 0.31190127
       objectReference: {fileID: 0}
     - target: {fileID: 6055735811579675400, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.9982699
+      value: 0.95011455
       objectReference: {fileID: 0}
     - target: {fileID: 6094125281113837442, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
       propertyPath: m_AnchorMax.y
@@ -11738,24 +11755,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1965622332919720188, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4367972817972750159, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1223671276604272093}
   m_SourcePrefab: {fileID: 100100000, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
---- !u!114 &1223671276604272091 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8421669550973654342, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
-  m_PrefabInstance: {fileID: 1223671276604272090}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1223671276604272092 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4367972817972750159, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
@@ -11777,7 +11784,12 @@ MonoBehaviour:
   ambientSource: {fileID: 24300002, guid: 7ad6ab9e1dd15294eaf27a2ad3ecda93, type: 2}
   playerController: {fileID: 686319186}
   cameraController: {fileID: 1235809837}
-  text: {fileID: 1223671276604272091}
+  text: {fileID: 0}
+  sliders:
+  - {fileID: 1223671276604272097}
+  - {fileID: 1223671276604272096}
+  - {fileID: 1223671276604272095}
+  - {fileID: 1223671276604272094}
 --- !u!114 &1223671276604272094 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4326656693444521786, guid: 1351b204fbf82044ca508f9093036b66, type: 3}

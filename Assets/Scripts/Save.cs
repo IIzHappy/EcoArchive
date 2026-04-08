@@ -10,4 +10,5 @@ public class Save
     public int[] _bugs;
     public int[] _bones;
     public List<LoadablePhoto> _loadablePhotos = new List<LoadablePhoto>();
+    public float[] _settings;
 }

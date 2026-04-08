@@ -12,7 +12,6 @@ public class Collection : MonoBehaviour
 
     public List<Photo> _photos;
     List<LoadablePhoto> _loadablePhotos;
-    [SerializeField] List<AnimalAsset> _animalAssets;
     Dictionary<AnimalAsset, GameObject> _animals = new Dictionary<AnimalAsset, GameObject>();
     private bool[] _animalsFound;
     [SerializeField] Dictionary<Bug, GameObject> _bugs = new Dictionary<Bug, GameObject>();
@@ -20,6 +19,7 @@ public class Collection : MonoBehaviour
     [SerializeField] Dictionary<Bone, GameObject> _bones = new Dictionary<Bone, GameObject>();
     private int[] _bonesFound;
 
+    [SerializeField] OptionsManager settings;
     [SerializeField] GameObject _photoIcons;
     [SerializeField] GameObject _animalIcons;
     [SerializeField] GameObject _bugIcons;
@@ -39,10 +39,6 @@ public class Collection : MonoBehaviour
     }
     private void Start()
     {
-        foreach (AnimalAsset asset in _animalAssets)
-        {
-            _animals.Add(asset, null);
-        }
         _animalsFound = new bool[_animals.Count()];
         _bugsFound = new int[_bugs.Count()];
         _bonesFound = new int[_bones.Count()];
@@ -57,6 +53,7 @@ public class Collection : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
             Save save = (Save)bf.Deserialize(file);
             file.Close();
+
             if (save._animals != null)
             {
                 for (int k = 0; k < save._animals.Length; k++)
@@ -65,6 +62,7 @@ public class Collection : MonoBehaviour
                     _animalsFound[k] = save._animals[k];
                 }
             }
+
             int i = 0;
             Debug.Log(_animals.Keys.Count);
             foreach (AnimalAsset animal in _animals.Keys)
@@ -74,33 +72,49 @@ public class Collection : MonoBehaviour
             }
 
             i = 0;
-            foreach (Bug bug in _bugs.Keys)
+            if (save._bugs != null)
             {
-                if (_bugsFound[i] > 0)
+                foreach (Bug bug in _bugs.Keys)
                 {
-                    bug._numCollected = _bugsFound[i];
+                    if (_bugsFound[i] > 0)
+                    {
+                        bug._numCollected = _bugsFound[i];
+                    }
+                    i++;
                 }
-                i++;
             }
 
             i = 0;
-            foreach (Bone bone in _bones.Keys)
+            if (save._bones != null)
             {
-                if (_bonesFound[i] > 0)
+                foreach (Bone bone in _bones.Keys)
                 {
-                    bone._numCollected = _bonesFound[i];
+                    if (_bonesFound[i] > 0)
+                    {
+                        bone._numCollected = _bonesFound[i];
+                    }
+                    i++;
                 }
-                i++;
             }
-            foreach (LoadablePhoto loadablePhoto in save._loadablePhotos)
+
+            if (save._loadablePhotos != null)
             {
-                Photo photo = ScriptableObject.CreateInstance<Photo>();
-                photo.name = loadablePhoto._photoName;
-                photo._score = loadablePhoto._score;
-                Texture2D image = LoadTexture(loadablePhoto._filePath);
-                photo._photo = Sprite.Create(image, new Rect(0, 0, image.width, image.height), new Vector2(0.5f, 0.5f), 100f);
-                AddPhoto(photo);
+                foreach (LoadablePhoto loadablePhoto in save._loadablePhotos)
+                {
+                    Photo photo = ScriptableObject.CreateInstance<Photo>();
+                    photo.name = loadablePhoto._photoName;
+                    photo._score = loadablePhoto._score;
+                    Texture2D image = LoadTexture(loadablePhoto._filePath);
+                    photo._photo = Sprite.Create(image, new Rect(0, 0, image.width, image.height), new Vector2(0.5f, 0.5f), 100f);
+                    AddPhoto(photo);
+                }
             }
+
+            if (save._settings != null) 
+            {
+                settings.SetSliders(save._settings);
+            }
+
             InstantiateAnimals();
             InstantiateBugs();
             InstantiateBones();
