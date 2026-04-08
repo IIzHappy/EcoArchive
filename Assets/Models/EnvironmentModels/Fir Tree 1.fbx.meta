@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8793689ceb445a44f90d5be5f550d4b3
+guid: 41a7b9c52f5eb1b42b7c70f06e75c804
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Trunk
-    second: {fileID: 2100000, guid: 30719c9a6bef0ef4bb9e071ce57a80be, type: 2}
+    second: {fileID: 6849546283596164469, guid: d75a9e7f256b88648b7ebe81ebe8a916, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
