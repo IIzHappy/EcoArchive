@@ -361,7 +361,7 @@ public class CameraController : MonoBehaviour
                 }
 
                 Debug.Log(hitChest.distance + " + " + dof.focusDistance);
-                if (hitChest.distance >= 20f * dof.focusDistance.GetValue<float>() && focus != 1)
+                if (hitChest.distance <= 20f * dof.focusDistance.GetValue<float>() && focus != 1)
                 {
                     focus = 1;
                 }

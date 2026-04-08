@@ -11,7 +11,7 @@ public class Collection : MonoBehaviour
     public static Collection Instance { get; private set; }
 
     public List<Photo> _photos;
-    public List<LoadablePhoto> _loadablePhotos;
+    List<LoadablePhoto> _loadablePhotos;
     [SerializeField] Dictionary<AnimalAsset, GameObject> _animals = new Dictionary<AnimalAsset, GameObject>();
     private bool[] _animalsFound;
     [SerializeField] Dictionary<Bug, GameObject> _bugs = new Dictionary<Bug, GameObject>();
@@ -55,6 +55,7 @@ public class Collection : MonoBehaviour
 
             _animalsFound = save._animals;
             int i = 0;
+            Debug.Log(_animals.Keys.Count);
             foreach (AnimalAsset animal in _animals.Keys)
             {
                 if (_animalsFound[i])
@@ -263,11 +264,19 @@ public class Collection : MonoBehaviour
         GameObject _newPhoto = Instantiate(_iconPrefab, _photoIcons.transform);
         _newPhoto.GetComponent<Image>().sprite = newPhoto._photo;
         _newPhoto.transform.GetComponentInChildren<TMP_Text>().text = newPhoto.name;
+        //_newPhoto.AddComponent<>();
     }
 
     public void AddLoadablePhoto(LoadablePhoto newLoadablePhoto)
     {
         _loadablePhotos.Add(newLoadablePhoto);
+    }
+
+    public void RenamePhoto(string newName, int index)
+    {
+        _loadablePhotos[index]._photoName = newName;
+        _photos[index]._photoName = newName;
+        _photos[index].name = newName;
     }
 
     public bool[] GetAnimals()
