@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class DayNightCycle : MonoBehaviour
 {
     public bool _running = false;
+    public bool _sleeping = false;
 
     [SerializeField] float _time;
     [SerializeField] float _startTime;
@@ -50,6 +51,10 @@ public class DayNightCycle : MonoBehaviour
         if (_running)
         {
             _time += Time.deltaTime;
+            if (_sleeping)
+            {
+                _time += Time.deltaTime * 24;
+            }
         }
         //update time and loop
         _time = Mathf.Repeat(_time, _secsPerDay);
@@ -76,6 +81,11 @@ public class DayNightCycle : MonoBehaviour
         //light intensity
         _intensity = Mathf.Clamp01(Mathf.Cos(normalizedTime * Mathf.PI * 2) * -0.5f + 0.5f);
         _sun.intensity = _intensity;
+
+        if (_sleeping && _time > 360 &&  _time < 1260)
+        {
+            _sleeping = false;
+        }
     }
 
     public string GetTime()
@@ -83,5 +93,10 @@ public class DayNightCycle : MonoBehaviour
         //irl sec = in game min
 
         return(TimeSpan.FromSeconds((_time/_secsPerDay)*1440).ToString(@"mm\:ss"));
+    }
+
+    public void Sleep()
+    {
+        _sleeping = true;
     }
 }
