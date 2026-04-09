@@ -19,13 +19,18 @@ public class PlayerController : MonoBehaviour
     //2-slow walk
 
     public float _gravity = 9.81f;
+    public float _waterBuoyancy = f;
     Vector3 _velocity;
 
     bool _isGrounded;
     [SerializeField] Transform _groundCheck;
     [SerializeField] float _groundedThreshold;
-
     [SerializeField] LayerMask _groundMask;
+
+    bool _isInWater;
+    [SerializeField] Transform _waterCheck;
+    [SerializeField] float _waterThreshold;
+    [SerializeField] LayerMask _waterMask;
 
     public float _jumpHeight = 3f;
 
@@ -84,11 +89,17 @@ public class PlayerController : MonoBehaviour
         _velocity.y += _gravity * Time.deltaTime;
         _playerController.Move(_velocity * Time.deltaTime);
 
-        _isGrounded = Physics.CheckSphere(_groundCheck.position,_groundedThreshold, _groundMask);
+        _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundedThreshold, _groundMask);
 
         if (_isGrounded && _velocity.y < 0)
         {
             _velocity.y = -1f;
+        }
+        _isInWater = Physics.CheckSphere(_waterCheck.position, _waterThreshold, _waterMask);
+
+        if (_isGrounded && _velocity.y < 0)
+        {
+            _velocity.y += (-_gravity + _waterBuoyancy) * Time.deltaTime;
         }
 
         bool movingOnGround = false;
