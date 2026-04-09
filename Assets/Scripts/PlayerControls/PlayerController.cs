@@ -141,12 +141,13 @@ public class PlayerController : MonoBehaviour
     {
         if (_interactable)
         {
-            Debug.Log(_curInteractable.tag);
             if (_curInteractable.tag == "Bed")
             {
-                _dayNightCycle._sleeping = true;
-                _canControl = false;
-                _rotateCam.enabled = false;
+                if (_dayNightCycle.Sleep())
+                {
+                    _canControl = false;
+                    _rotateCam.enabled = false;
+                }
             }
             else
             {
