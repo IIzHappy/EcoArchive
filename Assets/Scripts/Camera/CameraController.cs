@@ -248,7 +248,7 @@ public class CameraController : MonoBehaviour
                 RaycastHit check;
                 Ray temp = cam.ScreenPointToRay(new Vector3(0 + (i*8), 0 + (j*8), 0));
                 Physics.Raycast(temp, out check, Mathf.Infinity, ignore);
-                Debug.DrawRay(temp.origin, temp.direction, Color.red, 5f);
+                //Debug.DrawRay(temp.origin, temp.direction, Color.red, 5f);
                 if (check.collider != null)
                 {
                     if (check.collider.gameObject.layer == animal)
