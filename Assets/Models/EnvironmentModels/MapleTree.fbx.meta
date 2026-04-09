@@ -3,7 +3,17 @@ guid: 1303a5be439bf844fb1dbdca341df48c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MapleLeaves
+    second: {fileID: 2100000, guid: e00c2ae5861376c41852a461fbd490c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MapleTrunk
+    second: {fileID: 2100000, guid: 30719c9a6bef0ef4bb9e071ce57a80be, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

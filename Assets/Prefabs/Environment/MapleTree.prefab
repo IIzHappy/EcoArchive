@@ -66,11 +66,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6877267752214438396}
   m_SourcePrefab: {fileID: 100100000, guid: 1303a5be439bf844fb1dbdca341df48c, type: 3}
---- !u!23 &2224894574115834985 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -3173293647943772974, guid: 1303a5be439bf844fb1dbdca341df48c, type: 3}
-  m_PrefabInstance: {fileID: 5554728271164250299}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &3287118072524645434 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -2267444119770383231, guid: 1303a5be439bf844fb1dbdca341df48c, type: 3}
@@ -98,8 +93,9 @@ LODGroup:
   - screenRelativeHeight: 0.046687864
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 2224894574115834985}
+    - renderer: {fileID: 5535205954682860069}
     - renderer: {fileID: 3287118072524645434}
+    - renderer: {fileID: 5681796443341992996}
   - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers: []
@@ -146,3 +142,13 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!23 &5535205954682860069 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 128171803971365534, guid: 1303a5be439bf844fb1dbdca341df48c, type: 3}
+  m_PrefabInstance: {fileID: 5554728271164250299}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &5681796443341992996 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -8948775408629011297, guid: 1303a5be439bf844fb1dbdca341df48c, type: 3}
+  m_PrefabInstance: {fileID: 5554728271164250299}
+  m_PrefabAsset: {fileID: 0}

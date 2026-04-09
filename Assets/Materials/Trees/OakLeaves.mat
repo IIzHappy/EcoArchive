@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-638990960378542810
+--- !u!114 &-5272428027341225680
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skybox
-  m_Shader: {fileID: -6465566751694194690, guid: 9e479b3bfaed21f49be11f063fc054c5, type: 3}
+  m_Name: OakLeaves
+  m_Shader: {fileID: -6465566751694194690, guid: 6be9dd5a1dc4e5d40b218567d673e55c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -61,6 +61,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _LeavesTexture:
+        m_Texture: {fileID: 2800000, guid: 226975cf7e7034d4aa4c460e6e571f0d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -74,10 +78,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SkyboxStars_91744014a2dd46338c0fe31e28771ad7_StarColours_1222346341_Texture2D:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -117,59 +117,29 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _GroundBlend: 0.5
-    - _GroundBlendHeight: 0
-    - _HorizonBlend: 1
-    - _HorizonColourBlend: 0.5
-    - _HorizonSplitRadius: 0.5
-    - _HorizonSunriseRadius: 0.2
-    - _HorizonSunriseRadius2: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _SkyBlend: 0.5
-    - _SkyBlendHeight: 0
-    - _SkyBlendHeight2: -0.5
-    - _SkyRotation: 90
-    - _SkyTopBlend: 1
-    - _SkyTopHeight: 0.5
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
-    - _StarHeight: 400
-    - _StarIntensity: 0
-    - _StarIntensity2: 0
-    - _StarPower: 60
-    - _StarTime: 541.1712
-    - _StarTurnSpeed: 0
     - _Surface: 0
-    - _TimeBlend: 0.40780804
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _CenterColour: {r: 0.004004977, g: 0.28301886, b: 0.12404547, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DayColour: {r: 0.45490196, g: 0.7137255, b: 0.8117647, a: 1}
-    - _DayRainyColour: {r: 0, g: 0, b: 0, a: 0}
+    - _ColourBlendDistance: {r: 0.1, g: 0.9, b: 0, a: 0}
+    - _ColourTint: {r: 0.0980776, g: 0.7169812, b: 0.36600477, a: 1}
+    - _EdgeColour: {r: 0.21682805, g: 0.5943396, b: 0.18783367, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GroundColour: {r: 0.15241182, g: 0.19891784, b: 0.23584902, a: 1}
-    - _HorizonColour: {r: 0.08904416, g: 0.4059045, b: 0.6509434, a: 1}
-    - _HorizonColour2: {r: 0.654902, g: 0.7411765, b: 0.7490197, a: 1}
-    - _NightColour: {r: 0, g: 0, b: 0, a: 0}
-    - _SkyColour: {r: 0.0465023, g: 0.29156414, b: 0.5188679, a: 1}
-    - _SkyColour2: {r: 0.41960788, g: 0.65882355, b: 0.74901956, a: 1}
-    - _SkyTopColour: {r: 0.043137256, g: 0.2220803, b: 0.49019608, a: 1}
-    - _SkyTopColour2: {r: 0.28627452, g: 0.58431375, b: 0.7490196, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _SunriseColour: {r: 0.8679245, g: 0.45097175, b: 0.028657902, a: 255}
-    - _SunriseColour2: {r: 0.654902, g: 0.7411765, b: 0.7490196, a: 1}
-    - _TestCOlour1: {r: 0.8773585, g: 0, b: 0, a: 0}
-    - _TestCOlour2: {r: 0.11132706, g: 0.8784314, b: 0, a: 0}
-    - _Vector2: {r: 1, g: 0, b: 0, a: 0}
+    - _TintBlend: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

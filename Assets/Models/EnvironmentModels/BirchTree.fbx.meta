@@ -3,7 +3,17 @@ guid: 89ec50609274efb4c8dd0e9230c1b52f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BirchLeaves.001
+    second: {fileID: 2100000, guid: fd73605f6ee798a469b8cfa008d02ff9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BirchTrunk
+    second: {fileID: -753465093193859670, guid: 237edbf98019cfa478c806e163da7ebc, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
