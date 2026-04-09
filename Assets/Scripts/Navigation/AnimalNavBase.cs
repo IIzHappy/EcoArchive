@@ -1,6 +1,3 @@
-using System.Runtime.CompilerServices;
-using Unity.Hierarchy;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -27,12 +24,20 @@ public class AnimalNavBase : MonoBehaviour
     [SerializeField] private float idleMinTime = 2f;
     [SerializeField] private float idleMaxTime = 5f;
 
+    [SerializeField] private float playerFleeDistanceCheck = 15f;
+    [SerializeField] private float playerFleeDistance = 10f;
+    private bool playerFleeActive = false;
+    private Transform playerNoise;
+    private Vector3 currentFleeTarget;
+
     private float idleTimer;
 
     protected NavMeshAgent agent;
 
     private float moveTimer;
     protected float sampleInterval;
+
+    public virtual string AnimalID => "AnimalID";
 
     protected virtual void Awake()
     {
@@ -44,6 +49,12 @@ public class AnimalNavBase : MonoBehaviour
     protected virtual void Update()
     {
         moveTimer += Time.deltaTime;
+
+        if (playerFleeActive)
+        {
+            HandlePlayerFlee();
+            return;
+        }
         AnimalUpdate();
     }
 
@@ -130,4 +141,62 @@ public class AnimalNavBase : MonoBehaviour
     {
         sampleInterval = Random.Range(2f, 6f);
     }
+
+    public void playerFlee(Transform playerNoiseTransform)
+    {
+        playerNoise = playerNoiseTransform;
+        playerFleeActive = true;
+        SetState(AnimalState.Fleeing);
+        SetPlayerFleeDestination();
+    }
+    
+    private void HandlePlayerFlee()
+    {
+        if (playerNoise == null)
+        {
+            StopPlayerFlee();
+            return;
+        }
+
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        {
+            float dist = Vector3.Distance(transform.position, playerNoise.position);
+
+            if ( dist < playerFleeDistanceCheck) 
+            {
+                SetPlayerFleeDestination();
+            }
+            else
+            {
+                StopPlayerFlee();
+            }
+        }
+
+    }
+
+    private void SetPlayerFleeDestination()
+    {
+        Vector3 awayDirection = (transform.position - playerNoise.position).normalized;
+        Vector3 targetPos = transform.position + awayDirection * playerFleeDistance;
+        if (NavMesh.SamplePosition(targetPos, out NavMeshHit hit, playerFleeDistance, NavMesh.AllAreas))
+        {
+            currentFleeTarget = hit.position;
+            agent.SetDestination(currentFleeTarget);
+        }
+    }
+
+    private void StopPlayerFlee()
+    {
+        playerFleeActive = false;
+        playerNoise = null;
+        SetState(AnimalState.Roaming);
+        moveTimer = 0f;
+        SetNewSampleInterval();
+    }
+
+
+
 }
+
+
+

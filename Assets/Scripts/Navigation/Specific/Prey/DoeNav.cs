@@ -6,6 +6,7 @@ public class DoeNav : PreyBase
     [SerializeField] private float sprintMultiplier = 2f;
     [SerializeField] private float sprintTime = 2f;
     private float sprintTimer;
+    public override string AnimalID => "Doe";
 
     protected override void HandleFlee()
     {

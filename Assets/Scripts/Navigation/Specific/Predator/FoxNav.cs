@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class FoxNav : PreyBase
+public class FoxNav : PredatorBase
 {
     [SerializeField] private string playerTag = "Player";   
     [SerializeField] private float safeDistance = 15f;      
     [SerializeField] private float fleeMultiplier = 1.5f;  
 
     private Transform playerTransform;
+    public override string AnimalID => "Fox";
 
     protected override void AnimalUpdate()
     {
@@ -49,4 +50,5 @@ public class FoxNav : PreyBase
         agent.speed = agent.speed * fleeMultiplier;
         agent.SetDestination(fleePos);
     }
+    
 }

@@ -9,6 +9,7 @@ public class RatNav : PreyBase
 
     private Transform boneTarget;
     private float boneIdleTimer;
+    public override string AnimalID => "Rat";
 
     protected override void AnimalUpdate()
     {
