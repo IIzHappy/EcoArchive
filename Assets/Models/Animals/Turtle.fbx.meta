@@ -3,7 +3,22 @@ guid: f598303357ed0de479b8ceb745ad8f93
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TurtleEyes
+    second: {fileID: 2100000, guid: 40fcc0ef6243503498df47ea5ff46291, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TurtleShell
+    second: {fileID: 2100000, guid: c0aad4e2c9fca3d4aa6d744de4f19496, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TurtleSkin
+    second: {fileID: 2100000, guid: f991ea310921e9647a69315479803d32, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
