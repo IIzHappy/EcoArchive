@@ -19,7 +19,7 @@ public class Achievments : MonoBehaviour
     //Achievment: Specialist
     bool Specialist = false;
     string[] specialistReference = {"Bluejay", "Cardinal", "Catfish", "Salmon", "River Trout", "Owl", "Duck", "Goose", "Doe", "Stag", "Fox", "Coyote", "Wolf", "Bear", "Squirrel", "Rat", "Turtle", "Snake"};
-    int[] specialistCounter = new int[18];
+    int[] specialistCounter = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     public void IterateSpecialist(string animal)
     {
         for (int i = 0; i < specialistReference.Length; i++)
