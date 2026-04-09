@@ -18168,6 +18168,11 @@ CapsuleCollider:
   m_Height: 12.444786
   m_Direction: 1
   m_Center: {x: 0.017197251, y: 4.295019, z: 0}
+--- !u!1 &123279898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5197915446121738700, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
+  m_PrefabInstance: {fileID: 1235809836}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &124557782
 GameObject:
   m_ObjectHideFlags: 0
@@ -170048,6 +170053,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2628383737624178864, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 769906019}
+    - targetCorrespondingSourceObject: {fileID: 5197915446121738700, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1235809841}
   m_SourcePrefab: {fileID: 100100000, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
 --- !u!114 &1235809837 stripped
 MonoBehaviour:
@@ -170065,6 +170073,29 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 605689691120370433, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
   m_PrefabInstance: {fileID: 1235809836}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1235809841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123279898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c3b6a706944794685697fba6879a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayMusic:
+  - {fileID: 8300000, guid: a293502f7bf4be34c84f508813e72244, type: 3}
+  - {fileID: 8300000, guid: ad4b49b8229832344a8e0f1ac55d6357, type: 3}
+  - {fileID: 8300000, guid: 92b6f4ad1e0836741b3390613cc2f1e1, type: 3}
+  nightMusic:
+  - {fileID: 8300000, guid: 45010979f0f2819468a3bff83a1c159e, type: 3}
+  - {fileID: 8300000, guid: ad4b49b8229832344a8e0f1ac55d6357, type: 3}
+  - {fileID: 8300000, guid: 4dfc59b5a7b35bb4b83d0a0f859d7399, type: 3}
+  - {fileID: 8300000, guid: b5ca5259532e8f64abfa47d0480afadf, type: 3}
+  day: {fileID: 33159273}
+  player: {fileID: 1235809839}
 --- !u!1 &1236148272
 GameObject:
   m_ObjectHideFlags: 0

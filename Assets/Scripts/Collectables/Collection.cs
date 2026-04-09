@@ -130,7 +130,7 @@ public class Collection : MonoBehaviour
                 _bugsFound = new int[_bugs.Count];
             }
 
-                i = 0;
+            i = 0;
             if (save._bones != null)
             {
                 foreach (Bone bone in _bones.Keys)
