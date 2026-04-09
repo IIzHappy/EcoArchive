@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteAlways]
+//[ExecuteAlways]
 public class SkyboxController : MonoBehaviour
 {
     public List<SkyboxColours> _skyColours = new List<SkyboxColours>();
