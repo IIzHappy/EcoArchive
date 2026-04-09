@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: OakTrunk
-    second: {fileID: 2100000, guid: 30719c9a6bef0ef4bb9e071ce57a80be, type: 2}
+    second: {fileID: 2100000, guid: d6591dbb4f0fc7a40a258034f275950d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

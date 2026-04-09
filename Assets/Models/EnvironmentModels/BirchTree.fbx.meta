@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: BirchTrunk
-    second: {fileID: -753465093193859670, guid: 237edbf98019cfa478c806e163da7ebc, type: 3}
+    second: {fileID: 2100000, guid: 98643ef9d72f0b148ab19cffc30f1672, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

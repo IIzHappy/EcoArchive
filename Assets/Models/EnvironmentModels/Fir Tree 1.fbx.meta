@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Trunk
-    second: {fileID: 6849546283596164469, guid: d75a9e7f256b88648b7ebe81ebe8a916, type: 3}
+    second: {fileID: 2100000, guid: 2f3009f866da8da4a8a9b782640a7efe, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
