@@ -25,6 +25,8 @@ public class Achievments : MonoBehaviour
         }
     }
 
+    //public 
+
     public void LoadProgress(bool[] achievmentsUnlocked, int[] specProg)
     {
         achievments = achievmentsUnlocked;
