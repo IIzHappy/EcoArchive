@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     //2-slow walk
 
     public float _gravity = 9.81f;
-    public float _waterBuoyancy = f;
+    public float _waterBuoyancy = 8f;
     Vector3 _velocity;
 
     bool _isGrounded;
