@@ -48,6 +48,8 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
+        zoomBar.fillAmount = (cam.focalLength - 20) / 80;
+        focusBar.fillAmount = (dof.focusDistance.value - 1.4f) * 2.5f;
         ignore = ~LayerMask.GetMask("Lines", "Boxes", "Water");
         animal = LayerMask.NameToLayer("Animal");
         cam.usePhysicalProperties = true;
@@ -197,7 +199,7 @@ public class CameraController : MonoBehaviour
                         cam.focalLength = 20;
                     }
                     VFCam.focalLength = cam.focalLength;
-                    focusBar.fillAmount = (cam.focalLength - 20) / 80;
+                    zoomBar.fillAmount = (cam.focalLength - 20) / 80;
                 }
             }
         }

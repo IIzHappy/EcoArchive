@@ -122,7 +122,7 @@ Material:
     - _HorizonBlend: 1
     - _HorizonColourBlend: 0.5
     - _HorizonSplitRadius: 0.5
-    - _HorizonSunriseRadius: 0
+    - _HorizonSunriseRadius: 0.2
     - _HorizonSunriseRadius2: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
@@ -131,7 +131,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _SkyBlend: 0.5
-    - _SkyBlendHeight: -0.5
+    - _SkyBlendHeight: 0
     - _SkyBlendHeight2: -0.5
     - _SkyRotation: 90
     - _SkyTopBlend: 1
@@ -142,13 +142,13 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _StarHeight: 400
-    - _StarIntensity: 80
-    - _StarIntensity2: 10
+    - _StarIntensity: 0
+    - _StarIntensity2: 0
     - _StarPower: 60
-    - _StarTime: 220.83893
+    - _StarTime: 589.2297
     - _StarTurnSpeed: 0
     - _Surface: 0
-    - _TimeBlend: 0.5361298
+    - _TimeBlend: 0.7281978
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
@@ -158,16 +158,16 @@ Material:
     - _DayRainyColour: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GroundColour: {r: 0.15241182, g: 0.19891784, b: 0.23584902, a: 1}
-    - _HorizonColour: {r: 0.023529414, g: 0.03529412, b: 0.121568635, a: 1}
-    - _HorizonColour2: {r: 0.043137256, g: 0.07058824, b: 0.2, a: 1}
+    - _HorizonColour: {r: 0.08904416, g: 0.4059045, b: 0.6509434, a: 1}
+    - _HorizonColour2: {r: 0.654902, g: 0.7411765, b: 0.7490197, a: 1}
     - _NightColour: {r: 0, g: 0, b: 0, a: 0}
-    - _SkyColour: {r: 0.019607844, g: 0.03137255, b: 0.12156863, a: 1}
-    - _SkyColour2: {r: 0.052198283, g: 0.093962006, b: 0.21698111, a: 1}
-    - _SkyTopColour: {r: 0.0016019917, g: 0.004247332, b: 0.03773582, a: 1}
-    - _SkyTopColour2: {r: 0.0016019917, g: 0.004247332, b: 0.03773582, a: 1}
+    - _SkyColour: {r: 0.0465023, g: 0.29156414, b: 0.5188679, a: 1}
+    - _SkyColour2: {r: 0.41960788, g: 0.65882355, b: 0.74901956, a: 1}
+    - _SkyTopColour: {r: 0.043137256, g: 0.2220803, b: 0.49019608, a: 1}
+    - _SkyTopColour2: {r: 0.28627452, g: 0.58431375, b: 0.7490196, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _SunriseColour: {r: 0.023529414, g: 0.03529412, b: 0.121568635, a: 1}
-    - _SunriseColour2: {r: 0.5631748, g: 0.5660378, b: 0.32840872, a: 1}
+    - _SunriseColour: {r: 0.8679245, g: 0.45097175, b: 0.028657902, a: 255}
+    - _SunriseColour2: {r: 0.654902, g: 0.7411765, b: 0.7490196, a: 1}
     - _TestCOlour1: {r: 0.8773585, g: 0, b: 0, a: 0}
     - _TestCOlour2: {r: 0.11132706, g: 0.8784314, b: 0, a: 0}
     - _Vector2: {r: 1, g: 0, b: 0, a: 0}
