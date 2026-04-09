@@ -9,7 +9,7 @@ public class DayNightCycle : MonoBehaviour
     public bool _running = false;
     public bool _sleeping = false;
 
-    [SerializeField] float _time;
+    [SerializeField] public float _time;
     [SerializeField] float _startTime;
     public float _secsPerDay = 1440;
 
