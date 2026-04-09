@@ -53,7 +53,7 @@ public class DayNightCycle : MonoBehaviour
             _time += Time.deltaTime;
             if (_sleeping)
             {
-                _time += Time.deltaTime * 24;
+                _time += Time.deltaTime * 44;
             }
         }
         //update time and loop
@@ -96,8 +96,12 @@ public class DayNightCycle : MonoBehaviour
         return(TimeSpan.FromSeconds((_time/_secsPerDay)*1440).ToString(@"mm\:ss"));
     }
 
-    public void Sleep()
+    public bool Sleep()
     {
-        _sleeping = true;
+        if (_time > 1260 || _time < 360)
+        {
+            _sleeping = true;
+        }
+        return _sleeping;
     }
 }
