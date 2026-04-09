@@ -6,7 +6,6 @@ public class ExtractTreeColliders : MonoBehaviour
 {
     [SerializeField]
     private Terrain terrain;
-  
 
     private void Reset()
     {
