@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 1871825007708066031}
   - component: {fileID: 3924965765665926983}
   - component: {fileID: 4887203354047988659}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BearFixed 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

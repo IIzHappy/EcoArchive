@@ -107,6 +107,9 @@ public class spawningZone : MonoBehaviour
             {
                 if (animal != null)
                 {
+                    Vector3 hellPos = animal.transform.position;
+                    hellPos.y -= 400;
+                    animal.transform.position = hellPos;
                     Destroy(animal);
                 }
                 ;
