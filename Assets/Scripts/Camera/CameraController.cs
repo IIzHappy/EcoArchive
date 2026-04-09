@@ -369,7 +369,8 @@ public class CameraController : MonoBehaviour
 
                     Debug.Log(hitChest.collider.gameObject.name);
                     Debug.Log(hitChest.distance + " + " + dof.focusDistance);
-                    if (hitChest.distance <= 20f * dof.focusDistance.GetValue<float>() && focus != 1 && (hitChest.collider.gameObject.layer == LayerMask.NameToLayer("Lines") || hitChest.collider.gameObject.layer == LayerMask.NameToLayer("Boxes")))
+                    //if (hitChest.distance <= 20f * dof.focusDistance.GetValue<float>() && (hitChest.collider.gameObject.layer == LayerMask.NameToLayer("Lines") || hitChest.collider.gameObject.layer == LayerMask.NameToLayer("Boxes")))
+                    if ((cur.transform.position - this.gameObject.transform.position).magnitude <= 20f * dof.focusDistance.GetValue<float>())
                     {
                         focus = 1;
                         Debug.Log(navBase.AnimalID);
