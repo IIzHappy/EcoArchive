@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: River Trout
   m_EditorClassIdentifier: 
   _name: River Trout
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 41022bf9ec758fc42a6579fa9c3c7489, type: 3}
   _collected: 0

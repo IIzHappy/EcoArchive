@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Wolf
   m_EditorClassIdentifier: 
   _name: Wolf
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: c627c63c81b032841939adfae4f285d6, type: 3}
   _collected: 0

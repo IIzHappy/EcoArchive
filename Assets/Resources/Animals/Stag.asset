@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Stag
   m_EditorClassIdentifier: 
   _name: Stag
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: d319f44a7e3ca9147a8eea6245768578, type: 3}
   _collected: 0

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Turtle
   m_EditorClassIdentifier: 
   _name: Turtle
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 46c2195dd019149479025904b52379e4, type: 3}
   _collected: 0

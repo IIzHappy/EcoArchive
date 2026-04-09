@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Goose
   m_EditorClassIdentifier: 
   _name: Goose
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: ad578837cbbb01a4baf6e2a4e0fbd38a, type: 3}
   _collected: 0
