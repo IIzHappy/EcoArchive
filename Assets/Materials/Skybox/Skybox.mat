@@ -145,10 +145,10 @@ Material:
     - _StarIntensity: 0
     - _StarIntensity2: 0
     - _StarPower: 60
-    - _StarTime: 589.2297
+    - _StarTime: 545.7039
     - _StarTurnSpeed: 0
     - _Surface: 0
-    - _TimeBlend: 0.7281978
+    - _TimeBlend: 0.43802613
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
