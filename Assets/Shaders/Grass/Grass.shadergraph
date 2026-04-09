@@ -7240,7 +7240,7 @@
     "m_ObjectId": "aab503964d6445b889736537476b9340",
     "m_Title": "Wind",
     "m_Position": {
-        "x": -2491.0,
+        "x": -2490.999755859375,
         "y": -1498.0
     }
 }
@@ -7345,7 +7345,7 @@
     "m_Title": "Colour",
     "m_Position": {
         "x": -1664.0,
-        "y": -250.99981689453126
+        "y": -251.0
     }
 }
 
@@ -8025,7 +8025,7 @@
     "m_ZWriteControl": 0,
     "m_AlphaMode": 0,
     "m_RenderFace": 0,
-    "m_AlphaClip": false,
+    "m_AlphaClip": true,
     "m_CastShadows": true,
     "m_ReceiveShadows": true,
     "m_DisableTint": false,
@@ -9387,7 +9387,7 @@
     "m_Title": "Interactivity",
     "m_Position": {
         "x": -3018.0,
-        "y": -827.9999389648438
+        "y": -828.0
     }
 }
 
