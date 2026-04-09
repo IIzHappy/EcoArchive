@@ -4035,6 +4035,7 @@ GameObject:
   - component: {fileID: 532914284}
   - component: {fileID: 532914285}
   - component: {fileID: 532914286}
+  - component: {fileID: 532914287}
   m_Layer: 0
   m_Name: SprintRange
   m_TagString: Untagged
@@ -4091,6 +4092,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   area: {fileID: 532914285}
+--- !u!54 &532914287
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532914283}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &535728835 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8066924136064668604, guid: 90aa528500f69cf4ca87f843d3abd8af, type: 3}
@@ -4571,6 +4599,7 @@ GameObject:
   - component: {fileID: 584531167}
   - component: {fileID: 584531168}
   - component: {fileID: 584531169}
+  - component: {fileID: 584531170}
   m_Layer: 0
   m_Name: WalkRange
   m_TagString: Untagged
@@ -4627,6 +4656,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   area: {fileID: 584531168}
+--- !u!54 &584531170
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584531166}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &587916868 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3705609511265276769, guid: 2c1377ae64e4de242aa32e8741212622, type: 3}
@@ -14362,6 +14418,7 @@ GameObject:
   - component: {fileID: 2010968177}
   - component: {fileID: 2010968178}
   - component: {fileID: 2010968179}
+  - component: {fileID: 2010968180}
   m_Layer: 0
   m_Name: SlowRange
   m_TagString: Untagged
@@ -14418,6 +14475,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   area: {fileID: 2010968178}
+--- !u!54 &2010968180
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010968176}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2016006026
 GameObject:
   m_ObjectHideFlags: 0

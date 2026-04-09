@@ -64,7 +64,6 @@ public class Collection : MonoBehaviour
             }
 
             int i = 0;
-            Debug.Log(_animals.Keys.Count);
             foreach (AnimalAsset animal in _animals.Keys)
             {
                 animal._collected = _animalsFound[i];

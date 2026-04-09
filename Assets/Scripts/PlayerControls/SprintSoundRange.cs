@@ -6,11 +6,11 @@ public class SprintSoundRange : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        this.gameObject.SendMessageUpwards("AddSprintAnimal", other.gameObject);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Animal")) this.gameObject.SendMessageUpwards("AddSprintAnimal", other.gameObject);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        this.gameObject.SendMessageUpwards("RemoveSprintAnimal", other.gameObject);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Animal")) this.gameObject.SendMessageUpwards("RemoveSprintAnimal", other.gameObject);
     }
 }
