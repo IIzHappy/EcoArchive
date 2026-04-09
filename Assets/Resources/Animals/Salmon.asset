@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Salmon
   m_EditorClassIdentifier: 
   _name: Salmon
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: a51260f39b7eef842804948d26f4a749, type: 3}
   _collected: 0

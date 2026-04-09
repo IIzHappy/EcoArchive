@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Catfish
   m_EditorClassIdentifier: 
   _name: Catfish
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 15081cd77537e9240a3ad2b848f98f6a, type: 3}
   _collected: 0
