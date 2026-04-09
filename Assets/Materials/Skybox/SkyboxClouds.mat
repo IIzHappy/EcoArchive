@@ -141,7 +141,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _TimeBlend: 0.40780804
+    - _TimeBlend: 0.4082487
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
