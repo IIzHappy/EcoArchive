@@ -68,7 +68,7 @@ public class PredatorBase : AnimalNavBase
         PreyBase prey = other.GetComponent<PreyBase>();
         if (prey != null)
         {
-            if (Random.value < chaseChance)
+            if (Random.value < chaseChance && prey.animalSize <=size)
             {
                 currentPrey = prey.transform;
                 chaseTimer = chaseDuration;

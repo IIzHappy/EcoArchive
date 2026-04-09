@@ -31,8 +31,8 @@ public class owlSpawner : MonoBehaviour
     bool IsNight()
     {
         float time = cycle._time;
-        float nightStarted = 1080f;
-        float nightEnd = 360f;
+        float nightStarted = 1200f;
+        float nightEnd = 420f;
         return (time >= nightStarted ||  time <= nightEnd);
     }
 
@@ -41,7 +41,11 @@ public class owlSpawner : MonoBehaviour
         if (hasSpawned) return;
         if (Random.value <= spawnChance)
         {
-            spawnedOwl = Instantiate(spawnedOwl, transform.position, transform.rotation);
+            if (Owl == null)
+            {
+                Debug.Log("aint no owls here fuclker");
+            }
+            spawnedOwl = Instantiate(Owl, transform.position, transform.rotation);
             Debug.Log("Owl spawned");
         }
         hasSpawned = true;

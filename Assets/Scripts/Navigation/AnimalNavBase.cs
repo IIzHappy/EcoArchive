@@ -38,7 +38,8 @@ public class AnimalNavBase : MonoBehaviour
     protected float sampleInterval;
 
     public virtual string AnimalID => "AnimalID";
-
+    [SerializeField] protected float size = 1f;
+    public float animalSize => size;
     protected virtual void Awake()
     {
         agent = GetComponent<NavMeshAgent>();

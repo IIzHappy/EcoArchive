@@ -37,10 +37,16 @@ public class PreyBase : AnimalNavBase
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PredatorBase>() != null)
+        PredatorBase predator = other.GetComponent<PredatorBase>();
+        if (predator != null)
         {
-            currentPredator = other.transform;
-            SetState(AnimalState.Fleeing);
+
+
+            if (predator.animalSize >= size)
+            {
+                currentPredator = other.transform;
+                SetState(AnimalState.Fleeing);
+            }
         }
     }
 
