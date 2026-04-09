@@ -10,6 +10,7 @@ TagManager:
   - FoxPoints
   - RatPoints
   - Prey
+  - Bed
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public bool _canControl = true;
 
     [SerializeField] PlayerRotateCam _rotateCam;
+    [SerializeField] DayNightCycle _dayNightCycle;
 
     [Header("Player")]
     int walkState = 0;
@@ -142,15 +143,31 @@ public class PlayerController : MonoBehaviour
     {
         if (_interactable)
         {
-            Collectables item = _curInteractable.GetComponent<Collectables>();
-            if (item._bone != null)
+            if (_curInteractable.tag == "Bed")
             {
-                Collection.Instance.AddBone(item._bone);
-                Destroy(_curInteractable);
-                InteractCheck();
+                _dayNightCycle._sleeping = true;
+                _canControl = false;
+                _rotateCam.enabled = false;
+            }
+            else
+            {
+                Collectables item = _curInteractable.GetComponent<Collectables>();
+                if (item._bone != null)
+                {
+                    Collection.Instance.AddBone(item._bone);
+                    Destroy(_curInteractable);
+                    InteractCheck();
+                }
             }
         }
     }
+
+    public void WakeUp()
+    {
+        _canControl = true;
+        _rotateCam.enabled = true;
+    }
+
     void InteractCheck()
     {
         Ray ray = new Ray(GetEyePos().position, GetLookDir());
@@ -158,7 +175,7 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, _interactDistance))
         {
-            if (hit.collider.gameObject.tag == "Bones")
+            if (hit.collider.gameObject.tag == "Bones" || hit.collider.gameObject.tag == "Bed")
             {
                 _interactable = true;
                 _curInteractable = hit.collider.gameObject;

@@ -1,10 +1,18 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Achievments : MonoBehaviour
 {
     public static Achievments Instance {get; private set;}
+
+    [SerializeField] GameObject book;
+    [SerializeField] GameObject prefab;
+    [SerializeField] Sprite[] sprites = {null, null};
+    GameObject[] entries; 
 
     bool[] achievments = new bool[2];
 
@@ -23,6 +31,8 @@ public class Achievments : MonoBehaviour
                 {
                     Specialist = true;
                     achievments[0] = true;
+                    entries[0].GetComponent<Image>().sprite = sprites[0];
+                    entries[0].GetComponentInChildren<TMP_Text>().text = "Specialist";
                 }
             }
         }
@@ -43,6 +53,8 @@ public class Achievments : MonoBehaviour
             {
                 AnimalsComplete = true;
                 achievments[1] = true;
+                entries[1].GetComponent<Image>().sprite = sprites[1];
+                entries[1].GetComponentInChildren<TMP_Text>().text = "Animal Collection Complete";
             }
         }
     }
@@ -71,11 +83,26 @@ public class Achievments : MonoBehaviour
         achievments = achievmentsUnlocked;
         specialistCounter = specProg;
         Specialist = achievments[0];
+        if (Specialist)
+        {
+            entries[0].GetComponent<Image>().sprite = sprites[0];
+            entries[0].GetComponentInChildren<TMP_Text>().text = "Specialist";
+        }
         AnimalsComplete = achievments[1];
+        if (AnimalsComplete)
+        {
+            entries[1].GetComponent<Image>().sprite = sprites[1];
+            entries[1].GetComponentInChildren<TMP_Text>().text = "Animal Collection Complete";
+        }
     }
 
     private void Start()
     {
+        entries = new GameObject[achievments.Length];
+        for (int i = 0; i < achievments.Length; i++)
+        {
+            entries[i] = Instantiate(prefab, book.transform);
+        }
         if (File.Exists(Application.persistentDataPath + "/achievmentSave.save"))
         {
             BinaryFormatter bf = new BinaryFormatter();

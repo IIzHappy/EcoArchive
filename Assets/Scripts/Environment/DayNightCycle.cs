@@ -8,7 +8,7 @@ public class DayNightCycle : MonoBehaviour
 {
     public bool _running = false;
     public bool _sleeping = false;
-
+    public PlayerController playerController;
     [SerializeField] public float _time;
     [SerializeField] float _startTime;
     public float _secsPerDay = 1440;
@@ -85,6 +85,7 @@ public class DayNightCycle : MonoBehaviour
         if (_sleeping && _time > 360 &&  _time < 1260)
         {
             _sleeping = false;
+            playerController.WakeUp();
         }
     }
 
