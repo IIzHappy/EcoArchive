@@ -308082,10 +308082,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5989722833711539529, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5989722833711539529, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989722833711539529, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5989722833711539529, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
@@ -308097,7 +308101,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 769906019}
     - target: {fileID: 5989722833711539529, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2072410726}
+    - target: {fileID: 5989722833711539529, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989722833711539529, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5989722833711539529, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
@@ -308109,6 +308121,10 @@ PrefabInstance:
       value: SaveGame
       objectReference: {fileID: 0}
     - target: {fileID: 5989722833711539529, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SaveAchievments
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989722833711539529, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CameraController, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -308117,7 +308133,15 @@ PrefabInstance:
       value: GameSave, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5989722833711539529, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: Achievments, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989722833711539529, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989722833711539529, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6041838725155724813, guid: 1351b204fbf82044ca508f9093036b66, type: 3}
