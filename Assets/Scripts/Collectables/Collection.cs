@@ -39,6 +39,26 @@ public class Collection : MonoBehaviour
     }
     private void Start()
     {
+        AnimalAsset[] allAnimals = Resources.LoadAll<AnimalAsset>("Animals");
+        foreach (var animal in allAnimals)
+        {
+            _animals.Add(animal, null);
+        }
+
+        Bug[] allBugs = Resources.LoadAll<Bug>("Bugs");
+        foreach (var bug in allBugs)
+        {
+            _bugs.Add(bug, null);
+        }
+
+        Bone[] allBones = Resources.LoadAll<Bone>("Bones");
+        foreach (var bone in allBones)
+        {
+            _bones.Add(bone, null);
+        }
+
+        _loadablePhotos = new List<LoadablePhoto>();
+
         _animalsFound = new bool[_animals.Count()];
         _bugsFound = new int[_bugs.Count()];
         _bonesFound = new int[_bones.Count()];
@@ -98,6 +118,7 @@ public class Collection : MonoBehaviour
 
             if (save._loadablePhotos != null)
             {
+                _loadablePhotos = save._loadablePhotos;
                 foreach (LoadablePhoto loadablePhoto in save._loadablePhotos)
                 {
                     Photo photo = ScriptableObject.CreateInstance<Photo>();
@@ -110,7 +131,7 @@ public class Collection : MonoBehaviour
             }
             else
             {
-                _loadablePhotos = new List<LoadablePhoto> {};
+                _loadablePhotos = new List<LoadablePhoto>();
             }
 
             if (save._settings != null)
@@ -143,6 +164,8 @@ public class Collection : MonoBehaviour
             {
                 _bones.Add(bone, null);
             }
+
+            _loadablePhotos = new List<LoadablePhoto>();
 
             InstantiateAnimals();
             InstantiateBugs();
@@ -235,23 +258,25 @@ public class Collection : MonoBehaviour
         }
     }
 
-    public void FoundAnimal(AnimalAsset animal)
+    public void FoundAnimal(string name)
     {
-        if (animal._collected) return;
         int i = 0;
         foreach (AnimalAsset key in _animals.Keys)
         {
-            if (key == animal)
+            if (key._name == name)
             {
                 _animalsFound[i] = true;
+                key._collected = true;
+                Debug.Log(key._name + key._collected);
+                InstantiateAnimals();
                 return;
             }
             i++;
         }
-        animal._collected = true;
-        _animals[animal].GetComponent<Image>().sprite = animal._icon;
-        _animals[animal].GetComponentInChildren<TMP_Text>().text = animal._name;
-        EventFeed.Instance.makeNotif(animal._icon, animal._name + " discovered");
+        //animal._collected = true;
+        //_animals[animal].GetComponent<Image>().sprite = animal._icon;
+        //_animals[animal].GetComponentInChildren<TMP_Text>().text = animal._name;
+        //EventFeed.Instance.makeNotif(animal._icon, animal._name + " discovered");
     }
 
     public void AddBug(Bug bug)

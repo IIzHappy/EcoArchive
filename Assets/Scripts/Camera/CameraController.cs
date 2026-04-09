@@ -248,6 +248,7 @@ public class CameraController : MonoBehaviour
                 RaycastHit check;
                 Ray temp = cam.ScreenPointToRay(new Vector3(0 + (i*8), 0 + (j*8), 0));
                 Physics.Raycast(temp, out check, Mathf.Infinity, ignore);
+                Debug.DrawRay(temp.origin, temp.direction, Color.red, 5f);
                 if (check.collider != null)
                 {
                     if (check.collider.gameObject.layer == animal)
@@ -272,98 +273,108 @@ public class CameraController : MonoBehaviour
             if (cur != null)
             {
                 float tempAct = 1f;
-                AnimalNavBase navBase = cur.GetComponent(typeof(AnimalNavBase)) as AnimalNavBase;
-                switch (navBase.CurrentState)
+                AnimalNavBase navBase;
+                cur.TryGetComponent<AnimalNavBase>(out navBase);
+                //cur.GetComponent(typeof(AnimalNavBase)) as AnimalNavBase;
+                if (navBase != null)
                 {
-                    case AnimalNavBase.AnimalState.Idle:
-                        tempAct = 1;
-                        break;
-
-                    case AnimalNavBase.AnimalState.Roaming:
-                        tempAct = .95f;
-                        break;
-
-                    case AnimalNavBase.AnimalState.Chasing:
-                        tempAct = .75f;
-                        break;
-
-                    case AnimalNavBase.AnimalState.Fleeing:
-                        tempAct = .75f;
-                        break;
-
-                    case AnimalNavBase.AnimalState.Unique:
-                        tempAct = .5f;
-                        break;
-
-                    case AnimalNavBase.AnimalState.Resting:
-                        tempAct = .6f;
-                        break;
-
-                    default:
-                        tempAct = 1f;
-                        break;
-                }
-                if (tempAct < act)
-                {
-                    act = tempAct;
-                }
-
-                RaycastHit hitChest;
-                RaycastHit hitHind;
-                RaycastHit hitHeadL;
-                RaycastHit hitHeadB;
-                Ray frameChest = new Ray(cur.transform.Find("Chest").transform.position, (cam.transform.position - cur.transform.Find("Chest").transform.position));
-                Ray frameHind = new Ray(cur.transform.Find("Hind").transform.position, (cam.transform.position - cur.transform.Find("Hind").transform.position).normalized);
-                Ray frameHead = new Ray(cur.transform.Find("Head").transform.position, (cam.transform.position - cur.transform.Find("Head").transform.position).normalized);
-                GameObject thirdChest = null;
-                GameObject thirdHind = null;
-                GameObject thirdHeadL = null;
-                GameObject thirdHeadB = null;
-                if (Physics.Raycast(frameChest, out hitChest, Mathf.Infinity, lines)) 
-                    thirdChest = hitChest.collider.gameObject;
-                if (Physics.Raycast(frameHind, out hitHind, Mathf.Infinity, lines)) 
-                    thirdHind = hitHind.collider.gameObject;
-                if (Physics.Raycast(frameHead, out hitHeadL, Mathf.Infinity, lines)) 
-                    thirdHeadL = hitHeadL.collider.gameObject;
-                if (Physics.Raycast(frameHead, out hitHeadB, Mathf.Infinity, boxes)) 
-                    thirdHeadB = hitHeadB.collider.gameObject;
-
-                if (thirdChest.name == "R 3 Line" || thirdChest.name == "L 3 Line")
-                {
-                    if (thirdHeadB.name == "C 3 Line")
+                    switch (navBase.CurrentState)
                     {
-                        if (frameMult < 2.5f) frameMult = 2.5f;
-                    }
-                }
+                        case AnimalNavBase.AnimalState.Idle:
+                            tempAct = 1;
+                            break;
 
-                if (thirdChest.name == "R 3 Line")
-                {
-                    if (thirdHind.name == "L 3 Line")
+                        case AnimalNavBase.AnimalState.Roaming:
+                            tempAct = .95f;
+                            break;
+
+                        case AnimalNavBase.AnimalState.Chasing:
+                            tempAct = .75f;
+                            break;
+
+                        case AnimalNavBase.AnimalState.Fleeing:
+                            tempAct = .75f;
+                            break;
+
+                        case AnimalNavBase.AnimalState.Unique:
+                            tempAct = .5f;
+                            break;
+
+                        case AnimalNavBase.AnimalState.Resting:
+                            tempAct = .6f;
+                            break;
+
+                        default:
+                            tempAct = 1f;
+                            break;
+                    }
+                    if (tempAct < act)
                     {
-                        if (frameMult < 2f) frameMult = 2f;
+                        act = tempAct;
                     }
-                }
-                else if (thirdChest.name == "L 3 Line")
-                {
-                    if (thirdHind.name == "R 3 Line")
+
+                    RaycastHit hitChest;
+                    RaycastHit hitHind;
+                    RaycastHit hitHeadL;
+                    RaycastHit hitHeadB;
+                    Ray frameChest = new Ray(cur.transform.Find("Chest").transform.position, (cam.transform.position - cur.transform.Find("Chest").transform.position));
+                    Ray frameHind = new Ray(cur.transform.Find("Hind").transform.position, (cam.transform.position - cur.transform.Find("Hind").transform.position).normalized);
+                    Ray frameHead = new Ray(cur.transform.Find("Head").transform.position, (cam.transform.position - cur.transform.Find("Head").transform.position).normalized);
+                    GameObject thirdChest = null;
+                    GameObject thirdHind = null;
+                    GameObject thirdHeadL = null;
+                    GameObject thirdHeadB = null;
+                    if (Physics.Raycast(frameChest, out hitChest, Mathf.Infinity, lines))
+                        thirdChest = hitChest.collider.gameObject;
+                    if (Physics.Raycast(frameHind, out hitHind, Mathf.Infinity, lines))
+                        thirdHind = hitHind.collider.gameObject;
+                    if (Physics.Raycast(frameHead, out hitHeadL, Mathf.Infinity, lines))
+                        thirdHeadL = hitHeadL.collider.gameObject;
+                    if (Physics.Raycast(frameHead, out hitHeadB, Mathf.Infinity, boxes))
+                        thirdHeadB = hitHeadB.collider.gameObject;
+                    if (thirdChest != null && thirdHind != null && thirdHeadL != null && thirdHeadB != null)
                     {
-                        if (frameMult < 2f) frameMult = 2f;
+                        if (thirdChest.name == "R 3 Line" || thirdChest.name == "L 3 Line")
+                        {
+                            if (thirdHeadB.name == "C 3 Line")
+                            {
+                                if (frameMult < 2.5f) frameMult = 2.5f;
+                            }
+                        }
+
+                        if (thirdChest.name == "R 3 Line")
+                        {
+                            if (thirdHind.name == "L 3 Line")
+                            {
+                                if (frameMult < 2f) frameMult = 2f;
+                            }
+                        }
+                        else if (thirdChest.name == "L 3 Line")
+                        {
+                            if (thirdHind.name == "R 3 Line")
+                            {
+                                if (frameMult < 2f) frameMult = 2f;
+                            }
+                        }
+
+                        if (thirdChest.name == "R 3 Line" && thirdHind.name == "R 3 Line" && thirdHeadL.name == "R 3 Line")
+                        {
+                            if (frameMult < 3f) frameMult = 3f;
+                        }
+                        else if (thirdChest.name == "R 3 Line" && thirdHind.name == "R 3 Line" && thirdHeadL.name == "R 3 Line")
+                        {
+                            if (frameMult < 3f) frameMult = 3f;
+                        }
                     }
-                }
 
-                if (thirdChest.name == "R 3 Line" && thirdHind.name == "R 3 Line" && thirdHeadL.name == "R 3 Line")
-                {
-                    if (frameMult < 3f) frameMult = 3f;
-                }
-                else if (thirdChest.name == "R 3 Line" && thirdHind.name == "R 3 Line" && thirdHeadL.name == "R 3 Line")
-                {
-                    if (frameMult < 3f) frameMult = 3f;
-                }
-
-                Debug.Log(hitChest.distance + " + " + dof.focusDistance);
-                if (hitChest.distance <= 20f * dof.focusDistance.GetValue<float>() && focus != 1)
-                {
-                    focus = 1;
+                    Debug.Log(hitChest.collider.gameObject.name);
+                    Debug.Log(hitChest.distance + " + " + dof.focusDistance);
+                    if (hitChest.distance <= 20f * dof.focusDistance.GetValue<float>() && focus != 1 && (hitChest.collider.gameObject.layer == LayerMask.NameToLayer("Lines") || hitChest.collider.gameObject.layer == LayerMask.NameToLayer("Boxes")))
+                    {
+                        focus = 1;
+                        Debug.Log(navBase.AnimalID);
+                        Collection.Instance.FoundAnimal(navBase.AnimalID);
+                    }
                 }
             }
         }

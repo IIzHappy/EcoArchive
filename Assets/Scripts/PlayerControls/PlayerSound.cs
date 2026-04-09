@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerSound : MonoBehaviour
@@ -78,24 +79,25 @@ public class PlayerSound : MonoBehaviour
 
     void AlertAnimals(int state)
     {
+        AnimalNavBase navBase = null;
         switch (state)
         {
             case 0:
                 foreach (GameObject animal in _walkRangeAnimals)
                 {
-                    animal.GetComponent<AnimalNavBase>().playerFlee(this.transform);
+                    if (animal.TryGetComponent<AnimalNavBase>(out navBase)) navBase.playerFlee(this.transform);
                 }
                 break;
             case 1:
                 foreach (GameObject animal in _sprintRangeAnimals)
                 {
-                    animal.GetComponent<AnimalNavBase>().playerFlee(this.transform);
+                    if (animal.TryGetComponent<AnimalNavBase>(out navBase)) navBase.playerFlee(this.transform);
                 }
                 break;
             case 2:
                 foreach (GameObject animal in _slowRangeAnimals)
                 {
-                    animal.GetComponent<AnimalNavBase>().playerFlee(this.transform);
+                    if (animal.TryGetComponent<AnimalNavBase>(out navBase)) navBase.playerFlee(this.transform);
                 }
                 break;
 
