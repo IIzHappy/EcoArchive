@@ -3,7 +3,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class Achievments : MonoBehaviour
 {
@@ -22,20 +21,15 @@ public class Achievments : MonoBehaviour
     int[] specialistCounter = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     public void IterateSpecialist(string animal)
     {
-        Debug.Log("Start");
         for (int i = 0; i < specialistReference.Length; i++)
         {
-            Debug.Log("String ref");
             if (specialistReference[i] == animal)
             {
-                Debug.Log("int ref");
                 specialistCounter[i]++;
-                Debug.Log("Complete ref");
                 if (specialistCounter[i] >= 10)
                 {
                     Specialist = true;
                     achievments[0] = true;
-                    Debug.Log("Entries and sprite ref");
                     entries[0].GetComponent<Image>().sprite = sprites[0];
                     entries[0].GetComponentInChildren<TMP_Text>().text = "Specialist";
                 }

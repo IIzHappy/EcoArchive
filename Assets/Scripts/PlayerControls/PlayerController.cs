@@ -1,6 +1,4 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -143,6 +141,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_interactable)
         {
+            Debug.Log(_curInteractable.tag);
             if (_curInteractable.tag == "Bed")
             {
                 _dayNightCycle._sleeping = true;

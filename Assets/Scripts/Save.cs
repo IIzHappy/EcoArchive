@@ -1,7 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
-using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 [System.Serializable]
 public class Save
