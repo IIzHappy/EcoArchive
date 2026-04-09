@@ -264,6 +264,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f68da48374f41e34dba9023d669ca6bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bd2f332a9de4e7d4382d25812f9474c2, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f68da48374f41e34dba9023d669ca6bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: fc6835ff49eab8148a6eb4ed4aa1e717, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f68da48374f41e34dba9023d669ca6bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3f35b422761f73c448301b74a882e8d7, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f68da48374f41e34dba9023d669ca6bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 032695f5fd128934ea31cf83d144c6e7, type: 2}
     - target: {fileID: 919132149155446097, guid: f68da48374f41e34dba9023d669ca6bd, type: 3}
       propertyPath: m_Name
       value: CollisionTent
