@@ -39,25 +39,25 @@ public class Collection : MonoBehaviour
     }
     private void Start()
     {
-        AnimalAsset[] allAnimals = Resources.LoadAll<AnimalAsset>("Animals");
-        foreach (var animal in allAnimals)
-        {
-            _animals.Add(animal, null);
-        }
+        //AnimalAsset[] allAnimals = Resources.LoadAll<AnimalAsset>("Animals");
+        //foreach (var animal in allAnimals)
+        //{
+        //    _animals.Add(animal, null);
+        //}
 
-        Bug[] allBugs = Resources.LoadAll<Bug>("Bugs");
-        foreach (var bug in allBugs)
-        {
-            _bugs.Add(bug, null);
-        }
+        //Bug[] allBugs = Resources.LoadAll<Bug>("Bugs");
+        //foreach (var bug in allBugs)
+        //{
+        //    _bugs.Add(bug, null);
+        //}
 
-        Bone[] allBones = Resources.LoadAll<Bone>("Bones");
-        foreach (var bone in allBones)
-        {
-            _bones.Add(bone, null);
-        }
+        //Bone[] allBones = Resources.LoadAll<Bone>("Bones");
+        //foreach (var bone in allBones)
+        //{
+        //    _bones.Add(bone, null);
+        //}
 
-        _loadablePhotos = new List<LoadablePhoto>();
+        //_loadablePhotos = new List<LoadablePhoto>();
 
         _animalsFound = new bool[_animals.Count()];
         _bugsFound = new int[_bugs.Count()];
@@ -268,6 +268,7 @@ public class Collection : MonoBehaviour
                 key._collected = true;
                 Debug.Log(key._name + key._collected);
                 InstantiateAnimals();
+                Achievments.Instance.CheckAnimalCompletion(_animalsFound);
                 return;
             }
             i++;
@@ -304,7 +305,6 @@ public class Collection : MonoBehaviour
             if (key == bone)
             {
                 _bonesFound[i] += 1;
-                return;
             }
             i++;
         }

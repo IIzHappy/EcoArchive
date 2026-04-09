@@ -11,6 +11,4 @@ public class Save
     public int[] _bones;
     public List<LoadablePhoto> _loadablePhotos = new List<LoadablePhoto>();
     public float[] _settings;
-    public bool[] unlockedAchievments;
-    public int[] specialistProgress;
 }

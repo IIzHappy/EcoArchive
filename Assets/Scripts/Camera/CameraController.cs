@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using System.IO;
+using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] GameObject UI;
     [SerializeField] GameObject camUI;
+
+    [SerializeField] Image focusBar;
+    [SerializeField] Image zoomBar;
 
     [SerializeField] VolumeProfile volumeProfile;
     DepthOfField dof;
@@ -44,7 +48,7 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        ignore = ~LayerMask.GetMask("Lines", "Boxes");
+        ignore = ~LayerMask.GetMask("Lines", "Boxes", "Water");
         animal = LayerMask.NameToLayer("Animal");
         cam.usePhysicalProperties = true;
         DepthOfField test;
@@ -153,6 +157,7 @@ public class CameraController : MonoBehaviour
                     {
                         dof.focusDistance.value = 1.4f;
                     }
+                    focusBar.fillAmount = (dof.focusDistance.value - 1.4f) * 2.5f;
                 }
 
                 else if (Input.GetKeyDown("z"))
@@ -173,7 +178,7 @@ public class CameraController : MonoBehaviour
                             {
                                 if (check.collider.gameObject.layer == animal)
                                 {
-                                    dof.focusDistance.value = check.distance * 20f;
+                                    dof.focusDistance.value = check.distance / 20f;
                                 }
                             }
                         }
@@ -191,8 +196,8 @@ public class CameraController : MonoBehaviour
                     {
                         cam.focalLength = 20;
                     }
-
                     VFCam.focalLength = cam.focalLength;
+                    focusBar.fillAmount = (cam.focalLength - 20) / 80;
                 }
             }
         }
