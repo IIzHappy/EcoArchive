@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject _dayNight;
     [SerializeField] GameObject _eventFeed;
 
+    [SerializeField] CameraController _cameraController;
+
     [SerializeField] bool _inGame = true;
     public bool _freezeOnPause = true;
 
@@ -24,6 +26,7 @@ public class UIManager : MonoBehaviour
 
     public void OpenWindows()
     {
+        _cameraController.SetCamUseable(false);
         if (_freezeOnPause)
         {
             PauseGame();
@@ -35,6 +38,7 @@ public class UIManager : MonoBehaviour
     }
     public void CloseWindows()
     {
+        _cameraController.SetCamUseable(true);
         if (_freezeOnPause && _curWin == null)
         {
             UnpauseGame();
