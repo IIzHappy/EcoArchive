@@ -83,19 +83,19 @@ public class PlayerSound : MonoBehaviour
             case 0:
                 foreach (GameObject animal in _walkRangeAnimals)
                 {
-                    animal.GetComponent<AnimalNavBase>()/*React method*/;
+                    animal.GetComponent<AnimalNavBase>().playerFlee(this.transform);
                 }
                 break;
             case 1:
                 foreach (GameObject animal in _sprintRangeAnimals)
                 {
-                    animal.GetComponent<AnimalNavBase>()/*React method*/;
+                    animal.GetComponent<AnimalNavBase>().playerFlee(this.transform);
                 }
                 break;
             case 2:
                 foreach (GameObject animal in _slowRangeAnimals)
                 {
-                    animal.GetComponent<AnimalNavBase>()/*React method*/;
+                    animal.GetComponent<AnimalNavBase>().playerFlee(this.transform);
                 }
                 break;
 
