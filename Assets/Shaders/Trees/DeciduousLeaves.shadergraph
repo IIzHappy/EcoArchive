@@ -104,6 +104,9 @@
         },
         {
             "m_Id": "a1c5830db3cf4351be76d39d760ce1e3"
+        },
+        {
+            "m_Id": "57128ea9341f41fca0c9342852e84b43"
         }
     ],
     "m_GroupDatas": [],
@@ -149,6 +152,20 @@
                     "m_Id": "73d0bc88f2ed401d9802ecb23802c2a4"
                 },
                 "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "57128ea9341f41fca0c9342852e84b43"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "4bc9167eb880483aa067a6b437c6bc78"
+                },
+                "m_SlotId": 1
             }
         },
         {
@@ -908,10 +925,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -532.0,
-            "y": 453.9999694824219,
-            "width": 208.0,
-            "height": 433.0000305175781
+            "x": -536.0000610351563,
+            "y": 479.0000305175781,
+            "width": 182.99996948242188,
+            "height": 248.99996948242188
         }
     },
     "m_Slots": [
@@ -944,7 +961,7 @@
         "tex2d"
     ],
     "m_Precision": 0,
-    "m_PreviewExpanded": true,
+    "m_PreviewExpanded": false,
     "m_DismissedVersion": 0,
     "m_PreviewMode": 0,
     "m_CustomColors": {
@@ -1064,6 +1081,55 @@
     "m_NormalDropOffSpace": 0,
     "m_ClearCoat": false,
     "m_BlendModePreserveSpecular": true
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "57128ea9341f41fca0c9342852e84b43",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -717.0000610351563,
+            "y": 479.0000305175781,
+            "width": 159.0,
+            "height": 34.000030517578128
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "5818be0ce5034012ade61881afc6e50a"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "6f7beeb6bf8a4d5281b94c9cfb3cf4e7"
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
+    "m_ObjectId": "5818be0ce5034012ade61881afc6e50a",
+    "m_Id": 0,
+    "m_DisplayName": "LeavesTexture",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_BareResource": false
 }
 
 {
