@@ -48,8 +48,6 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        zoomBar.fillAmount = (cam.focalLength - 20) / 80;
-        focusBar.fillAmount = (dof.focusDistance.value - 1.4f) * 2.5f;
         ignore = ~LayerMask.GetMask("Lines", "Boxes", "Water");
         animal = LayerMask.NameToLayer("Animal");
         cam.usePhysicalProperties = true;
@@ -66,6 +64,8 @@ public class CameraController : MonoBehaviour
         {
             Directory.CreateDirectory(Application.persistentDataPath + "/Player Images/");
         }
+        zoomBar.fillAmount = (cam.focalLength - 20) / 80;
+        focusBar.fillAmount = (dof.focusDistance.value - 1.4f) * 2.5f;
     }
 
     private void Update()
