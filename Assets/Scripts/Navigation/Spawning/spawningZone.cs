@@ -17,7 +17,8 @@ public class spawningZone : MonoBehaviour
     public List<SpawnType> animalTypes;
     public float spawnInterval = 2f;
 
-    private bool spawnZoneActive = false;
+    public bool spawnZoneActive = false;
+    public bool startZone = false;
     private Dictionary<SpawnType, List<GameObject>> activeAnimals = new Dictionary<SpawnType, List<GameObject>>();
 
     private void Start()
@@ -27,13 +28,21 @@ public class spawningZone : MonoBehaviour
             activeAnimals[species] = new List<GameObject>();
         }
 
+        if (startZone)
+        {
+            spawnZoneActive = true;
+            StartCoroutine(spawning());
+        }
 
     }
+
+   
 
     private void OnTriggerEnter(Collider entity)
     {
         if (entity.CompareTag("Player"))
         {
+            Debug.Log("spawning" + gameObject.name);
             spawnZoneActive = true;
             StartCoroutine(spawning());
         }
@@ -43,6 +52,7 @@ public class spawningZone : MonoBehaviour
     {
         if (thingy.CompareTag("Player"))
         {
+            Debug.Log("Despawning" + gameObject.name);
             spawnZoneActive = false;
              DespawnAnimals();
         }
@@ -68,7 +78,7 @@ public class spawningZone : MonoBehaviour
         if (newList.Count >= species.maxNum) return;
         Vector3 spawnPosition;
         if (getMeshPoint(species.spawnRadius, out spawnPosition)){
-            GameObject animal = Instantiate(species.prefab, spawnPosition, Quaternion.identity);
+            GameObject animal = Instantiate(species.prefab, spawnPosition, Quaternion.identity, transform);
             newList.Add(animal);
         }
     }
@@ -95,7 +105,11 @@ public class spawningZone : MonoBehaviour
         {
             foreach (var animal in list)
             {
-                animal.SetActive(false);
+                if (animal != null)
+                {
+                    Destroy(animal);
+                }
+                ;
             }
             list.Clear();
         }
