@@ -151,6 +151,7 @@ public class Collection : MonoBehaviour
             {
                 _animals.Add(animal, null);
             }
+            _animalsFound = new bool[_animals.Count];
 
             Bug[] allBugs = Resources.LoadAll<Bug>("Bugs");
             foreach (var bug in allBugs)
