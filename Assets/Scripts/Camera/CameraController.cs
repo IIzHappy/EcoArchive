@@ -364,6 +364,7 @@ public class CameraController : MonoBehaviour
                 if (hitChest.distance <= 20f * dof.focusDistance.GetValue<float>() && focus != 1)
                 {
                     focus = 1;
+                    Debug.Log(navBase.AnimalID);
                 }
             }
         }
