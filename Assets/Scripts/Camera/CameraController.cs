@@ -382,6 +382,7 @@ public class CameraController : MonoBehaviour
                         focus = 1;
                         Debug.Log(navBase.AnimalID);
                         Collection.Instance.FoundAnimal(navBase.AnimalID);
+                        Debug.Log("ASGYUD");
                         Achievments.Instance.IterateSpecialist(navBase.AnimalID);
                     }
                 }
