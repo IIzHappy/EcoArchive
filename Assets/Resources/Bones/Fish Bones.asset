@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Fish Bones
   _icon: {fileID: 21300000, guid: 291c45b58759f804d98282c7af788c16, type: 3}
-  _numCollected: 2
+  _numCollected: 0
