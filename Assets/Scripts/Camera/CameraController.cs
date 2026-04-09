@@ -315,18 +315,18 @@ public class CameraController : MonoBehaviour
                 Ray frameChest = new Ray(cur.transform.Find("Chest").transform.position, (cam.transform.position - cur.transform.Find("Chest").transform.position));
                 Ray frameHind = new Ray(cur.transform.Find("Hind").transform.position, (cam.transform.position - cur.transform.Find("Hind").transform.position).normalized);
                 Ray frameHead = new Ray(cur.transform.Find("Head").transform.position, (cam.transform.position - cur.transform.Find("Head").transform.position).normalized);
-                Physics.Raycast(frameChest, out hitChest, Mathf.Infinity, lines);
-                Physics.Raycast(frameHind, out hitHind, Mathf.Infinity, lines);
-                Physics.Raycast(frameHead, out hitHeadL, Mathf.Infinity, lines);
-                Physics.Raycast(frameHead, out hitHeadB, Mathf.Infinity, boxes);
                 GameObject thirdChest = null;
                 GameObject thirdHind = null;
                 GameObject thirdHeadL = null;
                 GameObject thirdHeadB = null;
-                if (hitChest.collider.gameObject != null) thirdChest = hitChest.collider.gameObject;
-                if (hitHind.collider.gameObject != null) thirdHind = hitHind.collider.gameObject;
-                if (hitHeadL.collider.gameObject != null) thirdHeadL = hitHeadL.collider.gameObject;
-                if (hitHeadB.collider.gameObject != null) thirdHeadB = hitHeadB.collider.gameObject;
+                if (Physics.Raycast(frameChest, out hitChest, Mathf.Infinity, lines)) 
+                    thirdChest = hitChest.collider.gameObject;
+                if (Physics.Raycast(frameHind, out hitHind, Mathf.Infinity, lines)) 
+                    thirdHind = hitHind.collider.gameObject;
+                if (Physics.Raycast(frameHead, out hitHeadL, Mathf.Infinity, lines)) 
+                    thirdHeadL = hitHeadL.collider.gameObject;
+                if (Physics.Raycast(frameHead, out hitHeadB, Mathf.Infinity, boxes)) 
+                    thirdHeadB = hitHeadB.collider.gameObject;
 
                 if (thirdChest.name == "R 3 Line" || thirdChest.name == "L 3 Line")
                 {
@@ -364,7 +364,6 @@ public class CameraController : MonoBehaviour
                 if (hitChest.distance <= 20f * dof.focusDistance.GetValue<float>() && focus != 1)
                 {
                     focus = 1;
-                    Debug.Log(navBase.AnimalID);
                 }
             }
         }

@@ -281,6 +281,8 @@ MonoBehaviour:
   maxSampleAttempts: 10
   idleMinTime: 5
   idleMaxTime: 10
+  playerFleeDistanceCheck: 15
+  playerFleeDistance: 10
 --- !u!195 &9008348949039340241
 NavMeshAgent:
   m_ObjectHideFlags: 0

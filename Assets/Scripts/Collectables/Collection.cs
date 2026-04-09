@@ -109,8 +109,12 @@ public class Collection : MonoBehaviour
                     AddPhoto(photo);
                 }
             }
+            else
+            {
+                _loadablePhotos = new List<LoadablePhoto> {};
+            }
 
-            if (save._settings != null) 
+            if (save._settings != null)
             {
                 settings.SetSliders(save._settings);
             }
