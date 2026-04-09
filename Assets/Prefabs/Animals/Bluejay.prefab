@@ -254,6 +254,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 063ed512032812d4aa52deeebd4a336b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9151337286574781318}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 063ed512032812d4aa52deeebd4a336b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2202964604600463561}
   m_SourcePrefab: {fileID: 100100000, guid: 063ed512032812d4aa52deeebd4a336b, type: 3}
 --- !u!4 &4639886833862757219 stripped
 Transform:
@@ -311,3 +314,23 @@ MonoBehaviour:
   m_ObjectForwardAxis: 2
   m_ObjectUpAxis: 1
   m_StartOffset: 0
+--- !u!114 &2202964604600463561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417796071861948889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e05d67d089dee4aaad9ff8b746d2aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  sampleRadius: 10
+  maxSampleAttempts: 10
+  idleMinTime: 2
+  idleMaxTime: 5
+  playerFleeDistanceCheck: 15
+  playerFleeDistance: 10
+  size: 1

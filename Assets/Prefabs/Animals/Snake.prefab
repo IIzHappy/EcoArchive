@@ -211,6 +211,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snake
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cb1c4a20edcbe3f4496678f264c75b30, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cb1c4a20edcbe3f4496678f264c75b30, type: 3}
+      propertyPath: m_TagString
+      value: Animals
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -229,10 +237,10 @@ PrefabInstance:
       addedObject: {fileID: 3072932820120530493}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cb1c4a20edcbe3f4496678f264c75b30, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3645689124958643212}
+      addedObject: {fileID: 2252542278071039452}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cb1c4a20edcbe3f4496678f264c75b30, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2252542278071039452}
+      addedObject: {fileID: 4820630747535558535}
   m_SourcePrefab: {fileID: 100100000, guid: cb1c4a20edcbe3f4496678f264c75b30, type: 3}
 --- !u!1 &8499854340277318454 stripped
 GameObject:
@@ -261,23 +269,6 @@ NavMeshAgent:
   m_BaseOffset: 0.10768797
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3645689124958643212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8499854340277318454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac59f67ac61e234dab8f6739b67a759, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  sampleRadius: 10
-  maxSampleAttempts: 10
-  idleMinTime: 5
-  idleMaxTime: 10
 --- !u!136 &2252542278071039452
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -301,6 +292,29 @@ CapsuleCollider:
   m_Height: 5.0744257
   m_Direction: 2
   m_Center: {x: 0, y: 0.018557405, z: -0.3945879}
+--- !u!114 &4820630747535558535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8499854340277318454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15f6ebd34ec5c54e90d74b49acd0d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  sampleRadius: 10
+  maxSampleAttempts: 10
+  idleMinTime: 2
+  idleMaxTime: 5
+  playerFleeDistanceCheck: 15
+  playerFleeDistance: 10
+  size: 1
+  chaseDuration: 5
+  chaseCooldown: 8
+  chaseChance: 0.4
 --- !u!4 &9132839149630056844 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cb1c4a20edcbe3f4496678f264c75b30, type: 3}

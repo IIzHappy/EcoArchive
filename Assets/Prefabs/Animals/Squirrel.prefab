@@ -272,7 +272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b1d98dd1302f7e48afe356602dbedf9, type: 3}
       propertyPath: m_TagString
-      value: Prey
+      value: Animals
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -301,7 +301,7 @@ PrefabInstance:
       addedObject: {fileID: 803212060345257510}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6b1d98dd1302f7e48afe356602dbedf9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8386196789357877326}
+      addedObject: {fileID: 3332319470550594939}
   m_SourcePrefab: {fileID: 100100000, guid: 6b1d98dd1302f7e48afe356602dbedf9, type: 3}
 --- !u!4 &1728201243646116425 stripped
 Transform:
@@ -379,7 +379,7 @@ CapsuleCollider:
   m_Height: 2.8583338
   m_Direction: 2
   m_Center: {x: 0, y: 0.549855, z: 0.23355013}
---- !u!114 &8386196789357877326
+--- !u!114 &3332319470550594939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -388,12 +388,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2067184610623232243}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1e6fa04d0047ab40aab199ac6180295, type: 3}
+  m_Script: {fileID: 11500000, guid: bbc7ff2c0648a5c4aa8169a9724f3e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
   sampleRadius: 10
   maxSampleAttempts: 10
-  idleMinTime: 5
-  idleMaxTime: 10
+  idleMinTime: 2
+  idleMaxTime: 5
+  playerFleeDistanceCheck: 15
+  playerFleeDistance: 10
+  size: 1
   fleeDistance: 12

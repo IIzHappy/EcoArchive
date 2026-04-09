@@ -270,6 +270,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
+      propertyPath: m_TagString
+      value: Animals
+      objectReference: {fileID: 0}
     - target: {fileID: 3952659653627435672, guid: a803cdca8b3dc5a428511fab4a40f371, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -580,7 +584,12 @@ MonoBehaviour:
   maxSampleAttempts: 10
   idleMinTime: 5
   idleMaxTime: 10
-  fleeDistance: 12
+  playerFleeDistanceCheck: 15
+  playerFleeDistance: 10
+  size: 1
+  chaseDuration: 5
+  chaseCooldown: 8
+  chaseChance: 0.4
   playerTag: Player
   safeDistance: 15
   fleeMultiplier: 1.5

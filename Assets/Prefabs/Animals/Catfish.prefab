@@ -263,6 +263,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+      propertyPath: m_TagString
+      value: Animals
+      objectReference: {fileID: 0}
     - target: {fileID: 2749395313866395409, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -306,6 +310,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3072323009455102289}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2479428535519678929}
   m_SourcePrefab: {fileID: 100100000, guid: a6f801f81b5936e46b7ed4480c79a6cd, type: 3}
 --- !u!4 &176480440126308335 stripped
 Transform:
@@ -363,3 +370,23 @@ MonoBehaviour:
   m_ObjectForwardAxis: 2
   m_ObjectUpAxis: 1
   m_StartOffset: 0
+--- !u!114 &2479428535519678929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664611532649801045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e2d76ba6a46f548b18c0831da66f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  sampleRadius: 10
+  maxSampleAttempts: 10
+  idleMinTime: 2
+  idleMaxTime: 5
+  playerFleeDistanceCheck: 15
+  playerFleeDistance: 10
+  size: 1

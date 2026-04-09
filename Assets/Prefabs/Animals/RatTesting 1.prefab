@@ -249,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c6c3c419d79ff604e8c1df6b0f84fb38, type: 3}
       propertyPath: m_TagString
-      value: Prey
+      value: Animals
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -372,6 +372,9 @@ MonoBehaviour:
   maxSampleAttempts: 10
   idleMinTime: 5
   idleMaxTime: 10
+  playerFleeDistanceCheck: 15
+  playerFleeDistance: 10
+  size: 1
   fleeDistance: 12
   boneTag: Bones
   eatIdleMin: 5

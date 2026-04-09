@@ -215,6 +215,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 37e18603a4356924da3b0e747e2e7de9, type: 3}
+      propertyPath: m_TagString
+      value: Animals
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -239,9 +243,6 @@ PrefabInstance:
       addedObject: {fileID: 3385471867597766903}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 37e18603a4356924da3b0e747e2e7de9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -7026209914203120597}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 37e18603a4356924da3b0e747e2e7de9, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7392369251464540807}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 37e18603a4356924da3b0e747e2e7de9, type: 3}
       insertIndex: -1
@@ -258,6 +259,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 37e18603a4356924da3b0e747e2e7de9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2100348852067272182}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 37e18603a4356924da3b0e747e2e7de9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6074606826272116721}
   m_SourcePrefab: {fileID: 100100000, guid: 37e18603a4356924da3b0e747e2e7de9, type: 3}
 --- !u!1 &7492066990703942822 stripped
 GameObject:
@@ -330,23 +334,6 @@ NavMeshAgent:
   m_BaseOffset: 0.55
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-7026209914203120597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7492066990703942822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac59f67ac61e234dab8f6739b67a759, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  sampleRadius: 10
-  maxSampleAttempts: 10
-  idleMinTime: 2
-  idleMaxTime: 5
 --- !u!136 &7392369251464540807
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -481,6 +468,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.14921175, y: 0.0178926, z: 0.1353203}
   m_Center: {x: 0.1025829, y: -0.5647307, z: -0.20636357}
+--- !u!114 &6074606826272116721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7492066990703942822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 125bf51371335f14bb0ddbf107aeaeac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  sampleRadius: 10
+  maxSampleAttempts: 10
+  idleMinTime: 2
+  idleMaxTime: 5
+  playerFleeDistanceCheck: 15
+  playerFleeDistance: 10
+  size: 1
+  fleeDistance: 12
 --- !u!4 &7832599328528451100 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 37e18603a4356924da3b0e747e2e7de9, type: 3}

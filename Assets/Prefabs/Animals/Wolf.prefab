@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wolf
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bf5d9b57a7f833342af98113d2d3ffce, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bf5d9b57a7f833342af98113d2d3ffce, type: 3}
+      propertyPath: m_TagString
+      value: Animals
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -62,6 +70,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bf5d9b57a7f833342af98113d2d3ffce, type: 3}
       insertIndex: -1
       addedObject: {fileID: -6457634744170204038}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bf5d9b57a7f833342af98113d2d3ffce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2296540278340932048}
   m_SourcePrefab: {fileID: 100100000, guid: bf5d9b57a7f833342af98113d2d3ffce, type: 3}
 --- !u!1 &3325189710616111414 stripped
 GameObject:
@@ -117,3 +128,26 @@ NavMeshAgent:
   m_BaseOffset: 0.45118797
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2296540278340932048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3325189710616111414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdd25ca0f66f8da41aa840a8bd4ea3ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  sampleRadius: 10
+  maxSampleAttempts: 10
+  idleMinTime: 2
+  idleMaxTime: 5
+  playerFleeDistanceCheck: 15
+  playerFleeDistance: 10
+  size: 1
+  chaseDuration: 5
+  chaseCooldown: 8
+  chaseChance: 0.4
