@@ -39,29 +39,29 @@ public class Collection : MonoBehaviour
     }
     private void Start()
     {
-        AnimalAsset[] allAnimals = Resources.LoadAll<AnimalAsset>("Animals");
-        foreach (var animal in allAnimals)
-        {
-            _animals.Add(animal, null);
-        }
+        //AnimalAsset[] allAnimals = Resources.LoadAll<AnimalAsset>("Animals");
+        //foreach (var animal in allAnimals)
+        //{
+        //    _animals.Add(animal, null);
+        //}
 
-        Bug[] allBugs = Resources.LoadAll<Bug>("Bugs");
-        foreach (var bug in allBugs)
-        {
-            _bugs.Add(bug, null);
-        }
+        //Bug[] allBugs = Resources.LoadAll<Bug>("Bugs");
+        //foreach (var bug in allBugs)
+        //{
+        //    _bugs.Add(bug, null);
+        //}
 
-        Bone[] allBones = Resources.LoadAll<Bone>("Bones");
-        foreach (var bone in allBones)
-        {
-            _bones.Add(bone, null);
-        }
+        //Bone[] allBones = Resources.LoadAll<Bone>("Bones");
+        //foreach (var bone in allBones)
+        //{
+        //    _bones.Add(bone, null);
+        //}
 
-        _loadablePhotos = new List<LoadablePhoto>();
+        //_loadablePhotos = new List<LoadablePhoto>();
 
-        _animalsFound = new bool[_animals.Count()];
-        _bugsFound = new int[_bugs.Count()];
-        _bonesFound = new int[_bones.Count()];
+        //_animalsFound = new bool[_animals.Count()];
+        //_bugsFound = new int[_bugs.Count()];
+        //_bonesFound = new int[_bones.Count()];
         LoadCollection();
     }
 
@@ -69,21 +69,43 @@ public class Collection : MonoBehaviour
     {
         if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
         {
+            AnimalAsset[] allAnimals = Resources.LoadAll<AnimalAsset>("Animals");
+            foreach (var animal in allAnimals)
+            {
+                _animals.Add(animal, null);
+            }
+            _animalsFound = new bool[_animals.Count];
+
+            Bug[] allBugs = Resources.LoadAll<Bug>("Bugs");
+            foreach (var bug in allBugs)
+            {
+                _bugs.Add(bug, null);
+            }
+
+            Bone[] allBones = Resources.LoadAll<Bone>("Bones");
+            foreach (var bone in allBones)
+            {
+                _bones.Add(bone, null);
+            }
+
+            _loadablePhotos = new List<LoadablePhoto>();
+
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
             Save save = (Save)bf.Deserialize(file);
             file.Close();
 
-            if (save._animals != null)
-            {
-                for (int k = 0; k < save._animals.Length; k++)
-                {
-                    Debug.Log(_animalsFound[k]);
+            //if (save._animals != null)
+            //{
+            //    for (int k = 0; k < save._animals.Length; k++)
+            //    {
+            //        Debug.Log(_animalsFound[k]);
 
-                    _animalsFound[k] = save._animals[k];
-                }
-            }
-
+            //        _animalsFound[k] = save._animals[k];
+            //    }
+            //}
+            if (save._animals != null) _animalsFound = save._animals;
+            else _animalsFound = new bool[_animals.Count];
             int i = 0;
             foreach (AnimalAsset animal in _animals.Keys)
             {
@@ -103,8 +125,12 @@ public class Collection : MonoBehaviour
                     i++;
                 }
             }
+            else
+            {
+                _bugsFound = new int[_bugs.Count];
+            }
 
-            i = 0;
+                i = 0;
             if (save._bones != null)
             {
                 foreach (Bone bone in _bones.Keys)
@@ -115,6 +141,10 @@ public class Collection : MonoBehaviour
                     }
                     i++;
                 }
+            }
+            else
+            {
+                _bonesFound = new int[_bones.Count];
             }
 
             if (save._loadablePhotos != null)
