@@ -26,6 +26,36 @@ public class DetailCarve : MonoBehaviour
             DestroyImmediate(colliders[i].gameObject);
         }
 
+        for (int i = 0; i < terrain.terrainData.treePrototypes.Length; i++)
+        {
+            TreePrototype tree = terrain.terrainData.treePrototypes[i];
+
+            TreeInstance[] instances = terrain.terrainData.treeInstances.Where(x => x.prototypeIndex == i).ToArray();
+
+            for (int j = 0; j < instances.Length; j++)
+            {
+                instances[j].position = Vector3.Scale(instances[j].position, terrain.terrainData.size);
+                instances[j].position += terrain.GetPosition();
+
+                CapsuleCollider prefabCollider = tree.prefab.GetComponent<CapsuleCollider>();
+                if (!prefabCollider) continue;
+
+                GameObject obj = new GameObject();
+                obj.name = tree.prefab.name + j;
+
+                CapsuleCollider objCollider = obj.AddComponent<CapsuleCollider>();
+
+                objCollider.center = prefabCollider.center;
+                objCollider.height = prefabCollider.height;
+                objCollider.radius = prefabCollider.radius;
+
+                obj.layer = terrain.gameObject.layer;
+
+                obj.transform.position = instances[j].position;
+                obj.transform.parent = terrain.transform;
+            }
+        }
+
         for (int l = 0; l < terrain.terrainData.detailPrototypes.Length; l++)
         {
             DetailPrototype detail = terrain.terrainData.detailPrototypes[l];
@@ -41,7 +71,6 @@ public class DetailCarve : MonoBehaviour
                         position += terrain.GetPosition();
 
                         CapsuleCollider prefabCollider = detail.prototype.GetComponent<CapsuleCollider>();
-
                         if (!prefabCollider) continue;
 
                         GameObject obj = new GameObject();

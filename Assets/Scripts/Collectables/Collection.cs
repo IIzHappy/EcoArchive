@@ -78,7 +78,6 @@ public class Collection : MonoBehaviour
             {
                 for (int k = 0; k < save._animals.Length; k++)
                 {
-                    Debug.Log(save._animals[k]);
                     _animalsFound[k] = save._animals[k];
                 }
             }
