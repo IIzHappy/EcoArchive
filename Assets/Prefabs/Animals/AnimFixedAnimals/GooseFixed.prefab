@@ -197,8 +197,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 142.08371, y: 104.342026, z: -900.86993}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8122968946234672382}
   - {fileID: 5084371665141247976}
@@ -221,8 +221,8 @@ MonoBehaviour:
   currentState: 0
   sampleRadius: 10
   maxSampleAttempts: 10
-  idleMinTime: 2
-  idleMaxTime: 5
+  idleMinTime: 10
+  idleMaxTime: 20
   playerFleeDistanceCheck: 15
   playerFleeDistance: 10
   size: 7
@@ -240,7 +240,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 2
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

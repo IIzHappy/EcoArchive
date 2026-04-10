@@ -811,10 +811,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  sampleRadius: 10
+  sampleRadius: 30
   maxSampleAttempts: 10
-  idleMinTime: 2
-  idleMaxTime: 5
+  idleMinTime: 10
+  idleMaxTime: 20
   playerFleeDistanceCheck: 15
   playerFleeDistance: 10
   size: 6
@@ -832,7 +832,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.3614699
-  m_Speed: 2
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

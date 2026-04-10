@@ -317,10 +317,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  sampleRadius: 10
+  sampleRadius: 30
   maxSampleAttempts: 10
-  idleMinTime: 2
-  idleMaxTime: 5
+  idleMinTime: 10
+  idleMaxTime: 20
   playerFleeDistanceCheck: 15
   playerFleeDistance: 10
   size: 5
