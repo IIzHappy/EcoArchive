@@ -83,19 +83,40 @@ public class PlayerSound : MonoBehaviour
             case 0:
                 foreach (GameObject animal in _walkRangeAnimals)
                 {
-                    if (animal.TryGetComponent<AnimalNavBase>(out navBase)) navBase.playerFlee(this.transform);
+                    if (animal != null)
+                    {
+                        if (animal.TryGetComponent<AnimalNavBase>(out navBase)) navBase.playerFlee(this.transform);
+                    }
+                    else
+                    {
+                        _walkRangeAnimals.Remove(animal);
+                    }
                 }
                 break;
             case 1:
                 foreach (GameObject animal in _sprintRangeAnimals)
                 {
-                    if (animal.TryGetComponent<AnimalNavBase>(out navBase)) navBase.playerFlee(this.transform);
+                    if (animal != null)
+                    {
+                        if (animal.TryGetComponent<AnimalNavBase>(out navBase)) navBase.playerFlee(this.transform);
+                    }
+                    else
+                    {
+                        _walkRangeAnimals.Remove(animal);
+                    }
                 }
                 break;
             case 2:
                 foreach (GameObject animal in _slowRangeAnimals)
                 {
-                    if (animal.TryGetComponent<AnimalNavBase>(out navBase)) navBase.playerFlee(this.transform);
+                    if (animal != null)
+                    {
+                        if (animal.TryGetComponent<AnimalNavBase>(out navBase)) navBase.playerFlee(this.transform);
+                    }
+                    else
+                    {
+                        _walkRangeAnimals.Remove(animal);
+                    }
                 }
                 break;
 

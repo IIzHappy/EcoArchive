@@ -118,6 +118,7 @@ public class Collection : MonoBehaviour
             i = 0;
             if (save._bugs != null)
             {
+                _bugsFound = save._bugs;
                 foreach (Bug bug in _bugs.Keys)
                 {
                     if (_bugsFound[i] > 0)
@@ -135,6 +136,7 @@ public class Collection : MonoBehaviour
             i = 0;
             if (save._bones != null)
             {
+                _bonesFound = save._bones;
                 foreach (Bone bone in _bones.Keys)
                 {
                     if (_bonesFound[i] > 0)
@@ -310,7 +312,7 @@ public class Collection : MonoBehaviour
         }
         if (animal != null)
         {
-            animal._collected = true;
+            //animal._collected = true;
             _animals[animal].GetComponent<Image>().sprite = animal._icon;
             _animals[animal].GetComponentInChildren<TMP_Text>().text = animal._name;
             EventFeed.Instance.makeNotif(animal._icon, animal._name + " discovered");
