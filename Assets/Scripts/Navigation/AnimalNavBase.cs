@@ -206,7 +206,7 @@ public class AnimalNavBase : MonoBehaviour
         if (animator == null) return;
 
         animator.SetBool(IsRoaming, currentState == AnimalState.Roaming);
-        animator.SetBool(IsFleeing, currentState == AnimalState.Fleeing);
+        //animator.SetBool(IsFleeing, currentState == AnimalState.Fleeing);
         animator.SetBool(IsIdle, currentState == AnimalState.Resting);
         bool isRunning = currentState == AnimalState.Fleeing || currentState == AnimalState.Chasing;
         animator.SetBool(IsFleeing, isRunning);
