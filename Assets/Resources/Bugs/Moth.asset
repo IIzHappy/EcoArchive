@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f03bffbeed70b4387b348178081094, type: 3}
   m_Name: Moth
   m_EditorClassIdentifier: 
-  _name: 
-  _icon: {fileID: 0}
+  _name: Moth
+  _icon: {fileID: 21300000, guid: d2627d97eaa3c174f91af325eddff0c4, type: 3}
   _numCollected: 0

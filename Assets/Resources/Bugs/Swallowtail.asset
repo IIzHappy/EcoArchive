@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f03bffbeed70b4387b348178081094, type: 3}
   m_Name: Swallowtail
   m_EditorClassIdentifier: 
-  _name: 
-  _icon: {fileID: 0}
+  _name: Swallowtail
+  _icon: {fileID: 21300000, guid: 247b92fe840628a449882fb872b1f113, type: 3}
   _numCollected: 0
