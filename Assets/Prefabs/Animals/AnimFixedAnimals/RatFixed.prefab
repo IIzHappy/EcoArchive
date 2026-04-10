@@ -59,6 +59,7 @@ MonoBehaviour:
   playerFleeDistanceCheck: 15
   playerFleeDistance: 10
   size: 1
+  animator: {fileID: 1935983977975185757}
   fleeDistance: 12
   boneTag: Bones
   eatIdleMin: 5

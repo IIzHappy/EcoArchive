@@ -217,6 +217,7 @@ MonoBehaviour:
   playerFleeDistanceCheck: 15
   playerFleeDistance: 10
   size: 1
+  animator: {fileID: 318067417823011720}
 --- !u!114 &5571910829857470902
 MonoBehaviour:
   m_ObjectHideFlags: 0

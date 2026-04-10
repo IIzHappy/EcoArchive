@@ -818,7 +818,7 @@ MonoBehaviour:
   playerFleeDistanceCheck: 15
   playerFleeDistance: 10
   size: 6
-  animator: {fileID: 0}
+  animator: {fileID: 269509229727774733}
   chaseDuration: 5
   chaseCooldown: 8
   chaseChance: 0.4

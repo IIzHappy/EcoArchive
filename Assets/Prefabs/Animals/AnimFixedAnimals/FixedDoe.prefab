@@ -121,7 +121,7 @@ MonoBehaviour:
   playerFleeDistanceCheck: 15
   playerFleeDistance: 10
   size: 5
-  animator: {fileID: 0}
+  animator: {fileID: 7818380198711027292}
   fleeDistance: 12
   sprintMultiplier: 2
   sprintTime: 2

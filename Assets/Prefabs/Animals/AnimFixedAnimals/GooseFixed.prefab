@@ -225,11 +225,11 @@ MonoBehaviour:
   idleMaxTime: 5
   playerFleeDistanceCheck: 15
   playerFleeDistance: 10
-  size: 6
-  animator: {fileID: 0}
+  size: 7
+  animator: {fileID: 8475294486942230835}
   chaseDuration: 5
   chaseCooldown: 8
-  chaseChance: 0.4
+  chaseChance: 1
 --- !u!195 &8205031754651921385
 NavMeshAgent:
   m_ObjectHideFlags: 0

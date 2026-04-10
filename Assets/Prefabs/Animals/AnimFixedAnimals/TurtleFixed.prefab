@@ -245,6 +245,7 @@ MonoBehaviour:
   playerFleeDistanceCheck: 15
   playerFleeDistance: 10
   size: 1
+  animator: {fileID: 5480711519384156830}
   fleeDistance: 12
 --- !u!136 &4995031546288110778
 CapsuleCollider:

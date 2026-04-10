@@ -8,9 +8,9 @@ public class PredatorBase : AnimalNavBase
     [SerializeField] protected float chaseCooldown = 8f;
     [SerializeField] protected float chaseChance = 0.4f;
 
-    private Transform currentPrey;
-    private float chaseTimer;
-    private float cooldownTimer;
+    protected Transform currentPrey;
+    protected float chaseTimer;
+    protected float cooldownTimer;
 
     protected override void Update()
     {

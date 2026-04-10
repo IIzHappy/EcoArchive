@@ -166,6 +166,7 @@ MonoBehaviour:
   playerFleeDistanceCheck: 15
   playerFleeDistance: 10
   size: 1
+  animator: {fileID: 3094141552539699557}
   fleeDistance: 12
 --- !u!195 &8450721569223723396
 NavMeshAgent:

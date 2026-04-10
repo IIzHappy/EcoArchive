@@ -67,7 +67,7 @@ MonoBehaviour:
   playerFleeDistanceCheck: 15
   playerFleeDistance: 10
   size: 3
-  animator: {fileID: 0}
+  animator: {fileID: 8789913566609619374}
   fleeDistance: 12
 --- !u!135 &1108021484963756431
 SphereCollider:
