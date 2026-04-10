@@ -194,12 +194,14 @@ public class Collection : MonoBehaviour
             {
                 _bugs.Add(bug, null);
             }
+            _bugsFound = new int[_bugs.Count];
 
             Bone[] allBones = Resources.LoadAll<Bone>("Bones");
             foreach (var bone in allBones)
             {
                 _bones.Add(bone, null);
             }
+            _bonesFound = new int[_bones.Count];
 
             _loadablePhotos = new List<LoadablePhoto>();
 
