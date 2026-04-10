@@ -32,6 +32,7 @@ public class CameraController : MonoBehaviour
 
     private bool camUsable = true;
     public bool advancedCam = false;
+    public bool tutorial = false;
 
     LayerMask ignore;
     int animal;
@@ -382,7 +383,7 @@ public class CameraController : MonoBehaviour
                         focus = 1;
                         Debug.Log(navBase.AnimalID);
                         Collection.Instance.FoundAnimal(navBase.AnimalID);
-                        Achievments.Instance.IterateSpecialist(navBase.AnimalID);
+                        if (!tutorial) Achievments.Instance.IterateSpecialist(navBase.AnimalID);
                     }
                 }
             }

@@ -25,6 +25,8 @@ public class Collection : MonoBehaviour
     [SerializeField] GameObject _bugIcons;
     [SerializeField] GameObject _boneIcons;
 
+    public bool tutorial = false;
+
     public GameObject _iconPrefab;
 
     private void Awake()
@@ -292,6 +294,7 @@ public class Collection : MonoBehaviour
 
     public void FoundAnimal(string name)
     {
+        AnimalAsset animal = null;
         int i = 0;
         foreach (AnimalAsset key in _animals.Keys)
         {
@@ -299,17 +302,20 @@ public class Collection : MonoBehaviour
             {
                 _animalsFound[i] = true;
                 key._collected = true;
-                Debug.Log(key._name + key._collected);
-                InstantiateAnimals();
-                Achievments.Instance.CheckAnimalCompletion(_animalsFound);
-                return;
+                animal = key;
+                if (!tutorial) Achievments.Instance.CheckAnimalCompletion(_animalsFound);
+                break;
             }
             i++;
         }
-        //animal._collected = true;
-        //_animals[animal].GetComponent<Image>().sprite = animal._icon;
-        //_animals[animal].GetComponentInChildren<TMP_Text>().text = animal._name;
-        //EventFeed.Instance.makeNotif(animal._icon, animal._name + " discovered");
+        if (animal != null)
+        {
+            animal._collected = true;
+            _animals[animal].GetComponent<Image>().sprite = animal._icon;
+            _animals[animal].GetComponentInChildren<TMP_Text>().text = animal._name;
+            EventFeed.Instance.makeNotif(animal._icon, animal._name + " discovered");
+            InstantiateAnimals();
+        }
     }
 
     public void AddBug(Bug bug)
@@ -320,7 +326,7 @@ public class Collection : MonoBehaviour
             if (key == bug)
             {
                 _bugsFound[i] += 1;
-                return;
+                break;
             }
             i++;
         }
@@ -339,6 +345,7 @@ public class Collection : MonoBehaviour
             if (key == bone)
             {
                 _bonesFound[i] += 1;
+                break;
             }
             i++;
         }

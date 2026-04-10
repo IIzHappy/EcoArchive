@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeSkull
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7fb5531c70211154e853e523a1f00f0f, type: 3}
+      propertyPath: m_TagString
+      value: Bones
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
