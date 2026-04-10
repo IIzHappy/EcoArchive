@@ -26,7 +26,7 @@ public class MusicController : MonoBehaviour
             {
                 player.clip = dayMusic[Random.Range(0, dayMusic.Count())];
             }
+            player.Play();
         }
-        player.Play();
     }
 }
