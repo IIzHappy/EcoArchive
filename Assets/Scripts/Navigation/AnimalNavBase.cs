@@ -40,6 +40,11 @@ public class AnimalNavBase : MonoBehaviour
     public virtual string AnimalID => "AnimalID";
     [SerializeField] protected float size = 1f;
     public float animalSize => size;
+
+    [SerializeField] protected Animator animator;
+    protected static readonly int IsRoaming = Animator.StringToHash("isRoaming");
+    protected static readonly int IsFleeing = Animator.StringToHash("isFleeing");
+    protected static readonly int IsIdle = Animator.StringToHash("isIdle");
     protected virtual void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -136,6 +141,7 @@ public class AnimalNavBase : MonoBehaviour
     protected virtual void SetState(AnimalState newState)
     {
         currentState = newState;
+        UpdateAnimator();
     }
 
     protected void SetNewSampleInterval()
@@ -193,6 +199,17 @@ public class AnimalNavBase : MonoBehaviour
         SetState(AnimalState.Roaming);
         moveTimer = 0f;
         SetNewSampleInterval();
+    }
+
+    protected void UpdateAnimator()
+    {
+        if (animator == null) return;
+
+        animator.SetBool(IsRoaming, currentState == AnimalState.Roaming);
+        animator.SetBool(IsFleeing, currentState == AnimalState.Fleeing);
+        animator.SetBool(IsIdle, currentState == AnimalState.Resting);
+        bool isRunning = currentState == AnimalState.Fleeing || currentState == AnimalState.Chasing;
+        animator.SetBool(IsFleeing, isRunning);
     }
 
 
