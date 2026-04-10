@@ -187,4 +187,9 @@ public class PlayerController : MonoBehaviour
         _curInteractable = null;
         _crosshair.SetActive(false);
     }
+
+    public void Explode()
+    {
+        Destroy(this.gameObject);
+    }
 }
