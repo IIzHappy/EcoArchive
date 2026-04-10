@@ -430,13 +430,11 @@ MonoBehaviour:
   idleMaxTime: 10
   playerFleeDistanceCheck: 15
   playerFleeDistance: 10
-  size: 1
+  size: 4
+  animator: {fileID: 0}
   chaseDuration: 5
   chaseCooldown: 8
   chaseChance: 0.4
-  playerTag: Player
-  safeDistance: 15
-  fleeMultiplier: 1.5
 --- !u!114 &-1383287391921814065
 MonoBehaviour:
   m_ObjectHideFlags: 0

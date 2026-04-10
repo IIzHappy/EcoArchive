@@ -225,7 +225,8 @@ MonoBehaviour:
   idleMaxTime: 5
   playerFleeDistanceCheck: 15
   playerFleeDistance: 10
-  size: 1
+  size: 6
+  animator: {fileID: 0}
   chaseDuration: 5
   chaseCooldown: 8
   chaseChance: 0.4

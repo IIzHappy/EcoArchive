@@ -323,7 +323,8 @@ MonoBehaviour:
   idleMaxTime: 5
   playerFleeDistanceCheck: 15
   playerFleeDistance: 10
-  size: 1
+  size: 5
+  animator: {fileID: 0}
   fleeDistance: 12
 --- !u!114 &3357241012929949630
 MonoBehaviour:
