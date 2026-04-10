@@ -201,7 +201,7 @@ public class AnimalNavBase : MonoBehaviour
         SetNewSampleInterval();
     }
 
-    protected void UpdateAnimator()
+    protected virtual void UpdateAnimator()
     {
         if (animator == null) return;
 
