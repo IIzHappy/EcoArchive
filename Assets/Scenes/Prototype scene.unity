@@ -78797,40 +78797,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalTypes:
-  - prefab: {fileID: 4046247437373196763, guid: 2c1377ae64e4de242aa32e8741212622, type: 3}
+  - prefab: {fileID: 5533472734874811130, guid: 6110f1bd7bd6ca240aa912bc5f02d5bb, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 5519908790608817611, guid: bc087082282beaf498642ba8caa68003, type: 3}
+  - prefab: {fileID: 2493489694962377521, guid: 91fed5a0e2b0dcd4ba3f25e65c915ee3, type: 3}
     maxNum: 8
     spawnRadius: 320
-  - prefab: {fileID: 7492066990703942822, guid: 08634bb177e7edd41b80aef546a2d374, type: 3}
+  - prefab: {fileID: 1032609262166262476, guid: ce6cc4312b8917b41b5b9d30ae001ef3, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 3752231161712809340, guid: acfab9bfbbef55945b0a148effcf40ab, type: 3}
+  - prefab: {fileID: 5823601402312166624, guid: 019e6037b807566488a4e61194942439, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 1222184501482951595, guid: 389d8f7ccb7602c408e3b89a120c258c, type: 3}
+  - prefab: {fileID: 9214602393084592267, guid: 5336357a0c3706049b97ec2f70343457, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 5802493348036360286, guid: f83321368171b854bb4d1a5a7ad37366, type: 3}
+  - prefab: {fileID: 4147041341475528975, guid: cc2f6e84cad7af14496d3423f83f3183, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 8499854340277318454, guid: 9e6d4a53a417aad40861ad467cc4431c, type: 3}
+  - prefab: {fileID: 1917289873244154834, guid: f71a7f9f10133a04e83769cbaff1d87e, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 2067184610623232243, guid: 2f47c752adad9fe4fae29fdc8a5ecb9d, type: 3}
+  - prefab: {fileID: 4575683082260768105, guid: 7e83a48f9bf6d3f4b9c3352ac360b03f, type: 3}
     maxNum: 25
     spawnRadius: 320
-  - prefab: {fileID: 7615923784037889513, guid: 7053ddcceb12ab34cac2837dce0a25d3, type: 3}
+  - prefab: {fileID: 1287220067394811998, guid: feedc8585f2ce6e418fbe46c1adedd74, type: 3}
     maxNum: 8
     spawnRadius: 320
-  - prefab: {fileID: 3720781966176555921, guid: 50b08b30606fbeb4a809e70265c95cb2, type: 3}
+  - prefab: {fileID: 7357955259399126631, guid: 5240f00fa7e7f2149915fa6556f94520, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 3964367511752557667, guid: f7a9fa438ee3cf94fb2915c9dc609181, type: 3}
+  - prefab: {fileID: 5709826344615011928, guid: 12ef5518cc74f9e4685cd198e278178e, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 3325189710616111414, guid: 22c152a79a92a954fbf4457232d06c3a, type: 3}
+  - prefab: {fileID: 6193037884569433153, guid: 095a8083c72dc464693643522d1c3370, type: 3}
     maxNum: 9
     spawnRadius: 320
   spawnInterval: 0.25
@@ -79253,40 +79253,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalTypes:
-  - prefab: {fileID: 4046247437373196763, guid: 2c1377ae64e4de242aa32e8741212622, type: 3}
+  - prefab: {fileID: 5533472734874811130, guid: 6110f1bd7bd6ca240aa912bc5f02d5bb, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 5519908790608817611, guid: bc087082282beaf498642ba8caa68003, type: 3}
+  - prefab: {fileID: 2493489694962377521, guid: 91fed5a0e2b0dcd4ba3f25e65c915ee3, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 7492066990703942822, guid: 08634bb177e7edd41b80aef546a2d374, type: 3}
+  - prefab: {fileID: 1032609262166262476, guid: ce6cc4312b8917b41b5b9d30ae001ef3, type: 3}
     maxNum: 5
     spawnRadius: 470
-  - prefab: {fileID: 3752231161712809340, guid: acfab9bfbbef55945b0a148effcf40ab, type: 3}
+  - prefab: {fileID: 5823601402312166624, guid: 019e6037b807566488a4e61194942439, type: 3}
     maxNum: 15
     spawnRadius: 470
-  - prefab: {fileID: 1222184501482951595, guid: 389d8f7ccb7602c408e3b89a120c258c, type: 3}
+  - prefab: {fileID: 9214602393084592267, guid: 5336357a0c3706049b97ec2f70343457, type: 3}
     maxNum: 5
     spawnRadius: 470
-  - prefab: {fileID: 5802493348036360286, guid: f83321368171b854bb4d1a5a7ad37366, type: 3}
+  - prefab: {fileID: 4147041341475528975, guid: cc2f6e84cad7af14496d3423f83f3183, type: 3}
     maxNum: 8
     spawnRadius: 470
-  - prefab: {fileID: 8499854340277318454, guid: 9e6d4a53a417aad40861ad467cc4431c, type: 3}
+  - prefab: {fileID: 1917289873244154834, guid: f71a7f9f10133a04e83769cbaff1d87e, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 2067184610623232243, guid: 2f47c752adad9fe4fae29fdc8a5ecb9d, type: 3}
+  - prefab: {fileID: 4575683082260768105, guid: 7e83a48f9bf6d3f4b9c3352ac360b03f, type: 3}
     maxNum: 7
     spawnRadius: 470
-  - prefab: {fileID: 7615923784037889513, guid: 7053ddcceb12ab34cac2837dce0a25d3, type: 3}
+  - prefab: {fileID: 1287220067394811998, guid: feedc8585f2ce6e418fbe46c1adedd74, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 3720781966176555921, guid: 50b08b30606fbeb4a809e70265c95cb2, type: 3}
+  - prefab: {fileID: 7357955259399126631, guid: 5240f00fa7e7f2149915fa6556f94520, type: 3}
     maxNum: 5
     spawnRadius: 470
-  - prefab: {fileID: 3964367511752557667, guid: f7a9fa438ee3cf94fb2915c9dc609181, type: 3}
+  - prefab: {fileID: 5709826344615011928, guid: 12ef5518cc74f9e4685cd198e278178e, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 3325189710616111414, guid: 22c152a79a92a954fbf4457232d06c3a, type: 3}
+  - prefab: {fileID: 6193037884569433153, guid: 095a8083c72dc464693643522d1c3370, type: 3}
     maxNum: 0
     spawnRadius: 0
   spawnInterval: 0.25
@@ -133179,40 +133179,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalTypes:
-  - prefab: {fileID: 4046247437373196763, guid: 2c1377ae64e4de242aa32e8741212622, type: 3}
+  - prefab: {fileID: 5533472734874811130, guid: 6110f1bd7bd6ca240aa912bc5f02d5bb, type: 3}
     maxNum: 10
     spawnRadius: 220
-  - prefab: {fileID: 5519908790608817611, guid: bc087082282beaf498642ba8caa68003, type: 3}
+  - prefab: {fileID: 2493489694962377521, guid: 91fed5a0e2b0dcd4ba3f25e65c915ee3, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 7492066990703942822, guid: 08634bb177e7edd41b80aef546a2d374, type: 3}
+  - prefab: {fileID: 1032609262166262476, guid: ce6cc4312b8917b41b5b9d30ae001ef3, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 3752231161712809340, guid: acfab9bfbbef55945b0a148effcf40ab, type: 3}
+  - prefab: {fileID: 5823601402312166624, guid: 019e6037b807566488a4e61194942439, type: 3}
     maxNum: 10
     spawnRadius: 220
-  - prefab: {fileID: 1222184501482951595, guid: 389d8f7ccb7602c408e3b89a120c258c, type: 3}
+  - prefab: {fileID: 9214602393084592267, guid: 5336357a0c3706049b97ec2f70343457, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 5802493348036360286, guid: f83321368171b854bb4d1a5a7ad37366, type: 3}
+  - prefab: {fileID: 4147041341475528975, guid: cc2f6e84cad7af14496d3423f83f3183, type: 3}
     maxNum: 15
     spawnRadius: 220
-  - prefab: {fileID: 8499854340277318454, guid: 9e6d4a53a417aad40861ad467cc4431c, type: 3}
+  - prefab: {fileID: 1917289873244154834, guid: f71a7f9f10133a04e83769cbaff1d87e, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 2067184610623232243, guid: 2f47c752adad9fe4fae29fdc8a5ecb9d, type: 3}
+  - prefab: {fileID: 4575683082260768105, guid: 7e83a48f9bf6d3f4b9c3352ac360b03f, type: 3}
     maxNum: 15
     spawnRadius: 220
-  - prefab: {fileID: 7615923784037889513, guid: 7053ddcceb12ab34cac2837dce0a25d3, type: 3}
+  - prefab: {fileID: 1287220067394811998, guid: feedc8585f2ce6e418fbe46c1adedd74, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 3720781966176555921, guid: 50b08b30606fbeb4a809e70265c95cb2, type: 3}
+  - prefab: {fileID: 7357955259399126631, guid: 5240f00fa7e7f2149915fa6556f94520, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 3964367511752557667, guid: f7a9fa438ee3cf94fb2915c9dc609181, type: 3}
+  - prefab: {fileID: 5709826344615011928, guid: 12ef5518cc74f9e4685cd198e278178e, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 3325189710616111414, guid: 22c152a79a92a954fbf4457232d06c3a, type: 3}
+  - prefab: {fileID: 6193037884569433153, guid: 095a8083c72dc464693643522d1c3370, type: 3}
     maxNum: 0
     spawnRadius: 0
   spawnInterval: 0.25
@@ -162127,40 +162127,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalTypes:
-  - prefab: {fileID: 4046247437373196763, guid: 2c1377ae64e4de242aa32e8741212622, type: 3}
+  - prefab: {fileID: 5533472734874811130, guid: 6110f1bd7bd6ca240aa912bc5f02d5bb, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 5519908790608817611, guid: bc087082282beaf498642ba8caa68003, type: 3}
+  - prefab: {fileID: 2493489694962377521, guid: 91fed5a0e2b0dcd4ba3f25e65c915ee3, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 7492066990703942822, guid: 08634bb177e7edd41b80aef546a2d374, type: 3}
+  - prefab: {fileID: 1032609262166262476, guid: ce6cc4312b8917b41b5b9d30ae001ef3, type: 3}
     maxNum: 15
     spawnRadius: 330
-  - prefab: {fileID: 3752231161712809340, guid: acfab9bfbbef55945b0a148effcf40ab, type: 3}
+  - prefab: {fileID: 5823601402312166624, guid: 019e6037b807566488a4e61194942439, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 1222184501482951595, guid: 389d8f7ccb7602c408e3b89a120c258c, type: 3}
+  - prefab: {fileID: 9214602393084592267, guid: 5336357a0c3706049b97ec2f70343457, type: 3}
     maxNum: 15
     spawnRadius: 330
-  - prefab: {fileID: 5802493348036360286, guid: f83321368171b854bb4d1a5a7ad37366, type: 3}
+  - prefab: {fileID: 4147041341475528975, guid: cc2f6e84cad7af14496d3423f83f3183, type: 3}
     maxNum: 10
     spawnRadius: 330
-  - prefab: {fileID: 8499854340277318454, guid: 9e6d4a53a417aad40861ad467cc4431c, type: 3}
+  - prefab: {fileID: 1917289873244154834, guid: f71a7f9f10133a04e83769cbaff1d87e, type: 3}
     maxNum: 10
     spawnRadius: 330
-  - prefab: {fileID: 2067184610623232243, guid: 2f47c752adad9fe4fae29fdc8a5ecb9d, type: 3}
+  - prefab: {fileID: 4575683082260768105, guid: 7e83a48f9bf6d3f4b9c3352ac360b03f, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 7615923784037889513, guid: 7053ddcceb12ab34cac2837dce0a25d3, type: 3}
+  - prefab: {fileID: 1287220067394811998, guid: feedc8585f2ce6e418fbe46c1adedd74, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 3720781966176555921, guid: 50b08b30606fbeb4a809e70265c95cb2, type: 3}
+  - prefab: {fileID: 7357955259399126631, guid: 5240f00fa7e7f2149915fa6556f94520, type: 3}
     maxNum: 5
     spawnRadius: 330
-  - prefab: {fileID: 3964367511752557667, guid: f7a9fa438ee3cf94fb2915c9dc609181, type: 3}
+  - prefab: {fileID: 5709826344615011928, guid: 12ef5518cc74f9e4685cd198e278178e, type: 3}
     maxNum: 10
     spawnRadius: 330
-  - prefab: {fileID: 3325189710616111414, guid: 22c152a79a92a954fbf4457232d06c3a, type: 3}
+  - prefab: {fileID: 6193037884569433153, guid: 095a8083c72dc464693643522d1c3370, type: 3}
     maxNum: 0
     spawnRadius: 0
   spawnInterval: 0.25
@@ -306557,40 +306557,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalTypes:
-  - prefab: {fileID: 4046247437373196763, guid: 2c1377ae64e4de242aa32e8741212622, type: 3}
+  - prefab: {fileID: 5533472734874811130, guid: 6110f1bd7bd6ca240aa912bc5f02d5bb, type: 3}
     maxNum: 10
     spawnRadius: 470
-  - prefab: {fileID: 5519908790608817611, guid: bc087082282beaf498642ba8caa68003, type: 3}
+  - prefab: {fileID: 2493489694962377521, guid: 91fed5a0e2b0dcd4ba3f25e65c915ee3, type: 3}
     maxNum: 5
     spawnRadius: 470
-  - prefab: {fileID: 7492066990703942822, guid: 08634bb177e7edd41b80aef546a2d374, type: 3}
+  - prefab: {fileID: 1032609262166262476, guid: ce6cc4312b8917b41b5b9d30ae001ef3, type: 3}
     maxNum: 10
     spawnRadius: 470
-  - prefab: {fileID: 3752231161712809340, guid: acfab9bfbbef55945b0a148effcf40ab, type: 3}
+  - prefab: {fileID: 5823601402312166624, guid: 019e6037b807566488a4e61194942439, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 1222184501482951595, guid: 389d8f7ccb7602c408e3b89a120c258c, type: 3}
+  - prefab: {fileID: 9214602393084592267, guid: 5336357a0c3706049b97ec2f70343457, type: 3}
     maxNum: 10
     spawnRadius: 470
-  - prefab: {fileID: 5802493348036360286, guid: f83321368171b854bb4d1a5a7ad37366, type: 3}
+  - prefab: {fileID: 4147041341475528975, guid: cc2f6e84cad7af14496d3423f83f3183, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 8499854340277318454, guid: 9e6d4a53a417aad40861ad467cc4431c, type: 3}
+  - prefab: {fileID: 1917289873244154834, guid: f71a7f9f10133a04e83769cbaff1d87e, type: 3}
     maxNum: 5
     spawnRadius: 470
-  - prefab: {fileID: 2067184610623232243, guid: 2f47c752adad9fe4fae29fdc8a5ecb9d, type: 3}
+  - prefab: {fileID: 4575683082260768105, guid: 7e83a48f9bf6d3f4b9c3352ac360b03f, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 7615923784037889513, guid: 7053ddcceb12ab34cac2837dce0a25d3, type: 3}
+  - prefab: {fileID: 1287220067394811998, guid: feedc8585f2ce6e418fbe46c1adedd74, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 3720781966176555921, guid: 50b08b30606fbeb4a809e70265c95cb2, type: 3}
+  - prefab: {fileID: 7357955259399126631, guid: 5240f00fa7e7f2149915fa6556f94520, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 3964367511752557667, guid: f7a9fa438ee3cf94fb2915c9dc609181, type: 3}
+  - prefab: {fileID: 5709826344615011928, guid: 12ef5518cc74f9e4685cd198e278178e, type: 3}
     maxNum: 0
     spawnRadius: 0
-  - prefab: {fileID: 3325189710616111414, guid: 22c152a79a92a954fbf4457232d06c3a, type: 3}
+  - prefab: {fileID: 6193037884569433153, guid: 095a8083c72dc464693643522d1c3370, type: 3}
     maxNum: 5
     spawnRadius: 470
   spawnInterval: 0.25
