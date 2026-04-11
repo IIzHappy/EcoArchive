@@ -2786,7 +2786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8327984455575829167, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
       propertyPath: _gravity
-      value: -25
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 8327984455575829167, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
       propertyPath: _crosshair
@@ -2798,7 +2798,7 @@ PrefabInstance:
       objectReference: {fileID: 1294246176}
     - target: {fileID: 8327984455575829167, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
       propertyPath: _jumpHeight
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8327984455575829167, guid: c488c3cbee1b3d940af41d38e76e79a8, type: 3}
       propertyPath: _waterCheck
